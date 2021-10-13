@@ -1,0 +1,11 @@
+p {
+  font-size: 24px;
+  background-color: chartreuse;
+  border:2px solid #000;
+}
+
+body {
+    background-color: cornsilk;
+    font:300, tahoma, bolder;
+}
+

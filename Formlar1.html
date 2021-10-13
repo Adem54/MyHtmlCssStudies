@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--form icindeki action backend ile calisirken back-end e yollayacagimiz islemlerde kullanilir..-->
+    
+    <!-- method attribut u  hicbirsey yazmassak varsayilan olarak get olarak gelecektir ve buttona basildiginda action a yazdigimiz sayfaya veriler adres te acikca gosterilerek gonderilecektir  
+    http://127.0.0.1:5500/html2.html?ad=Adem&soyad=Erbas&cinsiyet=erkek&cbxmavi=mavi bu sekilde, o zaman biz eger ki hassas veriler gonderiyorsak o zaman ne yapmaliyoz methodumuz u get yapmamaliyiz 2048 karaktere kadar destekleniyor get..O zaman biz post methodu kullanmamiz gerekir bilgilerimiz hassas ise post ile de gidilen sayfada gonderilen verilerin karsilanmasi gerekir-->
+    <form action="html2.html" method="get">
+        <!--Form elemanlari inline oldugu icin alt alta gelmez kendimiz br ile alt alta getiririz-->
+        <!--label kullanmak tarayicinin inputun ne oldugunu bilmesi acisindan da cok onemlidir...-->
+        <label for="ad">Adinizi giriniz:</label>  
+        <input type="text" id="ad" name="ad" value="Adammm"> <br><br> <!--value degeri yazarsak bu sekilde kendisi varsayilan olarak bir isim atamis oluyoruz text boxa ve gonderilecek deger bu olur artik ama biz gidip text boxa baska bir deger girersek artik value olarak oraya girdigimiz deger gonderilecektir yani burda bizim value attributune yazdigimiz deger ile ekranda verilerimizi girerken yazdigimiz deger ayni dir ama en son biz ekrana ne girersek value o olur-->
+<!--for a biz bu label hangi inputa ait ise o inputun id sini for karsina yaz...-->
+<!--burda onemli olan type dir type=text sayesinde biz oraya yazi yaziyoruz...-->
+        <label for="soyad">Soyadinizi giriniz:</label>  
+        <input type="text" id="soyad" name="soyad"> <br><br>
+
+        <!--Radiobutton birden fazla secenek olup da birini secmemiz gerekirse kullaniriz-->
+<!--ikisine de ayni name ismini verirsek o zaman ya onu ya da onu tiklayabiliriz eger name vermezsek her ikisi de tiklanabilir...-->
+<!--Peki bizim radio buttonu kullanma maksadimiz bu degeri bir yere yollamak iste o is te value uzerinden yapilacaktir...-->
+<!--yine label for a radio inputtaki id ye karsilik geliyor bu for ve id leri ayarlayinca label ile yazdigimiz kadin ve erkek isimleri uzerine gelince de radio inputlar in ici tiklaniyor yoksa sadece direk radio input kutucuguna tiklayinca tiklenir...-->
+        <input type="radio" name="cinsiyet" value="erkek" id="erkek">
+        <label for="erkek">Erkek</label>
+        
+
+        <input type="radio" name="cinsiyet" value="kadin" id="kadin">
+        <label for="kadin">Kadin</label>
+        <br>    <br>
+        <!--checkbox-->
+        <!--tiklandiginda gonderecegi deger value ile veririz---->
+        <!--burdaki degerlere name leri uzerinden erisecekler...value ise burdaki degerin verecegi degerdir..-->
+          <!--default olarak secili olmasini istedigimiz hanigsi ise ona gider checked degeri veririz-->
+              <input type="checkbox" name="cbxmavi" id="mavi" value="mavi" checked="checked">
+             <label for="mavi">Mavi</label>
+             <input type="checkbox" name="cbxsari" id="sari" value="sari">
+             <label for="sari">Sari</label>
+             <input type="checkbox" name="cbxyesil" id="yesil" value="yesil">
+             <label for="yesil">Yesil</label>
+             <input type="checkbox" name="cbxkirmizi" id="kirmizi" value="kirmizi" checked="checked">
+             <label for="kirmizi">Kirmizi</label>
+
+             <br><br><br>
+            <!--type submit yaparsak ve buraya tiklarsak ne yapacak form etiketinin bir attributu olan action icine hangi sayfa yazarsak oraya gitmeye calisacak yani normalde bu buton verileri ornegin bir ekleme islemi vs olacagi icin bu verileri veritabani islemini yapan sayfamiza gider ve bu veriler veritabanina kaydedilir -->
+            <!-- Ayrica biz tiklayinca html2.html sayfasina git dedik action da ve form verilerini doldurduktan sonra biz buna tiklayinca sayfa ya giderken adres uzantisina ad,soyad, cinsiyet ve checkbox verierinin eklendigini goruyoruz.  http://127.0.0.1:5500/html2.html?ad=Adem&soyad=Erbas&cinsiyet=erkek&cbxmavi=mavi   -->
+             <input type="submit" value="Gonder">
+           
+             <input type="reset" value="Formu Sil" style="margin:0 10px 0 10px"><!--Bu buton ile for icine girdigimiz verilerisilebiliriz-->
+        
+             <!--type i button yaparsak o verileri gondermeyecektir cunku o normal  herhangi bir buton olur form butonu olmaz o zaman, unutmayalim-->
+             <input type="button" onclick="alert('Merhaba')" value="Send(NormalButon)-Formbutonu degil">
+
+            <br><br><br>
+<!--label larda for a id ne ise o yazilir..-->
+            <label for="arabalar">Favori Marka</label>
+            <select name="arabalar" id="arabalar" multiple>
+                <!--options da default olarak secili olmasi icin selected yaparken birden fazla  options in ayni anda secilebilmesi icin multiple yazariz....-->
+                <option value="honda">Honda</option>
+                <option value="renault">Renault</option>
+                <option value="mercedes" selected="selected">Mercedes</option><!--selected varsayilan olarak sayfa ilk acildiginda secili gelmesini saglar... -->
+                <option value="bmw">Bmw</option>
+<!--Optoin icindeki value attribute degerleri gonderilecek deger iken option taglari arasindas yazdgimiz deger ise kullaniciya gosterilecek olan degerdir..Veri olarak karsiya value ye ne yazarsak onu gonderir...-->
+
+            </select>         
+
+    </form>
+</body>
+</html>
+
+<!--Name ler bizim form elementlerimizin icinde bulunan degerlere erismek icin kullanilir, peki degerler nedir iclerindeki degerler value diye geciyor....yani ne girersek o dur normalde ama radio button ve checkbox da direk yazilan bir deger olmadigi icin value yiz biz elle yazariz.....-->

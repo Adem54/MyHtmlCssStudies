@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- External olarak style dosyamizi olusturma! -->
+    <link rel="stylesheet" href="style4.css" />
+
+    <!-- Internal yazma!!!   -->
+    <style>
+      p {
+        color: tomato;
+        background-color: darkcyan;
+      }
+    </style>
+  </head>
+  <body>
+    <!--Inline olarak style yani css yazma-->
+    <!--Biz external da border verdik ama inline ile border:none yapinca, external olarak yazilan border css kodu ezilmis olur ve inline ile ne yazdi isek o gecerli olacaktir...-->
+    <p style="background-color: cornsilk; border:none;">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta dolor
+      accusantium voluptates illum! Temporibus quae, illum vel odio
+      necessitatibus explicabo obcaecati labore. Quas modi corrupti ut veniam
+      veritatis deserunt fuga?
+    </p>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex veniam
+      possimus distinctio eos! Repellendus nihil labore, quibusdam nemo minima
+      dolore, libero minus sequi eveniet corporis fugit. Maiores voluptatum
+      voluptas ipsa.
+    </p>
+  </body>
+</html>
+
+<!-- Inline olarak style i html etiketleri icine yazdigimiz ayni stili farkli bir stille gidip Internal yani header icinde yazarsak o zaman ne olacak css stilleri cakisacaktir peki kiminki gecerli olur bu durumlarda inline olarak yazilan css stilleri header icinde yazilan ayni css stilini ezecektir inline olan gecerli olacaktir  
+Birde external olarak apayri bir dosyada css dosyamiz olacaktir style.css isminde mesela yazabilriz...
+Eger inline,internal ve external css arasinda bir cakisma olursa oncelik siralamasi sekilde olacaktir
+1-inline
+2-internal
+3-external
+
+Ornegin genel stillerin hepsini external css ile verirsiniz de istisna i olarak sitenize ozel birkkac ufak stil degisikligi istersiniz o zaman da gelip inline css ile external olan css ile yazdgimiz bazi css leri ezebiliriz...
+-->

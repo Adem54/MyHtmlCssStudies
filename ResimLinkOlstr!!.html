@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+img {
+    display:inline-block;
+}
+
+    </style>
+</head>
+<body>
+    <img src="images/carbon.png" style="width: 400;" width="640" alt="mycode">
+    <img src="https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg" width="440" alt="mycode">
+    <!-- tabki ki img inline bir element old icin yanyana gelecektir ama sayfayi telefon moduna getirirsek o zaman en son yazdigimiz img elementi asagi atilacaktir bu chrome tarayicisinin user agent style sheets den varsayilan olarak gelen ayarlarindan kaynaklanmaktadir...
+    Biz css ozelliklerinde display:block yaparsak tabi ki artik her satir da bir tane img elementi olacaktir ama display:inline-block yaparsak yanayna durmaya devam ederler ama artik kutut gibi davrannmaya baslarlar....
+   
+    -->
+
+    <!--  Image Map:Resim uzerinde tiklayarak bir yerden bir yere gitmeyi saglayabiliriz.Ornegin bir resmimiz var ve resim uzerinde bir tane bilgisayar resmimiz var biz ona tiklayinca mesela bilgisayar ile ilgili siteye gitsin istiyoruz ama ayni resim ustunde telefonlarimiz da var oraya tiklayinca da telefonlara gitsin istersek bunu kullanabiliriiz..... -->
+
+
+    <hr>
+    <img src="https://www.apowersoft-tr.com/wp-content/uploads/2015/06/transfer-photos-to-pc.jpg" width="440" alt="mycode" usemap="#pc">
+
+    <map name="pc">
+<!-- coords="200,60,405,214" bunlari pageruler eklentisi ile ornegin ilk iki olcum bilgisayarin sol sol ust kosesinden   resmin baslangic noktasi olan sol ust koseye kadar olcum, son 2 olcum ise bilgisayarin sag alt kosesinden yine resmin baslangic noktasina olan olcumdur....    -->
+        <area shape="rect" coords="200,60,405,214" href="https://www.google.no/" alt="google">
+        <area shape="rect" coords="54,89,114,218" href="https://www.google.no/" alt="google">
+
+    </map>
+</body>
+</html>

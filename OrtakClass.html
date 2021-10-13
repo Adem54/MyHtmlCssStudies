@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+a.button {
+    background-color: #333;
+    color: #fff;
+    display: inline-block;
+    line-height: 50px;
+    padding: 0 15px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+a.button.button-red {
+    background-color: red;
+}
+
+a.button.button-blue {
+    background-color: blue;
+}
+
+a.button.button-green {
+    background-color: green;
+}
+
+/*       
+background-color: #333; - Burada arka plan rengini varsayılan olarak siyah tonunda belirledik.
+color: #fff; - Burada varsayılan yazı rengini beyaz belirledik.
+display: inline-block; - Burada görüntüleme değerini inline-block olarak belirledik, bu görüntüleme değerlerini önceki derslerde görmüştük. Normalde <a> etiketi inline yani satır içi seviyeli bir etiketti, fakat biz CSS ile bunu hem inline hem block olacak şekilde belirledik. Bu da şu demek, inline olacak yani satır içi olacak ancak vereceğim diğer CSS özelliklerini de gösterebilmek için aynı zamanda blok seviyesinde olacak.
+line-height: 50px; - Burada satır yüksekliğini 50px olarak belirledik buda otomatik olarak yukarıdan ve aşağıdan ortaladı 50px içerisinde yazıyı.
+padding: 0 15px; - Burada ise sağ ve sol içten 15px'lik boşluk verdik. Böylece daha düzgün görünecek yazılar sağa ya da sola yapışmayacak.
+border-radius: 5px; - Burada ise butonun dört kenarını da 3px yumuşattık.
+text-decoration: none; - Burada ise <a> etiketlerinde varsayılan olarak altı çizili gelir, bu çizgiyi kaldırdık.
+a.button.button-red - Burada aslında açıklaması şu, <a> etiketleri içerisinde class değeri button olup aynı zamanda button-red de olan etiketi ya da etiketleri seç. Ve rengini kırmızı yaptık.
+a.button.button-blue - class değeri button-blue olanın arkaplan rengini mavi yaptık.
+a.button.button-green - class değeri button-green olanın arkaplan rengini yeşil yaptık.
+
+*/
+
+    </style>
+</head>
+<body>
+    <!--class ve id kavramlarini css de etiketleri birbirinden ayirmak icin kullanabilirz.Ayrica da javascript ile biz efekt verirken de bu id ve class lari kullaniriz.... -->
+    <!--ama class ile id yi ayirt edelim..Ayni ortak ozelliklere sahip etiketler icin, elementler icin kullaniriz ama id deyince sadece o elemente ozel olan ozellikleri kullanirken id kullaniriz...-->
+    <!--Bir div birden fazla class alabilir-->
+
+
+    <!--class lar ile ilgili soyle bir yaklasim sergileyebiliriz ayni kodlari surekli yazmamak icin biz ortak olan bir ozellikleri barindiran bir class yapariz sonra bu class i biz tum butonlarda kulllaniriz kendine has ekstra ozellikler icin ise anlamli isimler verip eger ortak class a button vermis isek mesela rengi kirmizi yapan class button-red gibi isimlendirilerek disardan bakan birinin de anlayacagi sekilde yapabiliriz.bu cok kullanislidir....-->
+    <a href="#" class="button">Normal Buton</a>
+    <a href="#" class="button button-red">Kırmızı Buton</a>
+    <a href="#" class="button button-green">Yeşil Buton</a>
+    <a href="#" class="button button-blue">Mavi Buton</a>
+</body>
+
+<!-- Şimdi yukarıdaki kodlarda <a> etiketini buton yapmak için kullandık, buton ne derseniz de? Basılan düğme işte :) Tıklayınca bir şeyler yapıyor, bu örnekte bir adrese gidiyor. Şimdi yukarıdaki kodları editörde baktığınızda yine görsel olarak hiçbir şey gözükmeyecek çünkü bunu birazdan CSS ile vereceğiz ancak öncesinde kullanılan niteliği bir inceleyelim.
+
+Şimdi her birisinde button adında class ekledik ancak her birisine de 2. bir class adı belirttik. Buda şundan dolayı, bu 3 butonda benim düşünceme göre aynı şekillerde görünecek sadece arka plan renkleri farklı olacak. Bu yüzden her birisini ayrı ayrı seçip ayrı ayrı CSS yazmak yerine 3'üne de aynı class ismini verdim CSS ile tek seferde hepsini aynı görünüme getireceğim. Ek olarak da 2. class isimlerine CSS'de arka plan rengini değiştirecek kodu yazacağım. Yani kısaca CSS'den anlamıyor olsanız da CSS kodlarımız şöyle gözükecek; -->
+</html>
+

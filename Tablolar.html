@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 2px, solid, black;
+        /*burda hem table icin hem de tr icin border olusturur biz 2 tane olan border in birini gormek icin border-collapse kullaniriz. */
+        /* border-collapse:unset;*/
+        border-collapse: collapse;
+      }
+      td,
+      th {
+        padding: 15px;
+        text-align: center;
+      }
+      table {
+        border-spacing: 10px;
+      }
+    /* tablo1>caption veya #tablo1 caption tablo1 icindeki captiona uygula demektir...*/
+      #tablo1 caption {
+          font-size:54px; 
+
+      }
+      #tablo2 caption {
+          font-size:34px; 
+
+      }
+      #tablo1 tr:nth-child(even){
+          background-color: cyan;
+      }
+      #tablo1 tr:nth-child(odd){
+          background-color: darkorange;
+      }
+
+      /*Burda tablo3 id li, tr satirlarinin cocuklari arasinda cift sayili olanlar maviye boyansin yani 2,4,6.satirlar maviye boyanacak, tek satirlar ise orange rengine boyanacak bu sekilde */
+
+      #tablo3 tr:nth-child(even){
+          background-color: cyan;
+      }
+      #tablo3 tr:nth-child(odd){
+          background-color: darkorange;
+      }
+      
+      /*Biz border-collaps yaptigimiz zaman border lari ust uste getirip birlestiriyordu sonra biz bir de gelip border lar arasina bosluk birak dedgimiz zaman ne oluyor bizim css kodlarimiz cakisiyor birbiri ile iste biz bu tur orneklerle karsilasacagiz...O zaman da bunlardan bir tanesi gecerli olacaktir o yuzden biz border-spacing i gorebilmek icin, border-collapse  yi silmemiz gerekecek.. */
+    </style>
+  </head>
+  <body>
+    <!--  Eskiden siteler tablolar icerisine yazilarak yapiliyormus yani tablo mantigi cok kullanislidir ornegin resimlerimiz icin de kullanabilirz mesela veya bir adres satiri alt alta kullanacaksak veya baslik karsisina birseyler yazacagiz diyelim ki bu tarz durumlarda da cok kullanislidir yani yanyana ve alt alta duzenli bir sekilde resim,yazi vs getirmek icin cok elverislidir...  -->
+
+    <table border="1px" style="width: 60%" id="tablo1">
+          <!-- caption etiketi veya elemnenti ile biz tablolarimiza baslik veririz-->
+        <caption>Bilgiler Tablosu</caption>
+      <tr>
+       
+        <th>Adi</th>
+        <th>Soyadi</th>
+        <th colspan="2">Adres</th>
+        <!--Eger biz  iki satir lik alan kaplamasini istersek basligimizin o zaman colspan kullaniriz...Burasi na ait altta 2 ser tane satir olmalidr eger biz 2 satir ayarlamazsak bir yandaki satir otomatikmen buranin altina kayar ve dengesiz bir goruntu olusabilir...-->
+
+        <th colspan="2">Resim</th>
+      </tr>
+
+      <tr>
+        <!--satir olustur-tableRow demektir.Bir satir olusturdugumuz zaman mutlaka bir de sutun olusturmaliyiz icine veri koyabilmek icin...-->
+        <td>Adem</td>
+
+        <td>Erbas</td>
+        <td>452326326</td>
+        <td>Skien Videregående</td>
+        <td>Ski</td>
+        <td>
+          <img
+            src="images/depositphotos_29460297-stock-photo-bird-cage.jpg"
+            alt="mypicture"
+            style="width: 120px"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Mehmet</td>
+
+        <td>Kaya</td>
+        <td>24059820</td>
+        <td>Porsgrunn videreående</td>
+        <td>Arendal</td>
+
+        <td>
+          <img
+            src="images/rainbow-love-heart-background-red-wood-60045149.jpg"
+            alt="mypicture2"
+            style="width: 120px"
+          />
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>Hasan</td>
+
+        <td>Serin</td>
+        <td>24059820</td>
+        <td>Larvik</td>
+        <td>Sandefjord</td>
+
+        <td>
+          <img
+            src="images/rainbow-love-heart-background-red-wood-60045149.jpg"
+            alt="mypicture2"
+            style="width: 120px"
+          />
+        </td>
+      </tr>
+    </table>
+
+    <hr />
+    <table border="2px" id="tablo2">
+        <!-- caption etiketi veya elemnenti ile biz tablolarimiza baslik veririz-->
+        <caption>Ogrenci Bilgileri</caption>
+      <tr>
+        <th colspan="2">Adi</th>
+      </tr>
+      <tr>
+        <td>Adem Erbas</td>
+        <td>Kazim Erti</td>
+      </tr>
+      <tr>
+        <th rowspan="2">Telefon No</th>
+        <td>492439</td>
+      </tr>
+      <tr>
+        <td>904929</td>
+      </tr>
+    </table>
+
+    <hr>
+
+    <table border="2px" id="tablo3">
+      <tr>
+          <th>Adi</th>
+          <th>Soyadi</th>
+          <th>Adres</th>
+      </tr>
+      <tr>
+          <td>Kemal</td>
+          <td>Yaya</td>
+          <td>Stavenger</td>
+      </tr>
+      <tr>
+        <td>Serkan</td>
+        <td>Lam</td>
+        <td>Kjelsvik</td>
+      </tr>
+      <tr>
+        <td>Adnan</td>
+        <td>Kapa</td>
+        <td>Lyngdal</td>
+      </tr>
+    </table>
+  </body>
+</html>

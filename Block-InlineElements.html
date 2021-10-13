@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--a etiketi link olustururken kullaniriz, target blank ile ise farkli bir sayfada acmak icin _blank yapariz..kendi sayfasindas acmak icin ise _self kullaniriz-->
+   <a href="http://www.google.com" target="_blank">Google</a>
+   <a href="http://www.google.com" target="_self">Google</a>
+
+   <!-- Absolute link direk link veriyoruz...-->
+   <a href="https://www.google.com">Absolute google</a>
+   <!-- kendimize ait bir dosymizi da cagirabiliriz...-->
+   <a href="html2.html">Relative url</a>
+   <br>
+   <!-- Resime link vermek icin ise bu sekilde yapariz-->
+   <a href="https://www.github.com">
+<img src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-C" style="width: 100px;" title="myownpicture" alt="mypicture">
+</a>
+<!-- title ise resmin uzerine gelince gozuken yazidir-->
+<!--alt burda cok onemlidir CEO icin google tarayicilar ressimleri ararken alt da  yazan yaziyi baz alirlar onun icin alt a yazdigimiz yazinin resimle ilgili olmasi cok onemlidir..Birde alt eger resim bulunamazsa altta yazan yazi gozukecektir.-->
+<hr>
+<!-- KENDINE MAIL ATTIRMA..... 
+    href icerisine eger mailto: yazip kendine mail atmasini istiyorsan mesela birinin direk onun karsisina ornegin bana mail at diyerek onu maile yonlendirecektir ve yazdigin kendi mail adresine mail atacak sekilde hazir bir maile yonlendirecektir-->
+<a href="mailto:adem5434e@gmail.com">Bana mail at</a>
+   <!--Inline elements
+a,span,i, b select,textarea,strong....
+
+Block Elements
+div,address,article,aside,blockquote,figure,footer,h1-h6,header,hr,li,main,nav,ol,ul,video,pre
+
+-->
+   <span> Merhaba </span>
+   <br> 
+</body>
+</html>
+
+<!--Biz elementleri inline ve block elementler olmak uzere 2 ye ayiririz
+Block dedigimizde tum satiri kaplarken, inline olanlar ise kendi alanlarini kaplar ve sonrasindas gelecek olan bir inline elemnt ile yanyana gelecektir...
+a elementi , etiketi de bir inline etikettir
+-->

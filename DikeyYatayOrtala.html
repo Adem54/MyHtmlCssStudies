@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.kutu1 {
+    width: 200px;
+    border:1px solid black;
+    padding:50px;
+    background-color:aquamarine;
+ 
+/*  yatay icinde bulundugu kutuya  ortalama */
+
+    margin:0 auto;
+    /*yatay da kendi icinde bulunan bir yaziyi ortalama */
+text-align: center;
+}
+.kutu2 {
+    width: 200px;
+    border:1px solid black;
+    display: inline-block;
+    line-height: 100px;
+    background-color:aquamarine;
+    text-align: center;
+}
+
+.kutu3 {
+    width: 200px;
+    height: 100px;
+    border:1px solid black;
+    display: inline-block;
+   
+     vertical-align:middle;
+  
+    background-color:aquamarine;
+    text-align: center;
+}
+
+.childDiv
+{
+/* Bir üst div’i dikkate alması için display:table özelliğini veriyorum */
+/* ve üst div’e göre ortalaması için vertical-align:middle kullanıyorum. */
+display:table-cell;
+vertical-align:middle;
+/* Div içerisindeki yazıyı yatay olarak ortalamak için text-align:center özelliğini kullanıyorum. */
+text-align:center;
+}
+
+
+.mainDiv
+{
+/* Dış div’e genişlik ve yükseklik olarak 300 değeri ve div’in gözükmesi için border veriyorum. */
+height:300px;
+width:300px;
+border: 2px #333 dashed;
+/* Dikkat: İç div’i dikey ortalayabilmek için dış div’e display:table özelliğini veriyorum. */
+display:table;
+}
+
+
+/* */
+
+.center { 
+  height: 200px;
+  position: relative;
+  border: 3px solid green; 
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+/* */
+img {
+  display: inline-block;
+  width:40%
+}
+
+.divImage {
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="kutu1">
+        <h3>MERHABA</h3>
+    </div>
+    <hr>    
+    <div class="kutu2">
+
+        <h3>MERHABA</h3>
+    </div>
+    <hr>
+    <div class="kutu3">
+
+        <h3>MERHABA</h3>
+
+    </div>
+    <div></div>
+<br>
+
+<hr>
+<div class="mainDiv">
+    <div class="childDiv">
+    Bu alan ortalanacaktir :)
+    </div>
+    </div>
+    <hr>
+    <div class="center">
+      <p>Bu yazı Dikey ve yatay olarak ortalandı.</p>
+    </div>
+    <hr>
+    <div class="divImage" >
+        <img src="images/istanbul.jpg"> 
+        </div> 
+</body>
+
+</html>

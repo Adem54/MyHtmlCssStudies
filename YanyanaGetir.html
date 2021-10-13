@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+       /*Biz bir menu yaparken ul-li ler ile de  yapabiliriz li elementleri display block elemntlerdir dolayisi ile bunlar alt alta geliyorlar ama biz gelip de bunlar hem yanyana gelsinler ama bir taraftanda kutu gibi davransinlar dersek o zaman iste display:inline-block tam buraya oturmus olur */
+      .menuUl li {
+            list-style-type:none;
+            /*Bir block elementi yani alt alta gelen li elementini yanyana gelmesini ama ayni zamanda da kutu gibi davranmaya devam etmesini istiyoruz cunku margin,padding degerleri de verebilelim istiyoruz... */
+            display: inline-block;
+            padding:10px;
+            border:1px solid black;
+            vertical-align: middle;
+            text-align: center;
+            box-sizing: border-box;
+            background-color: aquamarine;
+            margin-left:-4px;
+            
+            
+        }
+/* 4.element haric diger hepsini bunu uygula diyoruz....  */
+     .menuUl li:not(:nth-child(4)){
+            border-right:none;
+        }
+
+        /*ul lerin kendi icinde margin ve padding bosluklari var onlari da sifirlayabiliriz... */
+
+        #myUl {
+            margin:0;
+            padding:0;
+            list-style-type: none;
+            /*Alttaki ul ler icindeki li lerin yukari tasmasini bu sekilde de onleyebiliriz
+            Ayrica float-left ve clear:both ile de onleyebilriiz... */
+            /*overflow hidden deyince bunu bir blok elemente donusturuyoruz ve sonra gelen elementler onun altindan devam etmek zorunda kaliyor */
+            
+            overflow: hidden;
+           
+            
+        }
+
+        #myUl li {
+            float:left;
+          padding-left:15px;
+       
+        }
+
+        /*alttaki ul degerleri uste tasiyor bunu engellemek icin  yapilabilecekler 
+        
+          ul {
+            clear: both;
+            float:left;
+        }
+        */
+      
+
+        #div1 {
+    background-color:yellow;
+
+    width: 200px;
+
+    height: 150px;
+
+    overflow:hidden;/*belli bir alana yazi veriyoruz */
+    display:inline-block;/*Yanyana getirmek icin yollardan biri de display:inline-blocktur... */
+    }
+
+    /*
+        YANYANA GETIRME....
+    Biz 2 tane display block elementi yanyana getirmek icin ya float-left kullaniriz ki sonrasinda altta bulunan elementlerde tasma meydana gelir yine bunu da tasan elemente ya float-left veririz ya da clear-both  yaparak cozeriz ya da bizim yanyana getirdigimiz o 2 block elementi icinde bulunduran etiket e overflow hidden yapariz ve yukari tasmalari bu yolla da onleyebilirz, 2 tane blok elementi yanyana getirmenin bir baska yolu ise ikisini de display:inline-block yapmaktir..... */
+
+    #div2 {
+    background-color:yellow;
+
+    width: 200px;
+
+    height: 150px;
+
+    overflow:scroll;/*belli bir alana yazi veriyoruz */
+    display:inline-block;/*Yanyana getirmek icin yollardan biri de display:inline-blocktur... */
+    }
+
+
+   </style>
+</head>
+<body>
+<!-- overflow hidden ornegi-->
+<div id="div1">
+    <p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.
+      Lorem Ipsum, adı bilinmeyen bir matbaacınınLorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.
+      Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak
+      üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı
+      sahte metinler olarak kullanılmıştır. </p>
+    </div>
+
+    <div id="div2">
+        <p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.
+          Lorem Ipsum, adı bilinmeyen bir matbaacınınLorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.
+          Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak
+          üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı
+          sahte metinler olarak kullanılmıştır. </p>
+        </div>
+
+<hr>
+
+<!-- ul ve ol listelerinde li ler ile aralarinda margin,padding bosluklari bulunmaktadir bunu zaten gorebiliiriz -->
+    <ul class="menuUl">
+        <li>Ana Sayfa</li>
+        <li>Hakkimizda</li>
+        <li>Iletisim</li>
+        <li>Resimler</li>
+    </ul>
+
+    <hr>    
+    <ul id="myUl">
+        <li id="myLi" >Emre</li>
+        <li>Ahmet</li>
+        <li>Kemal</li>
+    </ul>
+
+    <ul>
+        <li>Jonas</li>
+        <li>Johakim</li>
+        <li> Nene </li>
+    </ul>
+    <ul>
+        <li>Yasin</li>
+        <li>Erman</li>
+        <li>Leman</li>
+
+            <ul>
+                <li>Adem</li>
+                <li>Berat</li>
+                <li>Cemsit</li>
+            </ul>
+
+
+        </li>
+    </ul>
+
+    <hr>
+
+    <ol type="1" start="10" style="margin-bottom:50px;">
+        <li>Tam Sayilar</li>
+        <li>Uslu Sayilar</li>
+        <li>Ondalikli Sayilar</li>
+        <li>Koklu Sayilar
+                <ol type="A">
+                    <li>Selma</li>
+                    <li>Kerem</li>
+                </ol>
+
+        </li>
+    </ol>
+
+    <hr>
+</body>
+</html>
