@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-size: 16px;/* em artik bizim burda verdiigmiz yazi buyuklugunu 1 em kabul eder ancak eger herhangi bir yazimizi icine alan p elementinin body den once bir parenti var ve o da bir font-size kullanmisa o zaman 1em olarak parentinin verdigi buyuklugu baz alacaktir.... */
+        }
+      
+        .item-view-width{
+            width: 50vw;
+        }
+
+        .parent {
+            width: 300px;
+            background-color:chartreuse;
+            border: 1px solid;
+        }
+
+        .item{
+            background-color: orange;
+            height: 30px;
+            margin: 10px 0;
+        }
+        /* % kullanmak bize responsive ligi sagliyor... Ama sunu unutma %50 demek parentinin %50 si demektir, yani ekranin 50% si degil yani biz body icine herhangi bir elemnt acarsak onun da parenti body olacaktir bu seferde.Default olarak da ekrana margin ve padding degerleri ile geliyro */
+        .item-yuzde {
+            width: 50%;
+            height: 25%;
+
+        }
+
+        .item-view-width{/* o an calisan ekranin yuksekligi ve boyutunu aliyor , genisligini aliyor,parentinin degil.Yani % ile farki tam olarak budur o an calisan ekranin genisligne gore hareket ediyor dolayisi ile bu responsive tasarim icin gayet kullanislidir... */
+            width: 50vw;
+            height: 25vw;
+            /*parent a falan bakmaz her zaman ekranin buyuklugune gore ayarlar dolayisi ile responsive tasarimlarda px kullanilmaz, vw kullanilir*/
+        }
+ #divP{
+     font-size: 10px;
+ }
+        p {/* em demek bu pm elementinin parenti font-size olarak kac ise font u onu 1 em kabul eder eger parent inda font-siz yoksa onun ustundekilere baka baka body ye kadar bakar orda da birsey yoksa o zaman chrome da varsayiilan olark font-size 16px dir 1 em i 16px olarak kabul eder...Diyelim ki parentinda sadece %200 yaziyor font-size o zaman 1 em 32px olur cunku font-size varsayilan olarak 16px gelecektir 200% de 32 olur o da 1 em olur..ama bu em lerin cok kullanilmasinin mantigi web sayfalarimizda bir standart olusturmak icindir yani biz web sitesi yaparken en basta standart yazi tipimizi font-size imizi body de belirleriz ve sonra artik 1 e olarak kullaniriz...   */
+            font-size: 2em;
+        }
+    </style>
+    <!--px ile calismak su anda bize hitap etmiyor o zaman ne yapmaliyiz ekranimiza gore buyuyen ve kuculen olcu birimleri kullanmamiz gerekiyor..-->
+</head>
+<body>
+    <div class="item item-yuzde">Item yuzde</div>
+    <div class="item item-view-width"></div>
+    <!-- .parent>(.item)*2 -->
+    <div class="parent">
+        <div class="item">Yuzde 50</div><!--bu sefer parenti kim ise onun %50 si olacaktir...-->
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+<div id="divP">
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, debitis voluptatibus nam quo autem ut? Veniam, repellat. Sed, hic error. Sunt sint dignissimos aut eius, officia vel cupiditate explicabo et.</p>
+</div>
+<hr>
+    <h1 style="font-size:calc(1.5rem + .75vw);">Merhaba Dünya</h1>
+</body>
+</html>

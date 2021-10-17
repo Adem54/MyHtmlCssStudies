@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>My First javascript</h1>
+    <button
+      type="button"
+      onclick="document.getElementById('demo').innerHTML=Date()">Tarih ve Saati Gostermek icin burayi tikla</button>
+    <!--onclik olayi ile tikladigimiz zaman bir html elementi icerisine ornegin tarih ve saati gosterebilyoruz  o html nin id si uzerinden-->
+      
+    
+    <p id="demo"></p>
+
+    <hr>
+
+    <p id="test"></p>
+
+    <script>
+          document.getElementById("test").innerHTML="Hello Javascript";
+        //Dikkat edelim javascriptte bunlar camelCase olarak geliyor css ozellikleri....
+       function myFunction(){
+      
+        document.getElementById("test").style.fontSize="32px";
+        document.getElementById("test").style.color="red";
+        document.getElementById("test").style.backgroundColor="orange";
+       };
+    </script>
+    <button type="button" onclick="myFunction()">CssOzellikleriDegtistir</button>
+  </body>
+</html>

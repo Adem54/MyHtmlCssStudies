@@ -14,23 +14,48 @@
     <form action="html2.html" method="get">
         <!--Form elemanlari inline oldugu icin alt alta gelmez kendimiz br ile alt alta getiririz-->
         <!--label kullanmak tarayicinin inputun ne oldugunu bilmesi acisindan da cok onemlidir...-->
-        <label for="ad">Adinizi giriniz:</label>  
-        <input type="text" id="ad" name="ad" value="Adammm"> <br><br> <!--value degeri yazarsak bu sekilde kendisi varsayilan olarak bir isim atamis oluyoruz text boxa ve gonderilecek deger bu olur artik ama biz gidip text boxa baska bir deger girersek artik value olarak oraya girdigimiz deger gonderilecektir yani burda bizim value attributune yazdigimiz deger ile ekranda verilerimizi girerken yazdigimiz deger ayni dir ama en son biz ekrana ne girersek value o olur-->
-<!--for a biz bu label hangi inputa ait ise o inputun id sini for karsina yaz...-->
-<!--burda onemli olan type dir type=text sayesinde biz oraya yazi yaziyoruz...-->
-        <label for="soyad">Soyadinizi giriniz:</label>  
-        <input type="text" id="soyad" name="soyad"> <br><br>
+
+        <!--fieldset ile biz ayni islevi yapan form elementlerini gruplandirabiliriz..-->
+
+        <fieldset>
+            <legend>Isim Bilgileri</legend>
+            <label for="ad">Adinizi giriniz:</label>  
+            <input type="text" id="ad" name="ad" value="Adammm"> <br><br> <!--value degeri yazarsak bu sekilde kendisi varsayilan olarak bir isim atamis oluyoruz text boxa ve gonderilecek deger bu olur artik ama biz gidip text boxa baska bir deger girersek artik value olarak oraya girdigimiz deger gonderilecektir yani burda bizim value attributune yazdigimiz deger ile ekranda verilerimizi girerken yazdigimiz deger ayni dir ama en son biz ekrana ne girersek value o olur-->
+    <!--for a biz bu label hangi inputa ait ise o inputun id sini for karsina yaz...-->
+    <!--burda onemli olan type dir type=text sayesinde biz oraya yazi yaziyoruz...-->
+            <label for="soyad">Soyadinizi giriniz:</label>  
+            <input type="text" id="soyad" name="soyad"> <br><br>
+
+           
+
+            <!--Birde datalistimiz var...onun icine de yine sirali listeleri yazabiliriz..-->
+        <label for="il">Sehir Girin</label>
+        <input list="sehirler" id="il" name="il" >
+        <datalist id="sehirler"><!--datalist de id ye verdigimiz deger ile input ta list in karsisina yazdigimiz deger ayni olmalidir...-->
+            <option value="Bursa">
+            <option value="Istanbul">
+            <option value="Ankara">
+            <option value="Izmir">
+        </datalist>
+
+        </fieldset>
+       
 
         <!--Radiobutton birden fazla secenek olup da birini secmemiz gerekirse kullaniriz-->
 <!--ikisine de ayni name ismini verirsek o zaman ya onu ya da onu tiklayabiliriz eger name vermezsek her ikisi de tiklanabilir...-->
 <!--Peki bizim radio buttonu kullanma maksadimiz bu degeri bir yere yollamak iste o is te value uzerinden yapilacaktir...-->
 <!--yine label for a radio inputtaki id ye karsilik geliyor bu for ve id leri ayarlayinca label ile yazdigimiz kadin ve erkek isimleri uzerine gelince de radio inputlar in ici tiklaniyor yoksa sadece direk radio input kutucuguna tiklayinca tiklenir...-->
+     <fieldset>
+        <legend>Cesitli Bilgiler</legend>
         <input type="radio" name="cinsiyet" value="erkek" id="erkek">
         <label for="erkek">Erkek</label>
         
 
         <input type="radio" name="cinsiyet" value="kadin" id="kadin">
         <label for="kadin">Kadin</label>
+
+
+
         <br>    <br>
         <!--checkbox-->
         <!--tiklandiginda gonderecegi deger value ile veririz---->
@@ -44,6 +69,8 @@
              <label for="yesil">Yesil</label>
              <input type="checkbox" name="cbxkirmizi" id="kirmizi" value="kirmizi" checked="checked">
              <label for="kirmizi">Kirmizi</label>
+
+     </fieldset>
 
              <br><br><br>
             <!--type submit yaparsak ve buraya tiklarsak ne yapacak form etiketinin bir attributu olan action icine hangi sayfa yazarsak oraya gitmeye calisacak yani normalde bu buton verileri ornegin bir ekleme islemi vs olacagi icin bu verileri veritabani islemini yapan sayfamiza gider ve bu veriler veritabanina kaydedilir -->
@@ -68,6 +95,18 @@
 
             </select>         
 
+            <br><br><br>
+<!--for karsisina id sine ne yazdi isek onu verecegiz..-->
+            <label for="adress">Adress</label>
+            <textarea name="adress" id="adress" cols="24" rows="3"></textarea>
+
+            <br>
+            <label for="bio">Biografi</label>
+            <textarea name="bio" id="bio" style="width:200px; height: 50px;"></textarea>
+
+            <br><br>
+<!--button html elementinin input type button dan farkli oncelikle button elementinin arasina yazi veya resim koyabiliriz ama input ta biz sadece value kullaniriz..ayrica input value button yaparsak o bos kendi basina bir butondur form dan bagimsizdir  yani eger biz inputta tipe buton dersek onunla formdaki verileri gonderemeyiz ama button da type a biz submit yaparsak formun butonu olmus oluyor ama biz buton html elemntinin type ina da gelir button yaparsak o zaman o da artik kendi basina bir buton olur formun butonu degil tiklayinca form elementleri etkilenmeyecektir....-->
+            <button type="button">Gonder!</button>
     </form>
 </body>
 </html>

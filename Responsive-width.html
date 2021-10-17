@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: darkseagreen;
+            box-sizing: border-box;/*artik genislik artmayacaktir....*/
+            border: 2px solid black;
+            margin: 10px;
+            padding: 10px;
+        
+        }
+      /* Eger biz responsive bir tasarim olsun diyorsak ve sayfanin buyuse de kuculse de benim width im sayfaya gore hep ayni boyutta kalsin istersek o zaman width i % olarak veririz... heigh icin ise ozellikle yazilarda dikkat edelim, yazilari yazarken eger biz kutuya birsey ler ekledikce kutu yuksekligi uzasin istersek de sadece width veririz height vermeyiz ki biz ekledikce asagi dogru uzasin diye */
+      #container {
+          margin: 15px;
+        width: 50%;
+        /* margin auto ile biz kutumuzu sayfa ortasina getiririz...*/
+      /*  margin: 20px auto;
+        /*ayrica height i da % verebiliriz..*/
+
+        background-color: cornsilk;
+      }
+
+      .div1 {
+        max-width: 960px;
+        /* Demek oluyor ki kucuklukte siniri yok ekran ne kadar kuculurse bu ona ayak uyduracak ama ekran onu buyuturken ekranin bir siniri var ekran onu 960 a kadar buyutebilir sonrasinda bu buyumez o sinirda kalir demektir.....
+        
+        */
+    
+        background-color:cyan;
+      }
+      .div2 {
+          margin:10px 0;
+          /*su halde bizim sitemizin genisligi 960 a kadar buyur, kucukluk olarak ise 660 a kadar kuculur en fazla*/
+          max-width: 960px;
+        min-width: 660px;
+        /* min-width demek sudur ki bu buyuk ama en fazla 360 a kadar azalir daha da azalmaz demektir bu yani bunun boyutu tum ekrani kapliiyor ama sadece minimum olmasinin da bir siniri var demektir...*/
+        background-color:darkkhaki;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit cupiditate dolorum enim consectetur ipsa quas ullam magnam maiores earum praesentium rerum tempora harum quis, voluptatibus natus ducimus at ut dignissimos?</div>
+    <div>
+      <div id="container">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+        tempora quas, a iusto perferendis exercitationem ex mollitia rem nam
+        dolorum, architecto earum! Quis beatae corporis consequuntur laboriosam.
+        Deserunt, laudantium omnis. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Autem perferendis ab, laboriosam deleniti ipsum nemo earum quam
+        nulla. Distinctio quos voluptas voluptatibus doloribus harum officiis
+        quaerat ea, laboriosam unde commodi! Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Distinctio vero voluptates molestias
+        officiis sed dolores earum deleniti placeat, porro enim optio quod
+        tenetur similique modi eveniet qui pariatur nemo temporibus!
+      </div>
+
+      <div class="div1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quibusdam
+        nam nostrum dolorum quod, ratione vero quas impedit laudantium
+        consectetur voluptates expedita! Aliquam dolorum ratione atque deleniti
+        commodi quisquam tempora! Maxime ducimus debitis delectus excepturi non
+        laboriosam deleniti placeat, error neque assumenda perspiciatis quis.
+        Suscipit, ut nobis, ab molestias dignissimos iure voluptatem, laborum
+        explicabo est amet fuga error exercitationem omnis. Magnam, labore,
+        consectetur quas nobis, aliquid delectus culpa perspiciatis dolorem
+        dicta dolores nihil? Corporis officiis eveniet ratione. Sunt mollitia a
+        esse perspiciatis voluptates id, magni voluptate velit, quis iusto vel.
+      </div>
+
+      <div class="div2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nihil accusamus deleniti aliquam vitae dignissimos cumque, aspernatur magnam iste non nemo sapiente maxime doloremque officia, sequi illo cupiditate officiis perspiciatis.
+          Ratione reprehenderit ipsa tempora unde sunt, repellat adipisci, totam veritatis voluptas perspiciatis eos ab quam corporis in. Maiores nihil recusandae, ratione harum quidem, magni voluptatum suscipit consequatur ipsam soluta eos!
+          Iusto possimus corporis nisi laboriosam natus. Minus ab alias modi omnis consectetur neque laboriosam vitae pariatur tempora nisi fugit itaque aliquam earum, excepturi, quos quam iusto! Eaque rerum iusto perspiciatis.
+      </div>
+    </div>
+  </body>
+</html>

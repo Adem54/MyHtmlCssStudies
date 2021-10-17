@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{/* Yildiz, universal bir secicidir bu demektir ki sayfadaki tum etiketleri kapsar  */
+         color: brown;   
+    }
+
+    p{
+        color: chartreuse;
+    }
+    /*Css kodlar yukardan asagi okunacagi icin biz * verince once renk orda verdigimiz renk olur daha sonra ise p nin kendisine verdigmmz color rengi en son okunacagiz icin p ye verdigimiz rengi goruruz bizz..*/
+
+    a:hover{
+        background-color:chartreuse;
+    }
+
+
+    /* div#container > ul  Bu demek oluyor ki div altindaki container isimli id nin cocuklari olan ul leri sec yani direk cocuklari olan ul yi alir eger ul torun ise onu almaz, yani container id sini hemen cocuklari icinden ul olanlara uygulanir...  */
+
+   /*  */ div#container > ul {
+  border: 1px solid black;
+} 
+
+/*  div#container ul burda diyorki container id li div in altinda yani icinde bulunan tum ul lere uygula demektir*/
+div#container ul {
+  border: 1px solid black;
+}
+
+a[title] {
+   color: green;
+}
+</style>
+</head>
+<body>
+    <div id="container">
+        <ul>
+           <li> List Item
+             <ul>
+                <li> Child </li>
+             </ul>
+           </li>
+           <li> List Item </li>
+           <li> List Item </li>
+           <li> List Item </li>
+        </ul>
+     </div>
+    <hr>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa officia doloremque, blanditiis expedita sit quo error pariatur tempora repellendus nostrum nam quidem veritatis corporis voluptatibus nulla obcaecati eos ipsum exercitationem!</p>
+
+    <hr>
+
+    <a href="http:/www.google.com">Tikla</a>
+<br><br>
+    <a href="" title="a2">gæ.sadg,sdøg</a> <br><br>
+    <a href="">sadfmadsmfsaldmfasd</a> <br><br>
+    <a href="" title="a4">sadøf,asdøf,sadf,</a> <br><br>
+
+</body>
+</html>
+
+<!-- 
+    1)* sembou secicisi
+    Yıldız sembolü sayfadaki her bir öğeyi seçer. Çoğu yazılımcı, margin ve paddingleri sıfırlamak için bu numarayı kullanacaktır. Çabuk testler için uygun olmasına rağmen, bunu asla yayın kodunuzda kullanmamanızı öneririm. Tarayıcıya çok fazla yük bindirir ve gereksizdir.
+
+    2)* ayrıca çocuk seçicilerle birlikte kullanılabilir.
+    #container * {
+    border: 1px solid black;  }
+    Bu #container div öğesinin altındaki her bir çocugu hedefleyecektir. Yine bu tekniğide çok fazla kullanmamaya çalışın, mümkünse hiç kullanmayın.
+    3)li a {
+      text-decoration: none;
+}
+Örneğin, tüm link(anchor) etiketlerini hedeflemek yerine yalnızca sırasız bir listede yer alan link etiketlerini hedeflemeniz gerekirse ne olur? İşte bu torun seçici kullanacağınız zamandır.
+
+4)  a:hover:uzerine geldiginde
+    a:link:tum linkleri
+    a:visited:ziyaret edilenlere uygulansin daha dogrusu daha once en az 1 kez tiklanmis yani
+
+    5)ul + p {
+   color: red;
+}  . Yalnızca, önceki öğenin hemen sonrasında bulunan ilk öğeyi seçecektir. Bu örnekte, her ul'den sonraki ilk paragraf yalnızca kırmızı metin olacaktır.
+
+6)/* div#container > ul  Bu demek oluyor ki div altindaki container isimli id nin cocuklari olan ul leri sec yani direk cocuklari olan ul yi alir eger ul torun ise onu almaz, yani container id sini hemen cocuklari icinden ul olanlara uygulanir...  */
+
+7)/*  div#container ul burda diyorki container id li div in altinda yani icinde bulunan tum ul lere uygula demektir*/
+
+8)ul ~ p {
+   color: red;
+}
+
+Bu kardeş kombinasyon X + Y'ye benzer, ama daha az kuralcıdır. Bitişik seçici (ul + p), yalnızca ilk seçicinin hemen sonrasındaki ilk öğeyi seçerken, bu daha geneldir. Örneğimiz üzerinden gidersek, bu seçici ul'den sonra gelen  p öğesini yani eger 4 tane p varsa 4 unu de seçecektir.
+
+ 8) a[title] {
+   color: green;
+}Bir nitelik seçici olarak adlandırılan bu seçici, yalnızca bir title(başlık) özelliğine sahip olan link etiketleri seçecektir.Yani title attributu unu kullanan a linklerine uygulanir
+9)a[href="https://net.tutsplus.com"] {
+  color: #1f6053; /* nettuts green */
+} Yukarıdaki kod https://net.tutsplus.com adresine sahip bütün link etiketlerine stil vermenizi sağlayacaktır. Hepsi markalı yeşil rengimizi alacaklar. Diğer bütün link etiketleri bundan etkilenmeyecek.
+
+10)a[href*="tuts"] {
+  color: #1f6053; /* nettuts green */
+}İşte ihtiyacımız olan bu. Yıldız tırnak içindeki değerin özelliğin içinde bir herhangi bir yerde bulunması gerektiğini belirtir. Böylece nettuts.com, net.tutsplus.com ve hatta tutsplus.com'un hepsine kapsar.
+Ancak bunun genel bir ifade olduğunu unutmayın. Ama link etiketi, Envato sitelerinden farklı url'inde tuts içeren başka bir siteye link veriyorsa ne olur? Daha spesifik olmanız gerektiğinde bir dizenin başını ve sonunu işaretlemek için ^ ve $ kullanın.
+
+11)a[href^="http"] {
+   background: url(path/to/external/icon.png) no-repeat;
+   padding-left: 10px;
+}
+Hiç bazı web sitelerinin harici linklerin yanında nasıl küçük bir ikon görüntüleyebildiğini merak ettiniz mi? Eminim bunları daha önce görmüşsünüzdür; Bağlantıların sizi tamamen farklı bir web sitesine yönlendireceğini gösteren güzel işaretlerdir.
+
+Bu karat(^) sembolü ile oldukça kolaydır.  Bu kurallı ifadelerde dizinin başlangıcını belirtmek için oldukça sık kullanılan bir yöntemdir. httpile başlayan bir href'e sahip olan tüm link etiketlerini hedeflemek istiyorsak, yukarıda gösterilen koddaki gib bir seçici kullanabiliriz.
+
+12)a[href$=".jpg"] {
+   color: red;
+}
+Tekrar, kurallı ifadeler sembolunu olan $ kullanarak dizenin sonunu hedefleyebiliriz. Bu durumda, bir resime link veren tüm link etiketlerini veya  en azından .jpg ile biten bir url'i arıyoruz. Bunun gif'ler ve png'ler için kesinlikle çalışmayacağını unutmayın.
+
+13)a[data-filetype="image"] {
+   color: red;
+}
+Sekiz numaraya geri dönün; png, jpeg, jpg, gif, gibi çeşitli imaj türlerinin hepsini nasıl kapsarız? Bir yol, herbiri için aşağıdaki gibi seçici yaratabiliriz.
+a[href$=".jpg"],
+a[href$=".jpeg"],
+a[href$=".png"],
+a[href$=".gif"] {
+   color: red;
+}
+Ama bu biraz mantık dışı ve verimsiz. Diğer bir yol, özel nitelikler(custom attributes) kullanmaktır. Bir imaja link veren her bir link etiketine data-filetype özelliği verirsek ne olur?
+
+	
+<a href="path/to/image.jpg" data-filetype="image"> Image Link </a>
+14)a[data-filetype="image"] {
+   color: red;
+}
+
+
+15)input[type=radio]:checked {
+   border: 1px solid black;
+}
+Bu takma sınıf, aktif hale gelen bir kullanıcı arabirimi öğesini (bir radyo düğmesi veya onay kutusu gibi) hedefleyecektir. Bu kadar basit.
+
+16)
+Önce(before) ve sonra(after) takma sınıfları superdir. Her geçen gün insanlar, onları daha etkili bir şekilde kullanmanın yeni ve yaratıcı yollarını bulmaktadır. Seçilen öğenin etrafında içerik oluşturmaya olanak sağlarlar.
+
+Birçok kişi, bu sınıflarla clear-fix hack'i ile karşılaştıklarında tanıştı.
+
+ 17) .clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+    }
+ 
+.clearfix { 
+   *display: inline-block; 
+   _height: 1%;
+}
+Bu hack, öğe ardına bir boşluk eklemek için :after takma sınıfıni kullanır ve daha sonra onu temizler. Özellijke overflow: hidden; methodunu kullanamadığınız zamanlarda araç kutunuzda olması gereken mükemmel bir numaradır.
+
+18)div:not(#container) {
+   color: blue;
+}Bu negasyon takma sınıfı özellikle yararlıdır. Diyelimki id'si container olan div'ler dışındaki bütün div'leri seçmek istiyorum. Yukarıdaki kod bu görevi mükemmel bir şekilde halledecektir.
+Yada paragraf etiketleri dışındaki bütün etiketleri seçmek(önerilmez) istersek;
+*:not(p) {
+  color: green;
+}
+
+19)p::first-line {
+   font-weight: bold;
+   font-size: 1.2em;
+}  Pseudo elemanlarını(:: ile belirlenir) kullanarak bir öğenin ilk satırı veya ilk harfi gibi belli bir parçasına stil uygulamanızı sağlar. Bunların etkili olması için block seviyesi öğelere uygulanması gerektiğini unutmayın.
+
+Bir pseudo-eleman iki kolondan oluşur: ::
+
+Bir Paragrafın Birinci Harfini Hedefleyin
+
+20)p::first-letter {
+   float: left;
+   font-size: 2em;
+   font-weight: bold;
+   font-family: cursive;
+   padding-right: 2px;
+}Bu kod sayfa üzerindeki bütün paragrafları bulup sadece birinci harflerini hedefleyecektir.
+
+Bu, çoğunlukla bir makalenin ilk harfine gazete benzeri bir tasarım uygulamak için kullanılır.
+21)Bir Paragrafın İlk Satırını Hedefleyin
+p::first-line {
+   font-weight: bold;
+   font-size: 1.2em;
+}
+Benzer şekilde, :: first-line elemanı, beklendiği gibi yalnızca öğeninin ilk satırını biçimlendirir.
+
+22)div p:only-child {
+   color: red;
+}Açıkcası only-child(tek çocuk) takma sınıfını sık sık kullanmayacaksınız. Yine de, ihtiyacınız olduğunda kullanılabilir.
+
+Ebeveyninin tek çocuğu olan öğeleri hedeflemenize izin verir. Örneğin, yukarıdaki kodu referans alarak, yalnızca div'nin tek çocuğu olan paragraf kırmızı renkte olacaktır.
+
+<div><p> My paragraph here. </p></div>
+ 
+<div>
+   <p> Two paragraphs total. </p>
+   <p> Two paragraphs total. </p>
+</div>
+Burda sadece birinci div'in paragrafları hedeflenecek ikinci div'inkiler değil. Bir öğeye birden fazla çocuk eklediğinizde, only-child takma sınıfı artık etkisini kaybeder.
+
+ul > li:only-of-type {
+   font-weight: bold;
+}Bu yapısal takma sınıf bazı zeki yollarla kullanılabilir. Ana evebeyn konteyneri içinde kardeşi olmayan öğeleri hedefleyecektir. Örnek olarak, tek bir liste öğesine sahip tüm ul'leri hedef alalım.
+
+Öncelikle, kendinize bunu nasıl başaracağınızı sorun? ul li yapabilirsiniz ama bu tüm liste öğelerini hedef alacaktır. Tek çözüm, only-of-type kullanmaktır.
+first-of-type, türünün ilk kardeşlerini seçmenize izin verir.
+Bunu daha iyi anlamak için bir test yapalım. 
+<div>
+   <p> My paragraph here. </p>
+   <ul>
+      <li> List Item 1 </li>
+      <li> List Item 2 </li>
+   </ul>
+ 
+   <ul>
+      <li> List Item 3 </li>
+      <li> List Item 4 </li>
+   </ul>   
+</div>
+
+Şimdi, okumaya devam etmeden önce sadece "List Item 2"yi nasıl hedefleyeceğinizi bulmaya çalışın. Çözümü bulduysanız(veya bulmaktan vazgeçtiyseniz), okumaya devam edin.
+
+1. Çözüm
+Bu testi çözmenin birden çok yolu var. Bir kaç tanesini gözden geçirelim. first-of-type'ı kullanarak başlayalım.
+ul:first-of-type > li:nth-child(2) {
+   font-weight: bold;
+}Bu kod kısaca, "sayfadaki ilk sırasız listeyi bul, daha sonra yalnızca liste öğeleri olan en yakın olan çocukları bul" diyor. Sonrada, bu bulunan setteki sadece ikinci liste öğesine göre filtreleme yapılıyor.
+
+2. Çözüm
+Başka bir seçenek, bitişik seçiciyi kullanmaktır.
+p + ul li:last-child {
+   font-weight: bold;
+}Bu senaryoda, p etiketinin hemen sonrarsındaki ul'yi buluruz ve daha sonrada öğenin son çocuğunu buluruz.
+3. Çözüm
+Bu seçicilerle istediğimiz kadar kötü niyetli veya eğlenceli olabiliriz.
+ul:first-of-type li:nth-last-child(1) {
+   font-weight: bold;   
+}
+ -->

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <style>
+        .paragraf1,.paragraf2 {
+            color: red;
+            background-color: rgb(75, 5, 236);
+            text-align: justify;
+            /*tum harfleri buyuk harf veya kucuk harf yapabiliriz..veya her bir kelimenin ilk harfini buyuk yapabiliriz capitalize ile*/
+            text-transform: uppercase;
+            text-indent: 100px;/*paragraf boslugu birak*/
+            letter-spacing: 2px;/*harf arasi bosluklar...*/
+            line-height: 2;/* satirlar arasi bosluk icin kullanilir ayricca bunu biz dikey de hizalamak icinde bazen kullaniriz...*/
+            word-spacing: 4px;
+            word-wrap:wrap;
+            text-shadow: 1px 1px black;
+           /*disardan bir yazi turunu bu sekilde dahil edebiliriz...*/
+            font-family: 'Roboto', sans-serif;
+
+        }
+      
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+    </style>
+      <!--css icine koymak istersek eger bu sekilde koyariz roboto yazi stilini ama html icine koymak istersek deu yukarda ki sekild ekoyariz...-->
+</head>
+<body>
+   <!--  (p.paragraf$)*5 1 den balayarak 5 e kadar sirayla -->
+
+   <p class="paragraf1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quibusdam, labore dolorum autem blanditiis similique aspernatur. Molestiae corporis, autem dolores tempora reiciendis harum quaerat maiores error ullam, molestias nisi repellendus.  </p>
+   <p class="paragraf2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt consequuntur non at, ducimus, repellendus vitae minima labore soluta cum, magni dicta expedita cupiditate deleniti eos sequi ea! Iusto, possimus commodi!</p>
+   <p class="paragraf3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maiores, deleniti soluta distinctio accusantium obcaecati non blanditiis ea rem voluptatem laborum, natus sapiente molestias, assumenda omnis. Rem facere dolores nesciunt!</p>
+   <p class="paragraf4"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatibus sit et aspernatur aliquam obcaecati aliquid hic veritatis ad itaque dolores nesciunt id similique, aut tenetur consequuntur aperiam ut odit. </p>
+   <p class="paragraf5"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate numquam natus dolorem ea quisquam veritatis neque, nam minima delectus, debitis magni eligendi harum quaerat, adipisci maiores? Aliquam cum illo fuga?</p>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--novalidate ile formdaki elemnetler icinde bulunan verileri girme zorunluluklkari validation lari n hepsni kaldirmis oluruz...-->
+    <form action="deneme.php" novalidate>
+<!--eger alan degistirilemesin istersek readonly attribut u ile yapabiliriz ama bir bu formu submit ettigtimizde bizim value ye burda verdigimiz deger gonderilecektir ama biz value olarak verdigimiz deger de  donderilmesin dersek o zaman da disabled attibut u kullaniriz-->
+<!--size attributu ile de texbox kutusunun boyutunu degistirebiliyoruz-->    
+Type text  :  <input type="text" size="12" name="name" value="Adem Erbas" readonly><!--value ile biz varsayilan olarak o degeri vermis oluruz acildiginda o deger ile gelir-->   <br><br>
+    Type text : <input type="text" name="isim" value="Zeynep Erbas" readonly disabled> <br><br><!--form submit edildiginde artik burda yazdigimiz value degeri form da da action daki url adresine  gitmeyecektir..-->
+    Type password  :  <input type="password">  <br><!--icine yazdigimiz karakterler gozukmez..--><br>
+    <!--biz burdas submitimize formaction adinda bir attribute vererek butona tiklayinca formdaki verilerin gitmesini istedigimiz adresi artik form attributundeki action degil de bizim submit butona yazdigimiz attirbute olan formaction a yazdigimiz yere gonderecektir...-->
+    Type submit  :  <input type="submit" formaction="test.php">  <br><!--form elemntleri icine girilen degrlerin action da yazilan adrese gonderilmesini sagliyor--><br>
+    Type reset : <input type="reset" value="Send"> <br> <!--bununlada form elemnlarina girdigimiz degerleri sifirlar siler--><br>
+    Type button : <input type="button" value="Gonder"> <br><br><!--normal bir buttondur form daki elemanlari action a gonderme gibi bir gorevi yoktur..sadece basit bir butondur...icinde javascript kodu yazabiliriz...OnClick -->
+    Type buttonElementSubmit:  <button type="submit">Send</button> <br><br>
+    Type buttonElementButton: <button type="button">Gonder</button> <br><br>
+    Type buttonElementReset: <button type="reset">Reset</button> <br><br>
+    Type color : <input type="color" name="color"> <br><br><!--Renk secimi icin kullaniriz...-->
+    Type date : <input type="date" name="date" min="2019-04-04" max="2023-04-04"> <br><br>
+    <!--autocomplete attributu ile email alanimizda daha onceden girdigimiz emailleri tahmin edip bize getirecektir-->
+    Type email : <input type="email" name="email"><br><br>
+<!--multiple sayesinde birden fazla dosya ayni anda secebiliyoruzz...-->
+    Type file : <input type="file" name="file" multiple><br><br>
+
+    Type month : <input type="month" name="month"> <br><br>
+<!--numaranin belli araliklarla artmasini istersek mesela 5 er 5 ser o zaman step attributunu kullaniriz-->
+    Type number : <input step="5" type="number" name="number" max="100" min="0"> <br><br>
+
+    Type range : <input type="range" name="range" max="20" min="0"><br><br>
+<!-- maxlength minlength ile kullanicinin belli sayida karakterler girmesini saglayabiliriz -->
+    Type search : <input type="search" maxlength="10" minlength="4" name="search"> <br><br>
+<!-- pattern ile yazdigimiz bir regex formatidir [0-9]{3} 0-9 dahil olmak uzere 3 sayi girilsin,[0-9]{2} 0-9 dahil olmak uzere arasindan 2 sayi girilsin demektir...-->
+
+<!--placeholder ile silik bir sekilde hangi formatta istedigimizi kullaniciya gosterebiliriz-->
+<!--ayrica eger bu alan girilmesi zorunlu bir alan ise required attributunu kullaniriz...-->
+    Type tel: <input type="tel" required placeholder="666-33-222" name="telefon" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"> <br><br>
+Type time : <input type="time" name="time" required> <br><br>
+<!--autofocus attributu ile sayfa acildiginda direk olarak autofocus attributunu verdigimiz alandan baslayacaktir fare imleci oraya gelecektir-->
+Type url : <input type="url" autofocus name="url"><br><br>
+
+Type week : <input type="week" name="week">
+
+    </form>
+</body>
+</html>
