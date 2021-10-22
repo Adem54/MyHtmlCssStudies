@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            display: inline-block;
+            width: 40px;
+            height: 1em;
+            background-color: red;
+            margin-left:-40px;
+        
+
+     }
+
+     .kutu{
+         width: 200px;
+         height: 200px;
+         border: 1px solid;
+     }
+
+     .relative {
+         background-color: palegoldenrod;
+         position: relative;
+         margin-bottom: 20px; 
+       margin-top:50px;
+       top:20px;
+       z-index: 0;
+     }
+
+     .static {
+         background-color: palegreen;
+         margin-bottom:20px;
+         position:static;
+         z-index: 1000;
+         
+     }
+
+     .absolute {
+         background-color: palevioletred;
+     }
+
+     /* POSITION ABSOLUTE  */
+
+     .kutu {
+         width: 100px;
+         height: 100px;
+         background-color: red;
+         position:absolute;
+         top: 0;
+         left: 0;
+     }
+     
+     .kapsayici-2{
+       position: relative;
+        border: 1px solid;
+        width: 20%;
+        height: 200px;
+        background-color: aqua;
+        margin-top: 120px;
+       
+     }
+
+     .kapsayici-1{
+        position: relative;
+        border: 1px solid;
+        width: 20%;
+        height: 300px;
+        background-color: rgb(238, 255, 0);
+     
+     }
+    </style>
+</head>
+<!--   
+    --------------Postion Relative i anlayalim-----------
+    Lorem den once ki width ve heihg ozelligi verdigimiz span elementi oldugu icin lorem yazisi tabiki spandan sonra geliyor, ve normal sartlarda biz span elementine eger margin-left:-15px degeri verirsek span elementi sola dogru iceri girecek, ve span elementinin bosalttigi alanin yerini lorem yazisi dolduracaktir...buraya dikkat burasi normal sartlar altinda boyle gerceklesir...,¨
+    Peki eger biz span a position-relative verir ve margin-left ile verdgiimiz -15 i gelip sadece left:-15px dersek span lementi yine 15px lik alani bosaltmis ve sola dogru kaymis olacak ancak, lorem yazisi sola yanasmayacaktir oldugu yerde durmaya devam edecektir...Bunun sebebi span elementinin position:relative olmasidir. PEKI NEDEN BOYLE OLUYOR POSITION-RELATIVE OZELLIGI ALAN BIR HTML ELEMENTI? ISTE BURAYA COK DIKKAT POSITION.RELATIVE MANTIGI BURDA SAKLI
+
+    Positive relative ile konumlandirdigimiz bir element aslinda hayali olarak eski yerinde duruyor hala bunu tarayici sadece yeni verdigim koordinatlara gore sadece gorsel acidan yeri orasi imis gibi gosteriyor, ama position relative ozellige sahip olan spanin yeri hala ilk konumlandigi yerdir...Biz bunu istedigim gibi konumlandirabiliriz fakat...gercekte Position-relative verdigimiz bir elementin yeri verdigiimiz top ve left degerini kaldirdigimiz zaman yeri neresi ise (0 a 0 noktasi birde verilmisse margin-padding degerleri..) gercek  yeri orasidir...Bu da su demektir, position-relative ozelligi verdigimiz bir elemente verecegimiz top,left degerleri ile tabi bize gore harekt ettirmis olacagiz ama diger ozellikteki kutular onun ilk konumu olan,0 a 0  yani top,left,right,bottom larini kaldirdigimiz zamanki degerine gore dikkate alacagi icin bizim position relative li bir kutuya verdigimiz top,left,right,bottom degerleri ile geldigi yerde dikkate almayacaklardir....sadece ilk konumunda hala duruyormus olarak kabul edeceklerdir....
+    ----------Position Absolute u Anlayalim!!!-----------------
+    Position absolute demek serbest demek yani kapsayicisinin 0 noktasina gore hizalanmasi demektir
+    Yani position absolute verdigimiz bir element once kendi parentina, babasina bakar position relative var mi diye varsa oraya konumlanir yoksa, babasinin babasina yani dedesine bakar yani bir ust dive bakar position relative var mi diye bu sekilde uste dogru gider position relativi buldugu yer de oraya konumlanir oranin 0 a 0 noktasina , peki hicbir ebeveyninde bulamazsa yukari dogru o zaman da son olarak sayfanin 0 a 0 noktasina kendisini konumlandirir.
+    Yani kapsayicisinin eger position relativ i yoksa onu kapsayicisi olarak gormuyor...
+    Ve position absolute olan bir elemente verdigiimiz top.bottom degerlerinde position relative ozelligi olan hangi ebeveynine gore kendini konumandirmissa onun 0 a 0 noktasina gore top ve left degerleri kutuyu hareket ettirir...
+    ------Position Fixed Ozelligi-------
+    Position:fixed ozelligi genelde header larda kullanilir, yani body icindeki header semantik elementlerde kullanilir...
+
+
+-->
+
+<body>
+    
+<span></span>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, quidem. Provident non qui molestiae amet aliquam, perspiciatis inventore quia numquam asperiores id repudiandae eum odit dolor, ipsum corrupti unde eligendi.
+    <br>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum quaerat fugit exercitationem vel fugiat fuga quis omnis debitis, quisquam nemo aut, autem, dicta officiis dolorem laudantium voluptas! Omnis, unde in.
+
+      <hr>
+      <div class="kutu static">
+        Position-Static
+        </div>
+      <div class="kutu relative">
+      Position-Relative
+      </div>
+      <div class="kutu absolute">
+        Position-Absolute
+        </div>
+
+  
+            <div class="kutu fixed">
+                Position-Fixed
+                </div>
+
+                <br><br><br><br>
+                <hr>|
+
+        <div class="kapsayici-1">
+            <div class="kapsayici-2">
+                <div class="kutu"></div>
+            </div>
+        </div>        
+      
+
+      
+
+</body>
+</html>
+<!--
+    1)Bizim css de top,right,bottom ve left degeri verebilmemiz icin, borwser in algilamasi icin mutlaka o deger position ozelligi vermemiz gerekiyor
+-->

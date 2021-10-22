@@ -1,0 +1,25 @@
+input { 
+margin: 0.5em;
+}
+
+.input {
+    border: 1px solid #BBB;
+     outline: none;
+     font-size:inherit;
+     /* font-size inherit sayesinde dinamik bir input kutuphanesi olusturuyoruz yani biz bu olusturacagimz input kutuphanesinin artik istedigimiz sisteme entegre edebilecegiz....*/
+     padding: 0.5em;
+     border-radius: 0.25em;
+}
+
+.input:focus {
+    border-color: aqua;
+    box-shadow: 0 0 5px 0 aqua;
+}
+
+.input-success {
+    border: 1px solid #27AE60;
+}
+.input-success:focus {
+    border-color: #2ECC71;
+    box-shadow: 0 0 5px 0 #2ECC71;
+}

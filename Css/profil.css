@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+
+
+}
+
+html {
+    font-size:1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+
+
+}
+body{   
+    margin:0 auto; 
+    
+ }
+
+header {
+    background-color: blue;
+    text-align: center;
+    width: 100vw;
+    padding:0.3em 0;
+    color: #fff;
+    
+}
+
+#context {
+    padding:0 2em ;
+}

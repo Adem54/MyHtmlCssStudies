@@ -1,0 +1,38 @@
+
+/* Buttona verdigimiz width ve heigh margin ve padding i kapsamiyordu bunu da kapsamasi icin en bastan box-sizing:border-box yapariz..   */
+*{
+    box-sizing: border-box;
+}
+
+/*Eger biz kendimize ozgu bir buton yapacaksak o zaman mutlaka var olan degerlerden kurtulmak olmali yani su an da  biz hicbir background-color vermedik ama kendisine ait default tarayidan gelen user agent degerleri vardir..  */
+/*
+Biz kendimiz css degeri verirken user agent ta default degerler var oldugunu unutmadan onlari da hesaba katarak css kodlarimizi ve html kodlarimizi dusunmeliyiz....
+
+*/
+.btn {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    padding: .5em 1em;/*Yazi boyutlari*/
+    border-radius: .4em;
+}
+/*
+Buton gibi icerilerde kullanilacak yapilarda rem yerine em kullaniriz cunku biz butonlarin da parentlerindaki yazi buyuklugune uyum saglamasini isteyebiliriz ve biz direk ebeveynlerine font-size verince bir daha butona vermeden onlar da parent indan geleni kullanabiliyor em de ama rem de boyle degil her zaman en basta verdigimiz font-size a bagli kaliyor ama biz iste bu tur durumlarda ornegin parent i 2rem yaptik diyelim buttonlar ona ayak uydurmayacak ve kucuk kalacak biz sitemizde parentin duruma gore degismesini isterirz bu tarz buton gibi icerde kullanilan yapilarda onun icin burda em kullanmak bestpractise dir rem yerine.Biz istiyoruz ki butonlari biz hazir bir sitemin icine koyunca direk otursun ondan dolayi em vererek ebeveynine ayak uydurmasini isteriz yoksa dengesiz goruntuler ortaya cikabilir, kapsayicisi 32px kendisi ise 16px kalabilir*/
+
+.btn:hover,.btn:focus {
+    background-color: #ddd;
+    box-shadow: 0 0 5px 0px #ccc;
+}
+
+.btn-primary {
+    background-color:hsl(138 100% 50%);
+    border-color:hsl(138 100% 30%) ;
+    color: #fff;
+}
+
+.btn-primary:hover,.btn-primary:focus {
+    background-color: hsl(138 100% 40%);
+    box-shadow: 0 0 5px 0 hsl(138 100% 30%)
+}

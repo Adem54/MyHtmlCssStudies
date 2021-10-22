@@ -13,7 +13,7 @@
         }
 
         body{
-            font-size: 16px;/* em artik bizim burda verdiigmiz yazi buyuklugunu 1 em kabul eder ancak eger herhangi bir yazimizi icine alan p elementinin body den once bir parenti var ve o da bir font-size kullanmisa o zaman 1em olarak parentinin verdigi buyuklugu baz alacaktir.... */
+            font-size: 16px;/* em artik bizim burda verdiigmiz yazi buyuklugunu 1 em kabul eder ancak eger herhangi bir yazimizi icine alan p elementinin body den once bir parenti var ve o da bir font-size kullanmissa o zaman 1em olarak parentinin verdigi buyuklugu baz alacaktir.... */
         }
       
         .item-view-width{
@@ -43,12 +43,14 @@
             height: 25vw;
             /*parent a falan bakmaz her zaman ekranin buyuklugune gore ayarlar dolayisi ile responsive tasarimlarda px kullanilmaz, vw kullanilir*/
         }
- #divP{
-     font-size: 10px;
+ #divEm{
+     font-size: 8px;
  }
         p {/* em demek bu pm elementinin parenti font-size olarak kac ise font u onu 1 em kabul eder eger parent inda font-siz yoksa onun ustundekilere baka baka body ye kadar bakar orda da birsey yoksa o zaman chrome da varsayiilan olark font-size 16px dir 1 em i 16px olarak kabul eder...Diyelim ki parentinda sadece %200 yaziyor font-size o zaman 1 em 32px olur cunku font-size varsayilan olarak 16px gelecektir 200% de 32 olur o da 1 em olur..ama bu em lerin cok kullanilmasinin mantigi web sayfalarimizda bir standart olusturmak icindir yani biz web sitesi yaparken en basta standart yazi tipimizi font-size imizi body de belirleriz ve sonra artik 1 e olarak kullaniriz...   */
             font-size: 2em;
         }
+
+      
     </style>
     <!--px ile calismak su anda bize hitap etmiyor o zaman ne yapmaliyiz ekranimiza gore buyuyen ve kuculen olcu birimleri kullanmamiz gerekiyor..-->
 </head>
@@ -61,9 +63,10 @@
         <div class="item"></div>
         <div class="item"></div>
     </div>
-<div id="divP">
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, debitis voluptatibus nam quo autem ut? Veniam, repellat. Sed, hic error. Sunt sint dignissimos aut eius, officia vel cupiditate explicabo et.</p>
+<div id="divEm">
+    <p> EM KULLANIDIGIMIZ PARAGRAF Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, debitis voluptatibus nam quo autem ut? Veniam, repellat. Sed, hic error. Sunt sint dignissimos aut eius, officia vel cupiditate explicabo et.</p>
 </div>
+
 <hr>
     <h1 style="font-size:calc(1.5rem + .75vw);">Merhaba Dünya</h1>
 </body>

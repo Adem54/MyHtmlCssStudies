@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    html{
+        font-size: 22px;
+    }
+   #main {
+       font-size: 10px;
+   }
+
+   #divEm {
+       font-size: 1em;
+   }
+
+   #divRem {
+       font-size: 1rem;
+   }
+</style>
+</head>
+<body>
+
+    <div id="main">
+    <div id="divEm">
+        <p> EM KULLANIDIGIMIZ PARAGRAF Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, debitis voluptatibus nam quo autem ut? Veniam, repellat. Sed, hic error. Sunt sint dignissimos aut eius, officia vel cupiditate explicabo et.</p>
+    </div>
+    <hr>
+    <div id="divRem"> REM KULLANDIGIMIZ PARAGRAF...Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quidem sapiente qui cupiditate tempore harum. Perferendis veniam veritatis facere, dignissimos suscipit incidunt excepturi illo nihil, est corporis voluptas doloribus voluptatum.</div>
+
+    <!-- 
+            Em ile Rem in farki su sekildedir...Em kullandigimiz herhangi bir p elementi icindeki tekst in yazi buyuklugu 1em in font-size ini belirlerken sira ile kendi ebevyinden baslayarak yukari dogru font-size degeri alan kapsayicilari var mi onu kontrol eder ve ilk font-size kullanan kapsayicisinin veridigi font-size degeri onun icin 1 em dir ama hicbir kapsayicisinda font-size deger i yoksa dogral olarak varsayilan olarak tarayicidan gelen 1em=16px default degerini kabul edecektir...Genellikle em degerini en basta html altinda bir standart belirlenir ve tum site o em degerini  kullanir
+
+            Rem e gelince ise rem de ise kapsayicisinin font-size degeri ne olursa olsun rem direk root a bakar yani varsayilan olarak gelen default olarak en basta ayarladigimiz font-size a bakacaktir eger html{font-size:20px} seklinde bir deger verirsek buraya bakar eger vermezsek de yine tarayicidan varsayilan olarak gelen 1rem=16px degerini baz alacaktir..... yani parentinin font-size inin kac oldugunu onemsemez...2rem dersek 32 px dir...
+            BEST PRACTISE DE  REM DE KULLANABIIRIZ YERINE GORE EM DE KULLANABILRIZ KESIN BIR KANAAT DIYEMEYIZ..
+            BEST PRACTISE DE % YERINE DE VW KULLANMAK DAHA KULLANISLIDIR
+            TABI MAX-WIDTH VE MIN-WIDTH IN KULLANIM YERLERID DE VARDIR-...
+            PX KULLANMAK RESPONSIVE MANTIGINA TERSTIR ONDAN DOLAYI PX KULLANILMAZ..YAZIDA REM,WIDTH DEGERLERINDE VS VW KULLANILIR...
+            CALC ILE EKRAN BOYUTUNA GORE KUTULARIN AYARLANMAIS ISINDE DE YINE BIZ VW KULLANIRIZ...
+
+            Em ile Rem arasindaki farklilik aynen width ekran boyutlari ayarlarken kullandigimiz % ile vw birimleri gibidir..
+
+            /*
+Buton gibi icerilerde kullanilacak yapilarda rem yerine em kullaniriz cunku biz butonlarin da parentlerindaki yazi buyuklugune uyum saglamasini isteyebiliriz ve biz direk ebeveynlerine font-size verince bir daha butona vermeden onlar da parent indan geleni kullanabiliyor em de ama rem de boyle degil her zaman en basta verdigimiz font-size a bagli kaliyor ama biz iste bu tur durumlarda ornegin parent i 2rem yaptik diyelim buttonlar ona ayak uydurmayacak ve kucuk kalacak biz sitemizde parentin duruma gore degismesini isterirz bu tarz buton gibi icerde kullanilan yapilarda onun icin burda em kullanmak bestpractise dir rem yerine*/
+
+
+     -->
+</div>
+</body>
+</html>

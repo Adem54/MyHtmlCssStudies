@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box {
+       width: 200px;
+       height: 200px;
+       background-color: crimson;
+       position: absolute;
+       left: 50px;
+       top: 150px;
+
+    }
+
+    .box-1 {
+        background-color: blue;
+        width: 300px;
+        height: 300px;
+        left: 140px;
+        z-index: 1;
+    
+    
+    }
+.box-2{
+    z-index: 2;
+}    
+
+
+   
+    </style>
+</head>
+
+<body>
+    <!--  
+        ----Position Static----------
+        Iki tane kutumuz var ve ikisi de position absolute degerleri var ve kendilerinin position i relative olan bir ebeveynleri olmadigi icn dogal olarak gidip ekrani yani ekrani baslangic noktasi olarak kabul ederek top ve left te ekranin 0 noktasina gore aliyor...Peki biz box-1 e position static degeri verirsek box-1 ne yapar. Box-1 position-static oldugu anda hicbir top,left,bottom ve rigth degerini tanimayacaktir ve ilk haline doner yani sanki biz hic top,left,right,bottom degeri vermememizi gibi ilk haline doner,,ve ne yapacak gidip body nin 0 a 0 noktasina konumlanacaktir...top,left,right,left bunlar position static de calismaaz
+
+        -------z-index olayi-------
+        Z-index olayi default olarak html deki in kod okuma sirasina gore hangisi en son okursa o daha usste olacaktir dolayisi ile burdsa box-2  classina sahip olan div daha sonra okundugu icin o daha ustte kaliyor....bu defaultta bu sekilde olacaktir...
+        z-index in calisabilmesi icin position ozelliklerinden relative,absolute ya da fixed dan herhangi biri verilmelidir...Position static de z-index calismaz.....
+
+    -->
+<div class="box box-1">  </div>
+<div class="box box-2"> </div>
+</body>
+</html>
