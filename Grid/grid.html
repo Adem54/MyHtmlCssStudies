@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .box {
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #000;
+      }
+
+      .box1 {
+        background-color: antiquewhite;
+      }
+      .box2 {
+        background-color: aqua;
+      }
+      .box3 {
+        background-color: bisque;
+      }
+      .box4 {
+        background-color: brown;
+      }
+      .box5 {
+        background-color: chartreuse;
+      }
+
+      .box6 {
+        background-color: darksalmon;
+      }
+
+      .container {
+        display: grid;
+        /* grid-template-rows: 150px 250px;
+            grid-template-columns: 100px 200px 300px; */
+        /*yukardaki gibi 2 satirda yazmak yerine tek satirda bu sekilde de yazabiliriz...
+            grid-template: 150px 250px / 100px 200px 300px ; */
+
+        /*   grid-template: 150px 250px / 100px auto 300px ;
+           Bu sekilde auto verince kalan tum boslugu o alan a koydugumu kutuya verecektir... */
+        /*
+            grid-template: 150px 250px / 100px 1fr 1fr ; 
+        Burda da 100px kadar alani satir da verdikten sonra yani width i geriye kalan ekranin alanini esit 2 parcaya boler ve o kutulara verir
+            */
+        grid-template: 150px 250px / 100px 2fr 3fr;
+      }
+
+      /* order ile kutularin yerini degistirebiliriz kutularini sirlanmasini saglayan order da tum kutular varsayilan olarak 0 dir burda biz son kutu olan box6 yi ilk siraya alabilnmek icin 0 dan daha dusuk bir deger vermemiz gerekiyor...*/
+      /* .box6{
+            order: -1;
+        }
+
+        .box3 {
+            order: -2;
+        } */
+
+      /* .box1 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        /*Burda 1 i biz baska bir kutu nun yerine tasiyoruz daha sonra ise kutular sirali bir sekilde devam ediyora uyiearalarindaki cizgileri sayiyoruz burda ki ilk cizgi basladiklari yerdir... 
+      }
+/*
+      .box2 {
+          /*Bu da grid in basladigi ve bittigi yerin tek satir da  yazilma seklidir...  */
+    /*    grid-row: 2 / 3;
+        /* 2.satir cizgisi ve 3.satir cizgisi arasinda */
+      /*  grid-column: 2 / 3;
+        /* 3. kolon ile 4.kolon arasinda olacak*/
+    /*  } */
+
+  /*    .box1 {
+          grid-row: 1 / 2;
+          grid-column: 1 / 3;
+     /*
+     }   *//* Bu durumda 1 2 ninde yerini de kapladi ve sirasi ile 2 3 u ittirdi,3 4 u ittirdi ve sonunda     */
+
+   /*   .box2 {
+          grid-row: 1 / span 2;/* span 2 demek 2 kutu gec demek o da 3 cizgiye karsilik geliyor... */
+       /*   grid-column: 3 / 4;
+      } */
+
+      /*Simdi de row lar arasi ve column lar arasi bolsuk birakalim*/
+
+      .container {
+          grid-row-gap: 10px;
+          grid-column-gap: 10px ;
+          /*Bunu daha kisa da yazabiliriz */
+          grid-gap: 10px 20px;
+      }
+
+      .box17 {
+        background-color: antiquewhite;
+      }
+      .box27 {
+        background-color: aqua;
+      }
+      .box37 {
+        background-color: bisque;
+      }
+      .box47 {
+        background-color: brown;
+      }
+      .box57 {
+        background-color: chartreuse;
+      }
+
+      .box67 {
+        background-color: darksalmon;
+      }
+      .container2{
+          display: grid;
+          /* satir genisligi 150px e 200px olan 2 satir ve 3 tane 200px lik kolon genisligi olan kolonlar istiyoruz*/
+          grid-template: 150px 200px / repeat(3, 200px);
+          /*istersek de kolonlari ekranin genisligi boyutunca esit sekilde yayilsin istersek de o zaman soyle aypariz...*/
+          grid-template: 150px 200px / repeat(3, 1fr);
+
+          /* Burda repeat ten sonraki parantezin icinde bir satirda kac kere verilen min kolon genisliginin tekrar edilecegi ni gosteriyor eger tekrar sayisi bizim toplam kolonumuza esit veya buyukse biz 2 satirlik genislik vermemize ragmen tek satir kullanilacaktir ancak eger tekrar sayisi kutu sayimizdan kucuk ise o zamn tekrar sayisi kadar olan kutular 1. satira geri kalanlari ise 2. satira yerlesecektir.....   
+          Ayrica min deger ise burda ekrani kuculttugumuz zaman en fazla ordaki min deger kadar kuculecektir...
+          ve genellikle ekrani verilen kutularla tamamen doolduracak sekilde ortayi buluyor yani eger az kutu varsa maks degeri de kullanabilir...*/
+          /*
+          grid-template: 150px 200px / repeat(4, minmax(150px, 250px));
+          */
+          grid-template:150px 250px / 200px 3fr 1fr;
+          /**/
+
+         
+       
+
+          grid-gap: 10px 10px;
+      }
+
+      .box27 {
+
+        /* grid-row: 1 / 2 ;
+        grid-column: 1 /2; */
+           /*Grid area ile biz section 2 yi basa almak istersek tek satir da  yapabiliriz  */
+
+           /* grid-area: 1 / 1 / 2 / 2; */
+      }
+         /* GRID AREA NIN ASIL OZELLIGI BURDA GELIYOR KARSIMIZA   */
+         .container2 {
+             display:grid;
+             grid-template:150px 250px / 200px 3fr 1fr;
+             grid-template-areas: 
+             "menu menu sidebar"
+             "D E sidebar"
+             "B F F" 
+             /* Burdaki A, B tamamen mahlastir yani degiskendir ne verecegimiz farketmez, ama burda dikkat edelim ilk satirda kac kutu varsa o kadar harf yazaiyoruz ikinci satirda kac kutu varsa o kadar harf yaziyoruz ve box larin herbirine de hangi kutuyu temsil etmesini istiyorsak onu yaziyoruz yani ve sonrasinda biz burda grid-template-areas da harflerin yerlerini istedigimiz gibi degistirebiliyruz ve biz harflerin yerini degistirdigimiz zaman degisen harfler hangi kutuyu temsil ediyorsa onlarin yeri de degismis oluyor...*/
+         }
+
+         .box17 {
+            grid-area:menu;
+         }
+
+         .box27 {
+            grid-area: menu;
+         }
+         .box37 {
+            grid-area:sidebar;
+         }
+         .box47{
+            grid-area:D;
+         }
+         .box57{
+            grid-area:E;
+         }
+         .box67{
+            grid-area:F;
+         }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box1">Section 1</div>
+      <div class="box box2">Section 2</div>
+      <div class="box box3">Section 3</div>
+      <div class="box box4">Section 4</div>
+      <div class="box box5">Section 5</div>
+      <div class="box box6">Section 6</div>
+    </div>
+<br><br> <hr><br><br>   
+
+    <div class="container2">
+        <div class="box box17">Section 17</div>
+        <div class="box box27">Section 27</div>
+        <div class="box box37">Section 37</div>
+        <div class="box box47">Section 47</div>
+        <div class="box box57">Section 57</div>
+        <div class="box box67">Section 67</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 200px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            font-size: 2rem;
+        }
+/* Bu arada sunu bilmekte fayda var, biz animasyon u gormustuk bir onceki derste ama animasyon performans acisindan skntilidir, animasyon verdigimiz eleman her hareketinde render ediliyor resize oluyor altindaki ve ustundeki eleman buyuklugu etkileniyor.Ben web sitemde butonumun uzerine gelince azicik hareket etmesini istiyorsam bu tarz durumlar icin transform lari kullaniriz daha cok...Ayni zamanda animasyon yapilarini ic ice de kullanabiliriz animasyon icinde transform veya transform yaparken transition kullanmak gibi*/
+        div:hover {
+            /* transform demek uzerine gelince birseyler degistir demektir biz translate dersek o zaman yerini degistirmek istiyoruz demektir*/
+
+/*            transform: translateX(50px);uzerine geldigimiz zaman divi 50px saga hareket ettirecek, biz sola hareket ettirmek istersek de -50px deriz
+transform:translateY(-50px);yukari dogru hareket eder*/
+transform:translate(50px, -50px); /*Bu transform:translateX() in kisaltilmis halidir*/
+/* eger hareket ettirirken % verirsek kendi boyutuna gore % veriyor parenetina gore degil... */
+transition: 2s;/*2s sursun*/
+/* transform:rotate(180deg);bu da dondur demektir*/
+transform: rotate(2turn);/* 2sn de 2 tur at demis oluyoruz...*/
+transform: rotateX(1turn);/*x ekseninde 1 tur at*/
+transform:rotateY(-1turn);/* y ekseninde tersten 1 tur at*/
+transform: scaleX(2);/*Kendi boyutunun kati kadar buyutur*/
+transform: scaleY(2);/*Kendi boyutunun kati kadar buyutur*/
+/* scaleX ve scaleY yi art arda yazdigimizda en son yaazdgimiz calisir ondan dolayi biz ikisini de 1 satirda yazacagiz..*/
+transform: scale(2);/* hem x ekseninde hem de y ekseninde 2 katina cik demektir*/
+/*Bu efek cok kullanislidir...buton ustune geldigimizde hafif hareketlenmesii istersek bunu kullaniriz...*/
+/* Biz herhangi bir rotate,translate,scale yaptigimizda bu browser a matrix olarak yansiyor arka planda matrixe donusturuyor...arka planda matrix diye aramaliyiz.. */
+        }
+    </style>
+</head>
+<body>
+    <div>Div</div>
+</body>
+</html>

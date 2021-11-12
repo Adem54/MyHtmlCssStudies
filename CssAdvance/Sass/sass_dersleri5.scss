@@ -1,0 +1,65 @@
+
+$bakdground-color:aqua;
+body {
+    background-color: $bakdground-color;
+}
+
+$sayac :1 ;
+@while $sayac < 4 {
+    //burasi item-1
+    .item-#{$sayac} {
+    color: lighten(green , 10*$sayac);
+    $sayac: $sayac + 1;
+}
+}
+
+// if ve for while donguleri
+$sayi : 10;
+
+p {
+    @if $sayi < 10 {
+        background-color: red;
+    }@else if $sayi==10 {
+        background-color: cyan;
+    }@else {
+        background-color: yellow;
+    }
+
+    @if $sayi > 10 {
+        @if $sayi < 30 {
+            color: teal;
+        }
+        @else {
+            color: purple;
+        }
+    }
+}
+
+
+/*for dongusunu kullanalim */
+
+$sayac:1;
+@for $i from 1 through 5{
+    .list-#{$i}{
+        width:2px * $i;
+    }
+}
+
+//each yapimiz var bir de bir listemizin her bir elemani uzerinde islem yapabilmemize yariyor
+@each $deger in(normal, bold, italic){
+    .#{$deger}{
+        font-weight: $deger ;
+    }
+}
+
+
+
+
+//Dongu ile sirali class larimizin ozelliiklerini otomatiklestirebiliriz..
+
+//Bu ne isimize yarayacak diye dusunebiliriz ama ozellikle li gibi item gibi birbiri ardinca siralanan sinif adlarinin oldugu siniflar yani item1,item2,item3 diye giden sinif isimlerimiz oluyordu, hepsine uygulayacaigizmi ozellikleri burda dondererek uygulayabilriz
+
+
+.container {
+    background-color:$bakdground-color;
+}

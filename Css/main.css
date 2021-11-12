@@ -1,0 +1,17 @@
+body {
+  background-color: red;
+}
+
+.menu-button, .submit-button {
+  border-radius: 2px;
+  margin: 5px;
+}
+
+.menu-button, .submit-button {
+  color: purple;
+}
+
+.submit-button {
+  font-size: 1rem;
+}
+/*# sourceMappingURL=main.css.map */

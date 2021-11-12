@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing:border-box;
+   }     
+        .container {
+  width:100%;
+  display:flex;
+ 
+  padding-right:10px;
+  margin-top:20px;
+
+}
+
+.div {
+
+height:100px;
+
+border:1px solid;
+margin-left:10px;
+}
+/* flex:0(flex-grow) 1(flex-shrink) 25%(flex-basis)*/
+/* flex-basis burda width gibi hareket ediyor ama flex-direction:column olursa o zamanda height gibi hareket edecektir ondan dolayi flex-basis dogrudan width demek degildir....flex-basis x direction idir
+Flex-basis dedigimiz zaman flex-basis i verdigimiz elemntler in genisliklerine bakilmaksizin onlarin flex-grow degerlerine gore onlara genislik vererek onlari yerlestirecektir....
+*/
+
+.div11 {
+    flex:0 1 25%;
+    background-color: chartreuse;
+   
+}
+.div12 {
+    flex:0 1 25%;
+    background-color:coral;
+  
+}
+.div13 {
+    flex:0 1 25%;
+    background-color:cyan;
+   
+}
+.div14 {
+    flex:0 1 25%;
+    background-color:deeppink;
+  
+}
+
+@media only screen and (max-width:1000px){
+    .container {
+
+  display:flex;
+ 
+
+ 
+  flex-wrap: wrap;
+ /* align-content: space-around; */
+ align-content:space-around;
+}
+
+.div11 {
+    flex:0 1 calc(50% - 10px);
+    background-color: chartreuse;
+    margin-bottom:10px;
+   
+}
+.div12 {
+    flex:0 1 calc(50% - 10px);
+    background-color:coral;
+    margin-bottom:10px;
+    
+}
+.div13 {
+    flex:0 1 calc(50% - 10px);
+    background-color:cyan;
+    margin-bottom:10px;
+   
+}
+.div14 {
+    flex:0 1 calc(50% - 10px);
+    background-color:deeppink;
+    margin-bottom:10px;
+  
+}
+}
+
+@media only screen and (max-width:700px){
+    .container {
+
+  display:flex;
+ 
+
+ 
+  flex-wrap: wrap;
+ /* align-content: space-around; */
+ align-content:space-around;
+}
+
+.div11 {
+    flex:0 1 calc(100% - 10px);
+    background-color: chartreuse;
+    margin-bottom:10px;
+   
+}
+.div12 {
+    flex:0 1 calc(100% - 10px);
+    background-color:coral;
+    margin-bottom:10px;
+    
+}
+.div13 {
+    flex:0 1 calc(100% - 10px);
+    background-color:cyan;
+    margin-bottom:10px;
+   
+}
+.div14 {
+    flex:0 1 calc(100% - 10px);
+    background-color:deeppink;
+    margin-bottom:10px;
+  
+}
+}
+
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+        <div class="div div11"></div>
+        <div class="div div12"></div>
+        <div class="div div13"></div>
+        <div class="div div14"></div>
+        
+      </div>
+
+ 
+</body>
+</html>

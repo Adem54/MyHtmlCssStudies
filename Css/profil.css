@@ -1,18 +1,16 @@
 * {
     box-sizing: border-box;
 
-
 }
 
 html {
-    font-size:1em;
+    font-size:1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
-
 
 }
 body{   
     margin:0 auto; 
+    padding:0;
     
  }
 
@@ -20,11 +18,41 @@ header {
     background-color: blue;
     text-align: center;
     width: 100vw;
-    padding:0.3em 0;
+    padding:0.3rem 0;
     color: #fff;
     
 }
 
-#context {
-    padding:0 2em ;
+.padding {
+    padding:0 2.5rem ;
 }
+
+h3{
+    margin-left:-0.5rem;
+}
+
+section:nth-child(2){
+    background-color: #0000ff;
+    padding:0.5rem 0 1.8rem 2rem;
+    
+    color: white;
+    
+}
+
+section:nth-child(2)>ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none ;
+    ;
+}
+
+footer{
+    background-color: blue;
+    text-align: center;
+    width: 100vw;
+    padding:1.5rem 0;
+    font-size:1.2rem;
+    color: #fff;
+}
+
+

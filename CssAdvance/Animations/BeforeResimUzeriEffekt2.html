@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .wrap {
+  width:100%;
+  height:auto;
+  background-color:#eeee;
+  
+  }
+
+*,*:before,*:after {
+  box-sizing:border-box;
+}
+.search {
+  width:100%;
+  height:;
+  background-color:#eeee;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 20px;
+
+
+
+ }
+.logo {
+   text-transform: uppercase;
+  letter-spacing:5px;
+  color:#e67e22;
+
+}
+
+.icons1 {
+    display:flex;
+    padding:5px 0;
+  
+}
+.icon {
+  position:relative;
+  
+  display:block;
+  margin-left:5px;
+  width: 2em;
+  height: 2em;
+  line-height:2em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  background-color: #fff;
+}
+
+/*Arama kutusu */
+#box {
+   /*  */ max-width: 400px; 
+    position: relative;
+}
+ 
+#box .fa-search {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    font-size: 20px;
+    color:cornflowerblue;
+     
+}
+ 
+#search { /*istediğimiz efekti tam veremedik bir daha bakalım */
+    /*  */  width:200px;
+    box-sizing: border-box;
+    border: 2px solid cornflowerblue;
+    border-radius: 30px;
+    font-size:18px;
+    padding: 10px 10px 6px 10px;
+   /* -moz-transition: width 0.4s ease-in-out;
+    -o-transition: width 0.4s ease-in-out;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;  */
+  
+ 
+}
+ 
+#search:focus {
+ width:350px;
+  opacity:1;
+  transition: all 0.5s ease-in-out;
+/*Arama kutusu */
+}
+  
+h1 {
+  margin:0;
+  padding:0;
+  vertical-align:middle;
+}
+h1>a {
+  text-decoration:none;
+  color:#e67e22;
+}
+.menu {
+  width:100%;
+   
+  
+  background-color:#eeee;
+   padding:20px 10px;
+}
+.menu>ul {
+  width:50%;
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  
+}
+.menu li {
+
+  text-align:center;
+}
+.menu a {
+  display:block;
+  text-decoration:none;
+    border-right:2px solid #e67e22;
+  padding:0px 10px;
+  font:normal 16px tahoma;
+     text-transform: uppercase;
+  letter-spacing:1px;
+  color:#2d3436;
+  
+  }
+.menu a:hover {
+  color:#e67e22;
+}
+.menu>ul>li:last-child > a  {
+ border-right:none;
+ 
+}
+.menu>ul>li:first-child > a {
+  color:#e67e22;
+}
+.image {
+  display:flex;
+  position:sticky;/*uygulanmadı bir daha bakalım */
+  top:0px;
+}
+.image img {
+  width:100%;
+  display:block;
+}
+.image>div {
+  max-height:400px; /*Resimlere en az 400px ol dedik ama onların içindeki kutulara birşey demedğimiz için kutuların  kendinden kaynaklanan küçük boşluklardan dolayı tam hizalmaa yapmıyorlar ondan dolayı img lerin iiçerisinde olduğu ktuları da sınırlandırarak tam oturmasını sağlıyoruz  */
+}
+.img2>div {
+  max-height:200px; 
+}
+.img2 {
+  display:flex;
+  flex-direction:column;
+ 
+  
+}
+/* Resmin Üzerine gelince oluşan efektler için kesin kullanılması gereken kodlara 3 yıldız koyduk ***  */
+
+/*Çok ilginç bir metodla burda yazıyı ve efekti yok etmiş hepsini kapsayan a etiketine overflow hidden vermiş ve efekt ve yazıyı relative ya da absolute vererek top ile onları a etiketinin altına itince overflow hidden dan dolayı normalde göstermiyor ancak hover deyince tekrar top özelliği vererek onları görselde gözükecek şekilde getirmiş  */
+.img1 img{
+  min-height:400px;
+  object-fit:cover;
+  object-position:bottom;
+  display:block; /* ***  */
+  transition:all 0.3s; /* ***/ /*Burası da a etiketinin üzerine gelince yani resmi de kapsadığı için resmin de üzerine gelince biz büyüsün demiştik transform scale ile işte bunun geliş ve gidiş i bir geçiş efekti ile olmasını istediğimiz için img ye transition diyoruz çünkü img nin büyüklüğü artsın diye değişiklik yapıyoruz 
+  eğer sadece hover kısmında transition verirsek sadece üzeringe gelirken geçiş efekti ile gelir ama geri img normal boyutuna gelirken efekt uygulamaz  o yüzden direk img de transition uygulamalıyız*/
+  }
+
+.img1-a { /* Dikkat edelim resmi a etiketin e aldık ve bu özellikleri a etiketine verriyoruz */
+    display: inline-block;/*   ***   */
+    margin: 0px;
+    /* */  overflow: hidden;       /*   ***   */
+    position: relative;  /*    ***    */
+    opacity: .99;
+    
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.05);
+}
+
+.img1-a::before { /*a nın öncesine before uyguladık */
+ 
+    content: ''; /*  ***    */
+  /*to bottom aşağı doğru gradi uygulasın,0.7 opacity ye kadar doldursun 
+  to top dersek yukarı doğru opacity 0 dan 0.7 ye kadar doldurur 
+  to right dersek sağa doğru doldurur 0 dan başlar 0.7 opacity ye kadar doldururalign-contentto left dersek de saola doğru 0 dan başlayıp 0.7 opacity ye kadar doldurur*/
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7)100%); /* *** */
+   /* Burda yukardan aşağı doğru gradient yapıyor transparant yani arka plan olmadan başlasın %0 aşağı doğru opacity 0.7 ye doğru 100% göstersin diye */ 
+ /* background: -webkit-linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7)100%); 
+  /*Efekt to bottom aşağı doğru olsun diyoruz neye göre aşağı doğru olacak boyuta göre boyut ne idi widht:100% height:50% ve top:100% olduğu için görselin en altından aşağı doğur 50% gidecek yükseklik olarak ama width aynı idi zaten sonra transparent:0% demek tamamını göster demektir normalde transparent 50% desek gradi rengimizin  yukardan aşağı doğru 50% sini göstermiyor yani transparent 100% olunca hiç göstermiyor o yüzden görebilmemiz için transparent 0% olmalıdır
+  Sonra rgb a renkleri red green blue mantığında renk kodları veririz 0 deyince siyah olur ve 4. parametre de opacity dir opacity de 0.7 den başlasın demektir
+  Rgba parametrelerinin parantezi kapattıktan sonraki 100% ile çarpılması demek gradienti 100% uygula demektir mesela 50% dersek ona gradiendt aşağı doğru yüksekliğin 50% si kadar uygulanıp daha sonra sabit renkte devam edecektir ama biz 100% yapıyoruz tabi ki!!!Yani 0% olursa gradi etkisi hiç ugulanmamış olur 
+; */ 
+    width: 100%;  /*  ***  */
+    height: 50%;/* 0000  */
+    position: absolute;  /*  *** */
+    top: 100%;  /*  ***   */
+  /* top:100% demek img1-a yani resmin yukardan aşağı doğru yüksekliği 100% demektir yani bu before özelliği resmin en altından başlasın aşağı doğru demek oluyor yani resmin en altından başlıyor 50% lik bir yükseklik aşağıdan yukarı doğru gradi etkisi yani siyahlık aşağıdan yukarı doğru azalarak gidecek şekilde background color özellikleri verdik tabi ki biz overflow-hidden verdiğimiz için bu gölge normalde gözükmüyor resmin dışına taştığı için ama resmin üzerine gelince before özelliği opaciyt:1 ve top:50% dediğimi zaman bu gölge yi tam a resmin üzerine gelince resmin yarısına uygulanacak hale getirmiş  oluyouruz  */
+     z-index: 2; /* *** */
+    transition-property:top,opacity; /*all da koysak olabilirsi aslında burda hatta all 0.3s/ top,opacityEfekt yukarı doğru gitsin diye yapılıyor bu ve opacity si ile gelsin */
+    transition-duration: 0.3s;
+  }
+  
+.img1-a:hover:before {
+  opacity:1;
+   top:50%; /* ***  *//* Burda da diyoruz ki resmin ortasından başlasın before da verdiğmiz boyutlar */
+ 
+}
+
+.img1-a:hover > img {
+  transform:scale(1.2);
+  transition:all,0.5s;
+}
+  
+.detay{
+    font-size: 16px;
+    padding: 20px;
+    color: #fff;
+    position: absolute; /* *** */
+    bottom: 0; /* yerini ayarlıyoruz bottom ve left 0 diyerek sol alta yerleştiriyoruz */
+    left: 0;
+    
+    z-index: 3; /*  ***  */
+  
+  }  
+
+
+.detay span{
+    display: block; /* başlıkla yazıyı alt alta getirmek için kullanmış */
+    position: relative; /* *** */ /* ilk başta gözükmemesi için top la aşağı atabllmek için relative olmasına ihtiyacımız var */
+    
+    top: 100px; /* ***  */ /* Göreseli yok etmek için top 100 px verip aşağı atıyor a etiketinde overflow hidden özelliği var ondan dolayıı gözükmüyor.
+  ÖNEMLİ!!!!!!!!
+  Ayrıca biz burda efekti aşağıdan yukarı mantığında yapmak istediğimiz için aşağı gönderiyouz önce gölgeyi daha sonra aşağıdan gelmesini sağlıyoruz top a vereceğimiz değerlerle veya bottom lefet right a vereceğimiz değerlerle geçiş efekti nasıl olsun onu ayarlayabiliriz*/
+    transition-property: top, opacity; /* *** *//*transition:all,0.3s de diyebiliriz */
+    transition-duration: 0.3s; /* *** */
+  
+ /* transition-delay: 0.20s;  */ 
+  /*Bu transition delay demek normalden biraz gecikecerek gelsin demek ve 0.20 s kadar geciksin demektir ancak burada spanlara olduğu için başlık ve normal yazı ikisi de aynı saniyede gecikecek ama biz önce başlık hemen sonrasında altındaki yazının gelmesini istiyoruz ondan dolayı transition delay olayını da hover larda baslığa özel hover açarak ayrıca yazıya özel hover açarak yapabiliriz ayrıca yine bu transition delay olayını normal başlık ve bilgi clasında direk kullansak da olur yani hover da değilde direk de kullanabiliriz */
+}
+
+/* Bunlar tamamen yazının büyüklük genişlik ve boyut özellikleri için verilmiş */
+.baslik{
+    line-height: 1;
+    font-weight: bold;
+    font-size: 18px;
+  /* transition-delay: 0.15s; */
+}
+
+.bilgi{
+    line-height: 1.2;
+    margin-top: 5px;
+    font-size: 12px;
+    
+  /* transition-delay: 0.20s; */
+}
+    
+.img1-a:hover span {
+  opacity:1;
+   top:0; /* ***  *//* Burda da diyoruz ki top 0 olsun ve yazılarımız a etiketinin içerisine gelmiş ve üzeringe gidince gözükmüş olsun diyoruz çünkü normalde top:100px den dolayı yazılarımız resin altına doğru gitmiş yani resmin dışına taşmış ve a etiketindeki overflow hidden özelliğinden dolayı da gözükmüyordu  */
+  /*Önemli asıl mantık şudur ki biz yazıları da aşağı gönderiyoruz ki aşağıdan yukarı yukarıdan aşağı efekti olsun yani üzerine gelince aşağıdan yukarı geçiş efektli olsun üzerinden gidince yukardan aşağı tekrar eski yerine geçiş efektli gitsin burada biz sadece top la yerini değiştirdik buna dikkat edin yani biz üzerine gelince yazının yeri ile oynarken eğer top un yanında left ile de yön verse idik o zaman yazı tekrar giderken bu sefer de  */
+  
+}
+/*Önce başlık sonra yazı gelmesi için yapıyoru burayı ama direk .baslik ve .bilgi claslarında kullanılınca da doğru olacağı için orda kullanmayı tercih ettik */
+.img1-a:hover .baslik{
+    transition-delay: 0.15s; 
+}
+.img1-a:hover .bilgi{
+    transition-delay: 0.20s;
+}   
+/* 2. sütundaki resimler için */
+.img2 img {
+  max-height:200px;
+  object-fit:cover;
+  object-position:bottom;
+  display:block;
+  transition:all 0.3s;
+  }
+/* 2.Sütunda üstteki resmi  için */
+.img2-1a { /* Dikkat edelim resmi a etiketin e aldık ve bu özellikleri a etiketine verriyoruz */
+    display: inline-block;/*   ***   */
+    margin: 0px;
+    /* */   overflow: hidden;    /*   ***   */
+    position: relative;  /*    ***    */
+    opacity: .99;
+
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.05);
+}
+
+.img2-1a::before {
+  content:" ";
+   background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7)100%);
+   width: 100%;  /*  ***  */
+    height: 100%;/* 0000  */
+    position: absolute;  /*  *** */
+    top: 100%;  /*  ***   */
+    z-index: 2; /* *** */
+    transition-property:top,opacity; 
+    transition-duration: 0.3s;
+  
+}
+
+.img2-1a:hover:before {
+  opacity:1;
+   top:0%; /* ***  *//* Burda da diyoruz ki resmin başından başlasın before da verdiğmiz boyutlar */
+ 
+}
+
+.img2-1a:hover > img {
+  transform:scale(1.2);
+  transition:all,0.5s;
+}
+
+
+
+.img2-2a { /* Dikkat edelim resmi a etiketin e aldık ve bu özellikleri a etiketine verriyoruz */
+    display: inline-block;/*   ***   */
+    margin: 0px;
+    /* */   overflow: hidden;    /*   ***   */
+    position: relative;  /*    ***    */
+    opacity: .99;
+
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.05);
+}
+
+.img2-2a::before {
+  content:" ";
+   background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7)100%);
+   width: 100%;  /*  ***  */
+    height: 100%;/* 0000  */
+    position: absolute;  /*  *** */
+    top: 100%;  /*  ***   */
+    z-index: 2; /* *** */
+    transition-property:top,opacity; 
+    transition-duration: 0.3s;
+  
+}
+
+.img2-2a:hover:before {
+  opacity:1;
+   top:0%; /* ***  *//* Burda da diyoruz ki resmin başından başlasın before da verdiğmiz boyutlar */
+ 
+}
+/* bu kısmı tam yapamadım daha tekrar bakalım resmin gelş ve gidiş efekti tam olmadı */
+.img2-2a:hover > img {
+  transform:scale(1.2);
+  transition:all,0.5s;
+}
+
+.img3 img {
+  min-height:400px;
+  object-fit:cover;
+  object-position:bottom;
+  display:block;
+  transition:all 0.3s;
+  }
+
+.img3-a { /* Dikkat edelim resmi a etiketin e aldık ve bu özellikleri a etiketine verriyoruz */
+    display: inline-block;/*   ***   */
+    margin: 0px;
+    /*  */   overflow: hidden;   /*   ***   */
+    position: relative;  /*    ***    */
+    opacity: .99;
+
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.05);
+}
+
+.img3-a::before {
+  content:" ";
+ /*  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7)100%); */
+  background-color:pink;
+   width: 100%;  /*  ***  */
+    height: 100%;/* 0000  */
+    position: absolute;  /*  *** */
+    top: 0%;  /*  ***   */
+  opacity:0;
+    z-index: 2; /* *** */
+    transition-property:top,opacity; 
+    transition-duration: 0.3s;
+  
+}
+.img3-a span {
+  border:1px solid;
+  position:relative;
+  z-index:6;
+  background-color:#000;
+}
+
+.img3-a:hover:before {
+  opacity:0.3;
+   top:0%; /* ***  *//* Burda da diyoruz ki resmin başından başlasın before da verdiğmiz boyutlar */
+ 
+}
+
+.img3-a:hover > img {
+  transform:scale(1.2);
+  transition:all,0.5s;
+}
+  
+
+
+    </style>
+</head>
+<body>
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <symbol id="icon-facebook" viewBox="0 0 32 32">
+        <title>facebook</title>
+        <path fill="#3b5998" style="fill: var(--color1, #3b5998)" d="M30.235 0h-28.469c-0.975 0-1.765 0.791-1.765 1.765v28.469c0 0.976 0.791 1.765 1.765 1.765h15.325v-12.392h-4.172v-4.828h4.172v-3.567c0-4.132 2.525-6.38 6.212-6.38 1.767 0 3.285 0.129 3.728 0.188v4.32h-2.561c-2 0-2.389 0.961-2.389 2.361v3.081h4.779l-0.62 4.84h-4.159v12.376h8.153c0.977 0 1.767-0.789 1.767-1.765v-28.469c0-0.975-0.789-1.765-1.765-1.765z"></path>
+        </symbol>
+          <symbol id="icon-linkedin" viewBox="0 0 32 32">
+        <title>linkedin</title>
+        <path fill="#0077b5" style="fill: var(--color2, #0077b5)" d="M27.263 27.269h-4.739v-7.425c0-1.771-0.036-4.049-2.469-4.049-2.471 0-2.848 1.927-2.848 3.919v7.556h-4.739v-15.269h4.552v2.081h0.061c0.636-1.2 2.183-2.467 4.493-2.467 4.801 0 5.689 3.16 5.689 7.273v8.381zM7.116 9.911c-1.525 0-2.751-1.235-2.751-2.753 0-1.517 1.227-2.751 2.751-2.751 1.52 0 2.752 1.233 2.752 2.751 0 1.519-1.233 2.753-2.752 2.753zM9.492 27.269h-4.752v-15.269h4.752v15.269zM29.633 0h-27.272c-1.305 0-2.361 1.032-2.361 2.305v27.389c0 1.275 1.056 2.305 2.361 2.305h27.268c1.304 0 2.371-1.031 2.371-2.305v-27.389c0-1.273-1.067-2.305-2.371-2.305h0.004z"></path>
+        </symbol>
+          <symbol id="icon-youtube" viewBox="0 0 32 32">
+        <title>youtube</title>
+        <path fill="#f00" style="fill: var(--color2, #f00)" d="M31.327 8.273c-0.386-1.353-1.431-2.398-2.756-2.777l-0.028-0.007c-2.493-0.668-12.528-0.668-12.528-0.668s-10.009-0.013-12.528 0.668c-1.353 0.386-2.398 1.431-2.777 2.756l-0.007 0.028c-0.443 2.281-0.696 4.903-0.696 7.585 0 0.054 0 0.109 0 0.163l-0-0.008c-0 0.037-0 0.082-0 0.126 0 2.682 0.253 5.304 0.737 7.845l-0.041-0.26c0.386 1.353 1.431 2.398 2.756 2.777l0.028 0.007c2.491 0.669 12.528 0.669 12.528 0.669s10.008 0 12.528-0.669c1.353-0.386 2.398-1.431 2.777-2.756l0.007-0.028c0.425-2.233 0.668-4.803 0.668-7.429 0-0.099-0-0.198-0.001-0.297l0 0.015c0.001-0.092 0.001-0.201 0.001-0.31 0-2.626-0.243-5.196-0.708-7.687l0.040 0.258zM12.812 20.801v-9.591l8.352 4.803z"></path>
+        </symbol>
+          
+          </defs>
+        </svg>
+        
+        
+        
+        <header class="wrap">
+          <div class="search">
+            <div class="logo">
+              <h1><a href="">lifestyle</a></h1>
+            </div>
+            <div class="icons1">
+            
+        <!-- --> <form>
+           <div id="box">
+               <input type="text" id="search" placeholder="Search..">
+               <i class="fa fa-search"></i>
+           </div>
+        </form> 
+              <a href=""><svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg></a>
+              <a href=""><svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg></a>
+              <a href=""><svg class="icon icon-youtube"><use xlink:href="#icon-youtube"></use></svg></a>
+            </div>
+          </div>
+          <nav class="menu">
+         <ul>
+           <li><a href="#">HOME</a></li>
+           <li><a href="#">OPTIONS PANEL</a></li>
+           <li><a href="#">PAGE</a></li>
+           <li><a href="#">SHORTCODES</a></li>
+           <li><a href="#">CONTACT US</a></li>
+           <li><a href="#">SHOP</a></li>
+            </ul>
+          </nav>
+          <div class="image">
+            
+            <div class="img img1">
+              <a class="img1-a" href="">
+              <img src="https://i.postimg.cc/mrtb0BqP/1.jpg" alt="">
+               <div class="detay">
+                <span class="baslik">Resim 1</span>
+                    <span class="bilgi">örnek 1 resim açıklaması buraya gelecek.</span>
+                </div>
+              </a></div>
+            
+            
+            
+             <div class="img img2">
+              <div class="img2-1"><a class="img2-1a" href="">
+                <img src="https://i.postimg.cc/7YWtK4gs/5.jpg" alt="">
+                </a></div>
+              <div class="img2-2"><a class="img2-2a" href="">
+                <img src="https://i.postimg.cc/Kj4rTKsZ/6.jpg" alt="">
+                </a></div>
+            </div>
+            <div class="img img3"><a class="img3-a" href="">
+              <img src="https://i.postimg.cc/FHX3rnmF/4.jpg" alt="">
+              
+              </a></div>
+           
+            
+          </div>
+        </header>
+        <br><br><br><br><br><br><br>
+        <hr>
+        <div class="parag">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, beatae quos? A consequuntur officia aut quibusdam harum, quae velit vel iste animi quo incidunt quam et numquam voluptas ab optio.
+          Et iure fugiat nostrum fugit esse nesciunt quidem, excepturi obcaecati, id quisquam blanditiis. Saepe quis nam, nisi amet expedita itaque a esse assumenda officia numquam commodi sit, neque laboriosam repudiandae?
+          Quis libero similique nulla numquam ipsa, maiores, asperiores repellendus incidunt iusto rerum minima quaerat adipisci optio officiis omnis nihil, sit tenetur vero soluta dolore dolorem repellat pariatur corporis. Neque, nisi.
+          Temporibus fugit laborum repudiandae quasi aperiam harum, necessitatibus corporis nihil. At nihil necessitatibus eaque nisi pariatur exercitationem? Ipsa temporibus quasi omnis nulla, error blanditiis quam amet eligendi earum distinctio ea!
+          Eius mollitia nihil explicabo sit. Perspiciatis facilis animi rem tempore cupiditate nihil cumque laboriosam inventore! Voluptatum enim fuga doloribus accusamus cumque, rerum, sed, laborum necessitatibus soluta quisquam blanditiis nihil nemo.</p>
+        </div>
+        <br><br><br><br><br><br><br>
+        <hr>
+        <div class="parag">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, beatae quos? A consequuntur officia aut quibusdam harum, quae velit vel iste animi quo incidunt quam et numquam voluptas ab optio.
+          Et iure fugiat nostrum fugit esse nesciunt quidem, excepturi obcaecati, id quisquam blanditiis. Saepe quis nam, nisi amet expedita itaque a esse assumenda officia numquam commodi sit, neque laboriosam repudiandae?
+          Quis libero similique nulla numquam ipsa, maiores, asperiores repellendus incidunt iusto rerum minima quaerat adipisci optio officiis omnis nihil, sit tenetur vero soluta dolore dolorem repellat pariatur corporis. Neque, nisi.
+          Temporibus fugit laborum repudiandae quasi aperiam harum, necessitatibus corporis nihil. At nihil necessitatibus eaque nisi pariatur exercitationem? Ipsa temporibus quasi omnis nulla, error blanditiis quam amet eligendi earum distinctio ea!
+          Eius mollitia nihil explicabo sit. Perspiciatis facilis animi rem tempore cupiditate nihil cumque laboriosam inventore! Voluptatum enim fuga doloribus accusamus cumque, rerum, sed, laborum necessitatibus soluta quisquam blanditiis nihil nemo.</p>
+        </div>
+        <br><br><br><br><br><br><br>
+        <hr>
+        <div class="parag">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, beatae quos? A consequuntur officia aut quibusdam harum, quae velit vel iste animi quo incidunt quam et numquam voluptas ab optio.
+          Et iure fugiat nostrum fugit esse nesciunt quidem, excepturi obcaecati, id quisquam blanditiis. Saepe quis nam, nisi amet expedita itaque a esse assumenda officia numquam commodi sit, neque laboriosam repudiandae?
+          Quis libero similique nulla numquam ipsa, maiores, asperiores repellendus incidunt iusto rerum minima quaerat adipisci optio officiis omnis nihil, sit tenetur vero soluta dolore dolorem repellat pariatur corporis. Neque, nisi.
+          Temporibus fugit laborum repudiandae quasi aperiam harum, necessitatibus corporis nihil. At nihil necessitatibus eaque nisi pariatur exercitationem? Ipsa temporibus quasi omnis nulla, error blanditiis quam amet eligendi earum distinctio ea!
+          Eius mollitia nihil explicabo sit. Perspiciatis facilis animi rem tempore cupiditate nihil cumque laboriosam inventore! Voluptatum enim fuga doloribus accusamus cumque, rerum, sed, laborum necessitatibus soluta quisquam blanditiis nihil nemo.</p>
+        </div>
+        
+</body>
+</html>

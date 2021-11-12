@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 2rem;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blueviolet;
+            min-height: 100vh;/*Tam ekran olmasi icin yani gorunen ekran 100vh olsun yani 100% olsun*/
+            overflow: hidden;
+        }    
+
+        .btn{
+            color: white;
+            background-color: #0AC;
+            border: none;
+            outline: none;
+            padding: .5em 1em;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+            cursor:pointer;
+        }
+
+        .btn:hover {
+            animation:goz-kirpma 500ms ease-in-out infinite, buyut 1s ease-in-out infinite;
+        }
+
+        .btn:focus {
+            animation: kac-git 500ms ease-in-out forwards;/* forwards yaparak en son ki hali yani asagida focus durumunda kac-git dedigimiz animasyonda 100% halinde aldigi ozellikler ne ise o hali ile kalsin demektir...*/
+        }
+         /* Yanip sonme animasyonu yaptik burda , calisma zamani boyunca, duration da 0% da baslasin, sonra iste 50% de opacity azalsin biraz sonra tekrar biterken geri gelsin diyoruz ve bu yanip sonmeyi sagliyr*/
+        @keyframes goz-kirpma{
+            from{/* 0% */
+                opacity: 1;
+            }
+            50%{
+              opacity: .75;
+            }
+
+            to{/* 100% */
+                opacity: 1;
+            }
+        }
+
+        @keyframes buyut{
+            
+            0%{/* 0% */
+               transform: scale(1);
+            }
+        50%{
+            transform: scale(1.1);
+            }
+
+            100%{/* 100% */
+                transform: scale(1);
+            }
+        }
+
+        @keyframes kac-git{
+            
+            33%{/* 0% */
+                transform: translate(100px, 50px) rotate(30deg) scale(.9) ;
+                /* 100px saga 50 px asagi git */
+               
+            }
+        66%{
+            transform: translate(0px, 25px) rotate(90deg) scale(.75) ;
+            }
+
+            100%{/* 100% */
+                transform: translate(-100px, -75px) rotate(200deg) scale(0) ;/* kaybolmasi icin scale i 0 yaparsak boyutu 0 olur ve kaybolmus olur.Bu animasyonun bittigi halinde kalmasi icinde biz animasyona forward diyerek bitirirsek o zaman animasyonumuz kayboldugu halidne kalir en son */
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">Uzerime Gelsene!</button>
+</body>
+</html>

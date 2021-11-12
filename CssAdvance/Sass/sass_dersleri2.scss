@@ -1,0 +1,45 @@
+//Mixin ler ile tekrar tekrar yazdgimiz satirlari bir daha bir daha yazmaktan kurtuluyoruz
+//Burda bir mixin olusturacagiz...
+
+//Burda bir tane tanim olusturuyoruz ve artik bu tanimi cagirip kullanabiliriz...
+//Mixin hazir fonksiyonlar gibi dusunebiliriz icindee bircok ozelligi barindiran hazir fonksiyonlardir bizim nerde ona ihtiyacimiz varsa oraya cagirip kullanacagiz ve mixinleri dinamik de yapabiliriz...parametre gecerek
+
+@mixin menu-buton($bg-color:aqua, $primary-color:tomato, $hover-color:green) {
+    a{
+        background-color: $bg-color;
+        color: $primary-color;
+        margin: 5px;
+        &:hover{// disariya a:hover yazmak la ayni sey
+            color:$hover-color;
+            text-decoration: none;
+        }
+    }
+    
+}
+
+ul {
+    list-style: none;
+}
+//mixin sayesinde paket ozellikler belirleyip onu degiskene atip o degiskeni direk kullaniyoruz ayni fonksiyonda bir takim isleri yapip direk fonksiyonu kullanir gibi veya ayni c# daki class icinde bircok isi yapip getirip o class i baska biryerde kullanmamiza benziyor
+.navbar{
+    li{
+    @include menu-buton(cyan,black, red);
+}
+}
+
+.link {
+    @include menu-buton();//mixini olustururken varsayilan olarak verdigimiz renkleri kullanacaktir
+}
+
+//Bu sekilde icinde content keywordu kullandiktan sonra bu mixini include deyip yazip parametreye deger verip sonra da acilan parantez icine yeni css ozellikleri yazdigimizda yazdigimiz css ozellikleri content keywerdu nun icine gelecektir.
+//Bu content olayi bizi proje icinde cok ciddi kendimizi tekrar etmekten ve cok efektif bir sekilde calismasmizi saglayacaktir....
+@mixin text-icerik($renk){
+    .test{
+        color:$renk;
+        @content
+    }
+}
+
+@include text-icerik(brown){
+    background-color:purple;
+}//Buranin icine yazdigimiz hersey sanki bir ustteki @mixin text-icerik icine yazilir gibi algilaniyor @content keywordu orada kullanildigi icin...

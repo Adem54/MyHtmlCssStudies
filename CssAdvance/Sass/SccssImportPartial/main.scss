@@ -1,0 +1,6 @@
+@import '_variables';//_ koydugumuz zaman bizim scss dosyasi ile ilgili bir css dosyasi olusturmayacak
+@import '_variables.scss';
+@import 'variables';//Ama boyle yazarsak gider bir tane css dosyasi olusturur bu dosyamizla alakali onun icin biz _ alt cizgi ile yaziyoruz
+
+//Biz parcalara ayirdigimiz dosyalarimizi import ettikten sonra onun icindekiler direk burda ana scss imizde dogrudan cagirabilecegiz...
+//Butonlari ayri biryerde tutabiliriz

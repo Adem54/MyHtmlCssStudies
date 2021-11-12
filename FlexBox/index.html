@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+       }/* ufak bir reset.css yapmis olduk burda aslinda */
+       
+       .container {
+           display: flex;/* display:flex i verdigimiz anda kutularimiz yanyana gelecektir*/
+           flex-wrap:wrap;
+           flex-direction:row;/* bu zaten default atanan degerdir*/
+           
+           height: 100vh;/*tum ekrani kaplasin demek */
+          /* align-items: center;/*Birden fazla satirlarda satirlar arasinda kafasina gore bosluk koyar onun icin birden fazla satirlarda ise yaramaz, onun yerine align-content kullanirz birden fazla satirlarda*/
+          
+          justify-content:center;
+        
+          align-items: center;
+         
+        
+       }
+       .box {
+         width: 10%;
+           color: white;
+           text-shadow: 0 1px 3px rgba(black,0.4);
+           padding: 10px;
+           font-size: 40px;
+           text-align:center;
+           
+         
+       }
+       
+       .box-1{
+            background-color:cornflowerblue;
+       }
+       .box-2{
+           flex-grow: 1;
+            background-color:blueviolet;
+       }
+       .box-3{
+           align-self: flex-start;
+          
+            background-color:darkgreen;
+       }
+       .box-4{
+           flex-grow: 1;
+            background-color:goldenrod;
+       }
+       .box-5{
+           flex-grow: 1;
+           align-self: flex-end;
+            background-color:orangered;
+       }
+    </style>
+</head>
+<body>
+    <!-- Flex box i kullanirken kapsayiciya display:flex vererk ise baslariz -->
+
+    <div class="container">
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+        <div class="box box-3">3</div>
+        <div class="box box-4">4</div>
+        <div class="box box-5">5</div>
+    </div>
+
+   
+</body>
+</html5>
+
+<!-- 
+Flex-box uzerinde duracaklarimiz
+1-Kapsayiciya display:flex ozelligi vermek
+ .container {
+           display: flex;/* display:flex i verdigimiz anda kutularimiz yanyana gelecektir*/
+       }
+2- Kutularin herbirine 50% width ozelligi veriyoruz ama yine de  kutular asagi inmiyor normalde 2 kutu ekranin 1 satirini, genisligini tamamen kaplamasi gerekiyor ve digerleri de asagi atlamasi gerekiyor ancak bunu yapmiyor sebebi flex-box in default olarak gelen degerindendir
+ .box {
+           width: 50%;
+           
+  Neden?Cunku flex-box in default ozellikleri var, ve bu default ozellikklerinden bir tanesi de flex-wrap:no-wrap olarak gelir yani satir atlama, direk olgudun satira yayil diyor...      
+  Ama gelip kutulari kapsayan .container class imiza  flex-wrap: wrap; boyle bir css ozelligi verirsek artik bizim kutulrimiz asagi satirlara da yayilacaktir ve bizim verdigimiz 50% css deger i gecerli olacaktir... 
+  3-Iki grup ozellikler var flex-box da 1 i sadece kapsayici da calisan ozellikler, digeri ise sadece alt elemanda calisan ozelliklerdir.Su anda sadece kapsayici da calisan ozellikleri inceliyoruz...
+
+  4-flex-direction ozelligi
+  flex-direction default olarak row dur, row demek satir satir ataniyor tarayci tarafindan.Bu yanyana dizil demek, biz bunu flex-direction:row-reverse yaparsak 5 ten baslar ve geriye dogru gider....
+  flex-wrap:wrap imiz de varsa o zaman satir satir ters yapacaktir
+  2-1,4-3 ve 5 inci kutuyu da saga yerlestirir tersten basladigi icin , bizim default soldasn basliyor cunku
+  Ama flex-wrap:no-wrap default haline getirirsek yani wrap ile ilgii hicbirsey vermezsek o zamanda tek satir da 5 den baslayarak geriye dogru giderek soldan saga dogru yerlestirir
+   flex-wrap:wrap-reverse; dersek de o zamn da sarmalamaya tersten baslar...satir satir ters sarmalar...
+   5-Kutularin kendi icinde ki bolsuklarin nasil olacagiini ve kutularin solda mi kalacagini yoksa orta da mi kalacak ya  da saga mi yasalanacaklar gibi...
+       justify-content:flex-start; bu soldan baslayarak hizala demek defaukt degeriridir zaten
+           justify-content:flex-end; bu da tam tersidir sag a hizalayacaktir
+       justify-content:space-between;
+       aralarina esit bosluk koyacak sekilde  eger sigiyorsa tek satira hizalayacaktir tabi eger flex-wrap:wrap ise o zaman da tek satira sigan kacatane kutu varsa onlarin kendi aralarina esit bosluk koyarak satirin tamamina yayacaktir sigan kutulari, en saga ve en sola birer kutu gelir hic solda ve sag da bosluk olmayacak sekilde
+        justify-content:space-around;
+         dersek bu sefer en sol ve en sagda duran kutularin da sol ve saglarinda esit bosluk birakir...yani en sagdaki ve en soldaki kutunun da body ile aralarinda biraz bosluk birakir ama bu bosluk kutularin kendi aralarindaki bosluktan daha azdir
+         bosluk su sekilde birair mesela 1 in sol ve sagina esit bosluk birakir 2 nin de sag ve soluna esit bosluk birakir ve 1 in sagindaki bosluk ve 2 nin solundaki bosluk birleserek ona gore 1 in solunda kalan boslugun 2 kati bosluk olusmus oluyor...
+         justify-content:space-evenly;
+         burda da kutular arasina ve en sag kutunun sag tarafina ve en soldaki kutunun sol tarafina da kutularin arasina koydugu kadar bosluk birakir...
+6-align-item ozelligi varsayilan ayarlara gore dikeydedir
+normalde justify-context in aynisidir aslinda yani onun dikey halidir varsayilan ayarlardas ancak...Eger biz flex-direction i coloumn yaparsak bu sefer dikey de hizalama olacak cunku orda direction x-y kisimlarini degistiriyor bir anda...
+start ust taraftir end demek de alt taraf demektir...varsayilan degeri strech tir..
+align-item  y ekseni uzerinde calisiyor yani soldan saga dogru olan hat, x ekseni yukardan asagi dogru olan hat ise y eksenidir ve bu flex-direction:column yaparsan demis oluyorsunki sen x ekseni olarak column gibi dusun yani eksenleri tersine ceviriyor o zaman da align-item soldan saga dogru calismay
+
+flex-direction: column;
+align-items: flex-end;
+bu sekilde kutular en saga yapisacak ve yukardan asagi dogru siralanacaktir...
+Eger  align-items: flex-start; olsa idi o zaman da en sola yapisacaklardi yukardan asagi dogru dizilmis sekilde en sola yapisacaklardir
+Ama flex-direction:row yani fefaultta olan deger olursa o zaman da kutular eger align-items:flex-start olursa kutular yukari yapisirlar soldan saga dogru hizalancak sekilde yani direction lar normale donmus oluyor..ya da align-items:flex-end yapilirsa o zaman da kutular bir satirlara siralanmis sekilde ekranin en altindan baslayacaktir...
+7-align-contents 
+align-items tek satirlar micin gecerlidir yani kutu eger alt satira dogru devam ederse align-items isimize yaramaz..o zaman da align-contents isimize yarar eger birden fazla satir varsa
+Ayrica hem alig-item hem align-content yazarsak ayni anda align-item in hicbir anlami kalmiyor...
+Eger birden fazla satir olmazsa align-content ozelligi bir ise yaramaz o zaman da align-item ise yarayacaktir...
+8-Surayi iyi anlamamiz gerekiyor biz flex-direction;column yaptigimiz anda x ekseni y eksenini bizim saga dogru cevirdigmiz dusunelim ve normalde y ekseni olan kismin x eksenine geldigini x ekseni olan kisminda ya eksenine geldigini dusunebiliriz ama biz bu flex-direction:column yaptiktan sonra , eksen i degistirdigimiz icin, justify-content:flex-start dedgimiz zaman bizim x eksenimiz artik yukardan asagi dogru olan eksen old icin kutulari justify-content:flex-start denilince yukardan asagi dogru siralayacaktir...sonra ise
+align-item ve align-content te biz her bir satirdaki kutulari dusunelim..her bir satirdaki kutulari dikey de hizaliyor eger flex-direction tersine donerse o zamnan da her bir satir yukardan asagi olacagi icin  o zaman da align-content yukardan asagi olan her bir satirin kendi arasindaki bosluklar ve onun sayfaya gore hizalanma boslugunu ayarlar, yani normalde dikey hizalama yapan align-context direction column olursa bu sefer da yatay hizalama yapacak neyi peki tabi ki satiri komple satir olarak dusunmeliyiz...peki dikey hizalamayi kim yapar direction column oldugunda o zamnan da dikey hizalamayi justify-content yapacaktir....
+Flex-box in en kritik anlasilmasi gerekn yeri flex-direction column oldugu zaman diger ozellikelrin de x ekseni olarak dikey ekseni , y ekseni olarak da yata ekseni kabul ettiklerini bilirsek o zaman bu mantigi kavramis oluruz...
+flex-direction column veriledig zaman ekranimiz sanki 90 derece saga donderilmis gibi farz edelim ama diger ozellikler ekranimizin dondurulmeden onceki eksenine gore hareket ettigi icin artik bizim dondurulmus ekran da dikey eksen x oldu, yatay eksen de y oldu bizde bu farki kavramak icn islem yaparken eger direction column ise ekrani eger 90 derece sola dondugunu dusunerek ozellikleri dusunursek o zaman sasirmadan a yapbiliriz...
+
+kapsayici ya degil de children pozisyonunda bulunan elemntlere ozel degerler de verebiliyoruz...
+flex-grow kalan bosluklari hangilerinin doldurmasini istiyorsak ona flex-grow deger i veririz
+flex-shrink ise yuksek deger vergimizi elemen, skstirilabilir demektir 
+order da elemantler arasindaki siralamadir default olarak hepsi 0 dir biz onlara order: degerleri vererek kendi aralarindaki siralamayi degistirebiliriz...
+Order genellikle responsive tasarim da cok isimize yariyor biz mesela mobil de slider altindaki aciklama yi en uste almak icin sirlaamasini degistiriyoruz ve bu sekilde html e dokummadan direk css ile siralamayi degistiriyoruz...
+
+Flex-box in en cok yararlanacagimiz ozelliklerinden iki  si de flex-grow ve flex-shrin bu ozellikler ozellikle responsive tasarim da muthis ise yariyor mesela ekran kuculunce ornegin kutularin yer kaplama alanlarindas degisiklik olmasini isteyebiliriz ve bazi kutularin hic kuculmemesini ama bazi kutularin kuculmesini isteyebiliriz...
+
+RESPONSIVE TASARIMDA MUTHIS ISIMIZE YARAYACAK OZELLIKLER
+flex-grow
+flex-shrink:Ekran kuculmesine ragmen kuculmesini istemedigimiz kutular icin kullaniriz...Default olarak tum kutularin flex-shrink i 1 dir bu yuzden ekran kuculunce hepsinin genisliklerinden esit sekilde alarak ekran kuculunce kucultecektir ama bizim bazi sekillerimiz kuculdugu zaman bozulabilir biz de onun bozulmasini istemeyebiliriz ondan dolayi bu tur durumlarda gelip flex-shrink:0 deersek o zaman ondan yemez onu oldugu gibi birakir ve digerlerinden esit yer ama biz digerleri arasinda da biris daha cok kuculsun ama diger i o kadar kuculmesin biraz kuculsun istersek de flex-shrinki ne kadar buyuk verirsek o kadar kuculecektir cunku kuculmesi ne kadar olsun diye veriyoruz biz sayiyi...
+flex-order
+
+Flex-wrap-
+Bu da responsive tasarimlarda cok ise yarar
+Bu default olark no-wrap ayarlandigi icin biz belirli bir width i olan bir alana o alana sigmayacak sekilde kutular verirsek eger varsayilan durumda ise yani biz herhangi bir wrap ozelligi vermemis isek o zaman kutular saga dogru ana container in disina tasarak gelecektir eger display:flex demissek ana container a iste bizim ana container icine girdgimiz tum kutularin kutumuz icinde kalmasi icin biz flex-wrap:wrap verirsek kutularimi saga dogru tasmak yerine sigmadigi yerde kendini asagi dogru atacaktir...
+
+Align-items da
+default u strecht tir tum elemanlari baslangic noktalarini ayni noktaya koyar
+baseline dersek de tum elemanlari ayni cizgi ustunde hizaliyor
+Bu ozellikle farkli yukseklikteki elemanlar in ayni satirda hizalarken hepsinin top noktasina gore degil de mesela midt noktasina gore hizalamak istersek  baseline i kullaniriz...
+Align-item flex-start ayni satirdaki tum elementleri baslangic noktalarini esitleyecek
+flex-end dersek bitis noktalarini hizalaycak
+center dersem de tam ortalarindan hizalaycak
+
+Flex-box ile birlikte margin cakismasinda son durum!!!1
+Iki elementin margini cakistiginda yani mesela altli ustlu duran iki kutudan ustte duran bir kutunun margin-bottom:10px alttaki kutunun da margin-top:10px ise iki kutunun arasindaki toplam margin degeri yine 10px olacaktir cunku marginler cakistiginda buyuk olan margin kac ise o deger olur aradaki deger
+
+Align-item
+normalde bu ozelligin varsayilan degeri strect tir ve sretch demek de dikey olarak tamamen yayil demektir mesela biz height degerini 200px vermissek 200px lik height e tamamen yayilacaktir bu zaten beklenen birseydir normalde de
+ -->

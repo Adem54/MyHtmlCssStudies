@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-size: 1em;
+        height: 200vh;
+      }
+
+      .parent {
+        width: 50%;
+        border: 2px solid steelblue;
+        padding: 2em;
+        background-color: chocolate;
+      }
+
+      .item1 {
+        width: 20%;
+        padding: 2em;
+        background-color: darksalmon;
+        position: relative;
+        top: 70px;
+        z-index: 909;
+      }
+
+      .item2 {
+          z-index: 100;
+        width: 20%;
+        padding: 2em;
+        background-color: darkseagreen;
+        position: sticky;
+        /* position sticky absolute gibi kendini dokumandan kaybetmiyor birazcik relative benziyor
+        Sticky nin calisabilmesi icin altinda bir cok html eelemnti olmasi gerekiyor ki biz asagi dogru kaydirinca sticky dedigimiz element yukari yapisiyor ve hic bir sekilde sorun olmadan kaliyor orda
+        
+        */
+        
+        top: 0px;
+      }
+
+      .item3 {
+        width: 20%;
+        padding: 2em;
+        background-color: deeppink;
+        position: fixed;
+        bottom: 0px;
+        right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      Ana Tasiyici
+      <div class="item1">Item1</div>
+      <div class="item2">Item2</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+      <div class="item1">Item1</div>
+
+      <div class="item3">Item3</div>
+    </div>
+  </body>
+</html>

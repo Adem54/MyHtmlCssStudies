@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Burda videonun genisligi ve yuksekliginin ne verildiginin onemi yok biz burda artik onu ezmeye baslayacagiz..
+aspect-ratio-context isimli class a sahip olan divimizin icinde bulunan iframe videomuza bir class tanimlaamasi yaapcaigz 
+aspect-ratio-item isminde
+*/
+
+.aspect-ratio-container {
+
+  position: relative;
+  /* width i 100% olan ve yuksekligi olmayan gorunmeyen bir container var once burda*/
+  height: 0;
+ /* padding-top: 50%; padding-top: 56.25% */
+  padding: calc(2 / 4 * 100% );
+  /*   padding-top: 50%; padding-top in % olarak verilmesi onun genisligi oraninda ona yansiyacaktir yani genisligi ne ise onun yarisi kadar yukseklik verecektir container a ondan dolayi kuculttugumz zaman bu orani herzaman koruyacaktir...
+  Peki eger ben eni 16 boyu heighti 9 olan bir video yapmak istersem o zaman da soyle yapacaigz 9/16*100 yaparsak o da 56.25% yapariz ve responsive hem mobil de hem de desktop da gozukecek bir tasarim yapmis oluyoruz... */
+} 
+
+.aspect-ratio-container .ratio-16-9 {
+  padding: calc(16 / 9 * 100% );
+}
+
+.aspect-ratio-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  }
+  /* .aspect-ratio-container icinde zaten width ve height inline olarak verildigi icin bizim .aspect-ratio-item da verdigimiz width ve height degerlerini gormeyecektir...Bunlari gormesi icin ise biz !important keywrodunu kullanacagiz... Bunu yaptik ama yine gorunmedi cunku .aspect-ratio-container imizin kendi yuksekligi olmadigi icin gorunmeyecektir..kendine de bir  yukseklik veririz..  height:400px;*/
+
+  /*object-fit:cover ile biz bir resmi belli bir boyuta yerlestirirken eger resmimizin boyutu oraya uymuyorsa o zaman ne oluyor resmimiz oraya orjinal haline gore resim kaliesi bozuluyor ve sik bir goruntu olmuyor bunun olmamasi icin resmimizin goruntu kalitesini korumak icin bu ozelligi kullaniriz..  */ 
+img.aspect-ratio-item {
+  object-fit:cover; 
+}
+section {
+    width: 30%;
+}
+    </style>
+</head>
+<body>
+    <h1>Aspect Ratio Container</h1>
+
+    <section>
+<!--Bu videomuzun ilk hali -->
+<div class="aspect-ratio-container">
+  
+  <img class="aspect-ratio-item" src="https://i.postimg.cc/qMZkKNHd/reddgio-8-HDKe-Ralis-Q-unsplash.jpg" alt="">
+
+</div>
+<!-- Normalde fotografin da en boy oranini koruyor ama problem su ki fotografi sunduruyor yani ozellikle de fotograf eger boyuna bir fotograf ise ozelliklede , fotografi bozuyor enine dogru sunduruyor.cunku biz yuksekligini de 100% yaptik....Bu sefer de resmi bozmamakk icin img icin bir ozellik kullanacagiz   object-fit:cover;  dersek resmi bozmadan  ve resmin istedigimiz bolumunu bize gosterecektir
+Bize resmin bizim padding olarak verdigimiz orana gore enine 16 boyuna 9 luk oranini secip gosterecektir resmi bozmayacak sekilde
+  */ -->
+<hr>
+
+<!--Bu da videomuzun responsive olmus halidir -->
+<!-- Bu div imizin icine fotograf veya video gelebilir-->
+<div class="aspect-ratio-container">
+  <iframe class="aspect-ratio-item" width="560" height="315" src="https://www.youtube.com/embed/UyLl_0R6AYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</section>
+</body>
+</html>

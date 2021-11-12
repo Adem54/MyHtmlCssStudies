@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* root en bastaki elementtir ana elementtir biz burda tanimladigimiz icin bunlar tanimli hale geliyor ve biz bunlari kullanabiliyruz... */
+        :root {
+           --main-color:blue;
+           --my-border:1px solid purple;
+           --title-background:tomato;
+           --title-padding:2rem;
+        }
+        h2{
+            background-color:var(--title-background);
+         /*   color: blue; */
+            color: var(--main-color);
+            padding: var(--title-padding);
+            border: var(--my-border);
+        }
+
+        p {
+            color: var(--main-color);
+            border: var(--my-border);
+            /* Ayrica biz bu sekilde herhangi bir elementimize ozel sadece onda da degisiklik yapabiliriz bu sekile...  */
+            --main-color:cyan;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        Orta olcekli bir proje yaptigimiz zaman projemizi yapariz ve bircok farkli renk kullaniriz projemizde ve mesela tekrar bir anda karar degistirip renklerin tamamini degistirmek isteriz ne yaparcagiz tum renklere tek tek git ve degistir cok zahmetli bir is dolayisi ile bunun yerine renkleri biz custom propertilerle olusturarak degisim ihtiyacinda sadece degiskene verdigimiz degeri degistirerek isimizi kolaylastirabiliriz...
+        Ayrica biz bu degisken tanimalayarak css ozelliklerini verme isini sadece renkler icinn degil tum ozellikler icin kullanabiliriz ki bu ozellikle bize css imizi bulundugumuz sirkete ait bir kurumsal standart olusturmak icin kullanabiliriz ve ayrica birden fazla versiyonumuz oldugu zaman ornegin sadece degiskenleri degistirerek tum web-sitemiziin stilini sadece degiskenlerle oynayarak degistirebiliriz....
+     -->
+
+     <h2>Baslik</h2>
+
+     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis atque aspernatur, excepturi facilis natus rerum consectetur assumenda maxime perspiciatis minima animi accusantium rem illum est voluptate maiores laboriosam minus inventore!</p>
+
+     <button>Tikla</button>
+
+     <script>
+         //Javascript kullanarak biz customer property yani degisken ile olusturdugumuz ana rengi tek tusla javascript ile de degistirebiliyoruz ki bu su demek biz farkli versiyonlar yazip onu tek tusla da degistirebiliriz
+         const button=document.querySelector('button').addEventListener('click', ()=>{
+             document.documentElement.style.setProperty('--main-color', 'pink');
+             document.documentElement.style.setProperty('--title-background', 'gray');
+         });
+     </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+//Sass da degisken kullaniminda dolar isareti kullanilir
+//Burda hem scss hemde clasik css kodlairmiz yazabiliriz....
+$primary-color:#fff;
+$secondary-color:black;
+body {
+    color: $secondary-color;
+    background-color:$primary-color;
+}    
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+//Burda degisken isimlerini verirken tek tire - veya alt tire ile ayiriyoruz
+$buyuk-font:2rem;
+$primary-color:#fff;
+$secondary-color:black;
+
+//Liste degiskenlerimiz ya aralarinda bosluk birakarak belirtiriz ya da aralarina virgul koyarak belirtiriz.Birden fazl properties i ayni anda tutan degiskenlerimize listeler deriz
+$red-border:2px solid red;
+$body-font:Helvetica, Arial, sans-serif;
+$body-margin:20px 10px 10px 5px;
+
+//Map yapisi 
+//Bir rengin tonlarini tutmak isteyebiliriz mesela
+$red-map: (light: #e573e5, medium: #f4433f, dark: #b71cb7);
+
+.p1 {
+    font-size:$buyuk-font;
+    border:$red-border;
+    margin:$body-margin;
+}
+
+.p2{
+    //Degisken icine atadigimiz renki gelip burda guncelleyebiliriz...ama burda guncelledigimz renk sadece bu secici icin element icin gecerli olacaktir...Diger elemntlerden $secondary yi kullananlar yine en ustte ne tanimlanmissa renk olarak onu alacaklardir
+    $secondary-color:yellow;
+    color:$secondary-color;
+}
+
+//NESTED YAPILAR-SECICILER UZERINDEN IC ICE YAZARAK DA KULLANABILIIRZ..Ve bu sekilde yazmak specificty acisindan da gucludur yani normal css de .main.main-content-p3{} ile aynidir.Ve bunun okunurlugu cok daha kolaydir Ve ayni zamanda mesela biz main ile ilgili herseyi burda yapacagimiz icin burda gorebiliriz
+.main {//& bunu biz sanki main imis gibi kullandik &-content yazarken...
+    &-content {
+        .p3{
+            color:map-get($red-map, medium);
+        }
+    }
+}
+//& onu kapsayan secicinin adidir
+    a{
+        font-size:$buyuk-font;
+        &:hover {/*icinde bulundugum a nin uzerine gelindiginde demektir...  */
+            color:map-get($map: $red-map, $key:light );
+        }
+    }
+    //Sass sayesinde biz bir elementin css secicisinin icinde kendi ismini kullanarak islem yapabiliyoruz..
+    //a:hover islmeini a nin icinde &:hover ile yazabiliriz & neyin altina yaziyorsak o dur & demek onu kapsayan seyin adidir aslinda
+    
+   
+
+
+.p3{
+    color:map-get($red-map, light);
+}
+
+.p4{
+    /*
+    Nested Property
+     text-align:center;
+    text-transform: uppercase;
+    text-overflow: hidden;
+    Bu sekilde ayni keyword ile baslayan property leri asagidaki gibi daha kisa yazabilirz Scss sayesinde
+    */
+    text:
+    {
+align:justify;
+transform: uppercase;
+overflow: hidden;
+    }
+
+    font:{
+
+        size:1rem;
+        family:tahoma;
+        weight:bold;
+    }
+   
+   
+}
+
+
+
+
+
+

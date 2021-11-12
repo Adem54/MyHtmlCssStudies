@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            color:white;
+            background-color: orange;
+            font-size:2rem;
+            /* animation:renk-degistir 4s cubic-bezier(0, 0, 1, 1.39) 2s 1 both, boyut-degistir 4s 2s 2 alternate;
+            animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation-name:renk-degistir,boyut-degistir;
+            animation-duration:2s;
+            animation-timing-function:ease-in;
+            animation-delay:.1s;
+            animation-iteration-count: 2;
+            animation-fill-mode:both;
+            animation-direction:alternate;
+        }
+
+        div:hover {
+            cursor: pointer;
+            animation-play-state: paused;/* animasyon sayfa yuklendiginde baslayacak ve biz uzerine geldgimizde duracak.. */
+         /*   background-color: teal; arkaplan rengini animasyon ile yapacagim icin burdan siliyorum
+            /* animation name olarak biz istedigimiz bir ismi verebiliriz sonra da bu animasyonumuzu tanimlamaliyiz*/
+            /*
+            animation:renk-degistir 4s cubic-bezier(0, 0, 1, 1.39) 2s 1 both, boyut-degistir 4s 2s 2 alternate;direction=>alternate-efekt baslayip bittikten sonra geri donsun..bu fill-mode ,forward kullanirsak da en son kalan renk de kalsin basa donmesin demektir....backwards dersek de 2 sn delay bekleme aninda ilk rengini baslangic rengini getirir..both yaparsak da hem forwards hem backwards olur*/
+            /* iteration-counter dan sonra da direction geliyor, buraya dikkat edelim direction transiction da bulunmuyor...Direction in calisabilmesi icin en az 2 kez tekrar etmesi gerekiyor...*/
+            /* delay gecikme den sonra iteration-counter kavrami var oraya da biz infinitive dersek surekli calissin demektir sonsuz demektir, ama 2 yazarsak da 2 kez tekrar edecektir..veya 1 yazarsak da 1 kere tekrar eder orange dan baslayip teal e geciyor background-color evet direction  da biz alternate yazarsak o zaman geri donmesii de gostermemiz gerekiyor bunu gorebilmek icin en az 2 kez calismasi gerekiyor..*/
+
+            /*1s lik bir gecikme olsun demektir biz hover olunca yani mausla uzerine gidince 1s bekler sonra animasyon baslar...*/
+            /*easy-out,easy-in gibi efektler ile cubic-bezier(0, 0, 1, 1.39) ayni islevi goruyor ondan dolayi inspect yaparak istedigimiz efekti ayarlayip cubic kismini kopyalayip gelip burda easy-out yerine yazabiiriz */
+            /* Animation ozellikleri de transicsiction ozellikleri gibidir...*/
+      /* Inspect yaparak hover in icinde oldugu html etiketinin ustune geliriz html elementlerinin oldugu kisimda sonra da saga tiklayip hover oldugunda ya tiklarsak hover oldugundaki kodlar css tarafinda karsimiza gelecektir ordan da animation dan easy-out un ustune tiklayarak animasyon gecicisin nasil oldugunu cubic grafigi ile goruruz istersek degistiririz grafigi ve gecis efektini ve ordas olusan cubic kodunu da kopyalayip gelip uygulamamizda kullanabiliriz. Yani getirip ease-out un yerine kullanabilirzi...cubic-bezier(0, 0, 1, 1.39) */
+        }
+
+      @keyframes renk-degistir {
+          0%{/* 0% ile 100% arasi yerine from to da kullanabiiriz */
+
+          }
+
+          50%{
+
+          }
+
+          100% {
+
+          }
+      }
+
+      @keyframes renk-degistir {
+          from{/* 0% ile 100% arasi yerine from to da kullanabiiriz */
+            background-color:red;
+          }
+
+          50%{
+            background-color: yellow;
+          }
+
+          to {/*bitme aninda, veya 100% olma aninda*/
+background-color: teal;
+          }
+      }
+
+@keyframes boyut-degistir {
+    to {/*bitme aninda, veya 100% olma aninda*/
+width: 200px;
+height: 200px;
+    }
+
+    
+}
+
+    </style>
+</head>
+<body>
+    <div>Div</div>
+</body>
+</html>

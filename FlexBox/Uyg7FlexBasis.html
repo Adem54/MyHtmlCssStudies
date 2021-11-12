@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 100%;
+            height: 500px;
+            background-color: lightgray;
+            display: flex;
+           
+        }  
+        .item1 {
+            width: 10%;
+            height: 80px;
+            background-color:lightgreen ;
+            margin: 1em;
+           
+
+        }
+
+        .item2{
+            /* flex-basis verdigimiz elementleri yokmus gibi sayip kalan boslugu hesaplar ve buraya flex-basis verilen elementleri flex-grow larinin oranina gore yerlestirir.Peki normalde default ta nasil oluyor flex-grow, flex-grow default ta kutularin kendi genisliklerine gore kutular yerlestikten sonra kalan bosluklari flex-grow oranina gore kutularla dolduruyor....
+            Burda suna dikkat edelim flex-basis verdigimiz elementlerin ikisininde width leri ayni olmasina ragmen flex-basis verdgimiz icin flex-grow larina bakiyor ve onlarin arasindaki orana gore o kutulara genislik veriyor....
+            */
+           /* */  flex-basis:0;
+            width: 40%;
+            flex-grow:1;
+            height: 160px;
+            background-color:lightskyblue ;
+            margin: 1em;
+        }
+
+        .item3{
+            width: 40%;
+          /*  */ 
+          flex-basis:0;
+          
+            flex-grow: 2;
+            height: 240px;
+            background-color:mistyrose;
+            margin: 1em;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+    </div>
+
+</body>
+</html>

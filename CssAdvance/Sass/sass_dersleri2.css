@@ -1,0 +1,24 @@
+ul {
+  list-style: none; }
+
+.navbar li a {
+  background-color: cyan;
+  color: black;
+  margin: 5px; }
+  .navbar li a:hover {
+    color: red;
+    text-decoration: none; }
+
+.link a {
+  background-color: aqua;
+  color: tomato;
+  margin: 5px; }
+  .link a:hover {
+    color: green;
+    text-decoration: none; }
+
+.test {
+  color: brown;
+  background-color: purple; }
+
+/*# sourceMappingURL=sass_dersleri2.css.map */

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container div {
+             display: none;
+             font-size: 200%;
+             font-weight: bold;
+        }
+
+        /* Bu ozellik ekran genisligi ekran yuksekliginde buyuk oldugu zaman gecerli olacaktir... */
+        @media (orientation:landscape){
+            .container div {
+                background-color: tomato;
+            }  }
+       
+
+/*
+SPECIFY COK ONEMLI...BAZEN SEBEPSIZ YERE KODLARIMIZ NEDEN GELMIYOR DIYE DUSUNEBILIRIZ ISTE O ZAMAN SPECIFY KAVRAMINA DIKKAT EDELIMMM...OZELLIKLE DE BAZI CSS KODLARIMIZIN EZILMESI ICIN KOD YAZDI ISEK
+Burda biz ekran boyutlarinin durumuna gore yazdigmiz css kodlarinda eger seciciyi sadece .mobil diye yazarsak veye .tablet diye yazarsak ekrana hicbirsey gelmiyor cunku biz genel bir kod yazdik .container div {} secerek ve biz ekran boyutlarina gore yazdigimiz css kodlarinin .container div seicicisi ile yazdigimiz kodlari ezmesini istiyoruz ama sadece class ismini yazarak ezemiyor bunun sebebi iste specify yani biz sadece .mobil veya .tablet yazdigimiz da uzerine gelirsek 0 1 0 gosteriyor ama .container div in uzerine gelirsek 0 1 1 gosteriyor bu da sadece .tablet veya .mobil yazdigimizda .container div i ezememesini sagliyor cunku daha kucuk kaliyor yaninda bu problemi cozmek icin biz de div.mobil veya div.tablet yazarak secicimizin specifiy inii guclendirerek kodlarimizin ekran da gorunmesini sagliyoruz
+Ya da biz bu sorunu*/
+@media (max-width:480px){
+    div.mobil{
+        display: block;
+    }
+}
+
+@media (min-width:481px) and (max-width:768px){
+    div .tablet {
+        display: block;
+    }
+}
+
+@media(min-width:769px) and (max-width:1024px){
+  div .laptop {
+        display: block;
+    }
+}
+
+@media(min-width:1025px) and (max-width:1200px){
+  div .desktop {
+        display: block;
+    }
+}
+
+@media(min-width:1201px){
+   div .large {
+        display: block;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="mobil">Mobil</div>
+        <div class="tablet">Tablet</div>
+        <div class="laptop">Laptop</div>
+        <div class="desktop">Desktop</div>
+        <div class="large">Large</div>
+    </div>
+</body>
+</html>

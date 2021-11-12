@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div > p {
+            color: red;
+        }
+/*  div p => Bu div icindeki tum p ler yani cocukklari ve tum torunlari etkileyecektir
+    div > p => bu ise div altindaki cocuklari pozisyonundaki p ler etkilenecek yani direk bir altindaki p ler etkilenecek torunlari etkilenemeyecek
+
+
+
+.p2 ~ span {/* .p2 class li elementin kardesleri olan span ve o kardeslerinin altindaki span lari etkile demektir
+    SUNU DA UNUTMAYALIM KI BU KURALLAR HTML ICINDE DIV DEN ONCE YAZILMIS P ELEMENTLERINE ETKI ETMEYECEKTIR...|
+    background-color:yellow ;
+}
+
+*/
+
+.p2 + span {/* .p2 class li elementin kardeslerinden ilki olan span ve o kardeslerinin altindaki span lari etkile demektir */
+    background-color:yellow ;
+}
+
+h2.h2Sinif{/*h2 lerden sinifi h2Sinif olan elementleri sec */
+    background-color: crimson;
+}
+h2:not(.h2Sinif):not(.h2){/*  h2 elemenetlrinden class i h2Sinif olan ve class i h2 olan element haricindekilere uygula dmeektir... */
+    background-color: cyan;
+}
+
+
+input[type="submit"]{/* biz checkbox a tiklayinca uygulamayacak check olmadigi zaman uygulayacak */
+ background-color: orange;
+}
+
+input[type="text"]{
+    background-color:darkseagreen;
+}
+
+input:not(:checked){
+    margin: 50px;
+}
+
+input[type]{/* input icerisinsde type attributune sahip olan tum inputlari sececektir..*/
+    border:5px solid yellow ;
+}
+
+input[data-margin*="em"]{/* biz kendi attributumuzu verdik mesela ve burda * araciligi ile arama yapiyoruz ve icinde diyoruz em varsa data-margin attributu kullananlar arasinda icinde ad varsa onlari sec demektir bu..*/
+    background-color:greenyellow ;
+}
+
+input[data-margin^="ad"]{/* ad ile baslayanlari bul ve bu ozellkleri uygula demektir */
+    background-color: greenyellow;
+}
+
+input[data-margin$="ad"]{/* mm ile bitenleri sec ve bu ozellkleri uygula demektir */
+    background-color: greenyellow;
+}
+
+    </style>
+</head>
+<body>
+
+    <input data-margin="ademmm" type="text">
+    <input type="checkbox">
+    <input type="text">
+    <input type="submit">
+    <h2 class="h2Sinif" id="h2ID">Baslik H2</h2>
+    <h2>BaslikH2-2</h2>
+    <h2>BaslikH2-3</h2>
+    <h2 class="h2">BaslikH2-4</h2>
+
+    <p class="paragrafSinif"> Paragraf1</p>
+    <div>
+        <p class="p2">Paragraf2</p>
+        <span>Span elementi1
+
+            <span>Span elementi 2</span>
+            <p>ParagrafTorun</p>
+        </span>
+        <p>Paragraf3</p>
+        <span>Span elementi3</span>
+    </div>
+</body>
+</html>

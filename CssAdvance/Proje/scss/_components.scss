@@ -1,0 +1,119 @@
+.site-logo {
+    width: 5rem;
+    transition: .5s;
+    &:hover {
+        transform: rotate(1turn);
+    }
+  }
+
+.header__title {
+  font-size: 2rem;
+  color: white;
+  animation: textFromLeft 1s;
+}
+
+.header__subtitle {
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  animation: textFromRight 1s;
+
+}
+
+.btn {
+  text-decoration: none;
+  color: white;
+  background-color: $primary-color;
+ border: none;
+  border-radius:100px;
+  padding: .15rem 1rem;
+  outline: none;
+  animation: btnAnimation 1s ease-out;
+  &:hover {
+      color: white;
+      background-color: $primary-color-light;
+  }
+}
+
+.btn-container {
+  text-align: right;
+}
+
+.btn-container .btn-square {
+  padding:.3rem .5rem;
+ font-size: 1rem;
+  border-radius: .3rem;
+  
+}
+
+.icon-down {
+  position: absolute;
+  width: 2rem;
+  bottom: 1rem;
+  animation: iconDownAnimation 1s alternate infinite;
+}
+
+
+
+.tutor-card {
+    text-align: center;
+    padding: 1rem;
+    margin: .5rem 1rem;
+    border: 1px solid $primary-font-color;
+    border-radius: .5rem;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    flex:1;
+    background-size: cover; 
+    background-position: center center;
+    background-color:azure;  
+    background-size: 50%; 
+    transition: 0.5s ease-in-out;
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: inset 0px 0px 13px -1px rgba(0,0,0,0.18);
+    }
+
+    &--asp {
+      
+        background-image:linear-gradient(
+            to right bottom,  
+            rgba(white,0.5),
+            rgba(white, 0.5)),
+             url("../img/ASP.Net.png");
+       
+      
+        
+    }
+
+    &--nodejs {
+      
+        background-image:linear-gradient(
+            to right bottom,  
+            rgba(white,0.5),
+            rgba(white, 0.5)),
+             url("../img/nodejs-png-transparent-nodejs-images-892776.png");
+        
+        background-size: 50%; 
+    
+ 
+        
+    }
+
+    &--javascript {
+      
+        background-image:linear-gradient(
+            to right bottom,  
+            rgba(white,0.5),
+            rgba(white, 0.5)),
+             url("../img/imgbin_javascript-logo-html-png.png");
+       
+        background-size: 40%;
+        
+    }
+    
+}
+
+
+

@@ -1,0 +1,57 @@
+body {
+  background-color: aqua;
+}
+
+.item-1 {
+  color: #00b300;
+}
+
+.item-2 {
+  color: #00e600;
+}
+
+.item-3 {
+  color: #1aff1a;
+}
+
+p {
+  background-color: cyan;
+}
+
+/*for dongusunu kullanalim */
+.list-1 {
+  width: 2px;
+}
+
+.list-2 {
+  width: 4px;
+}
+
+.list-3 {
+  width: 6px;
+}
+
+.list-4 {
+  width: 8px;
+}
+
+.list-5 {
+  width: 10px;
+}
+
+.normal {
+  font-weight: normal;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-weight: italic;
+}
+
+.container {
+  background-color: aqua;
+}
+/*# sourceMappingURL=sass_dersleri5.css.map */

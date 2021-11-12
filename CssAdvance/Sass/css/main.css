@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+}
+
+.card {
+  margin: 2em;
+  max-width: 300px;
+  padding: 2em;
+  box-shadow: 0 10px 20px 10px block;
+}
+
+.card--light {
+  background-color: #eee;
+}
+
+.card--dark {
+  background-color: #333;
+  color: white;
+}
+
+.card__title {
+  font-family: tahoma;
+}
+
+.card__description {
+  font-family: verdana;
+}
+
+/* Bu sekilde disarda yazmak yerne & ampersan kullanarak .card secici blogu icine her ikisinide yazabildik!!! 
+  .card--light {
+    
+  }
+  .card--dark {
+    
+  }
+
+  */
+/*# sourceMappingURL=main.css.map */

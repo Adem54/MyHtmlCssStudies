@@ -80,11 +80,20 @@
     Peki eger biz span a position-relative verir ve margin-left ile verdgiimiz -15 i gelip sadece left:-15px dersek span lementi yine 15px lik alani bosaltmis ve sola dogru kaymis olacak ancak, lorem yazisi sola yanasmayacaktir oldugu yerde durmaya devam edecektir...Bunun sebebi span elementinin position:relative olmasidir. PEKI NEDEN BOYLE OLUYOR POSITION-RELATIVE OZELLIGI ALAN BIR HTML ELEMENTI? ISTE BURAYA COK DIKKAT POSITION.RELATIVE MANTIGI BURDA SAKLI
 
     Positive relative ile konumlandirdigimiz bir element aslinda hayali olarak eski yerinde duruyor hala bunu tarayici sadece yeni verdigim koordinatlara gore sadece gorsel acidan yeri orasi imis gibi gosteriyor, ama position relative ozellige sahip olan spanin yeri hala ilk konumlandigi yerdir...Biz bunu istedigim gibi konumlandirabiliriz fakat...gercekte Position-relative verdigimiz bir elementin yeri verdigiimiz top ve left degerini kaldirdigimiz zaman yeri neresi ise (0 a 0 noktasi birde verilmisse margin-padding degerleri..) gercek  yeri orasidir...Bu da su demektir, position-relative ozelligi verdigimiz bir elemente verecegimiz top,left degerleri ile tabi bize gore harekt ettirmis olacagiz ama diger ozellikteki kutular onun ilk konumu olan,0 a 0  yani top,left,right,bottom larini kaldirdigimiz zamanki degerine gore dikkate alacagi icin bizim position relative li bir kutuya verdigimiz top,left,right,bottom degerleri ile geldigi yerde dikkate almayacaklardir....sadece ilk konumunda hala duruyormus olarak kabul edeceklerdir....
+
+    Ayrica position relative verilen eleman normalde ise kendi ustundeki elemani dikkate alacaktir...ve normal yerinde kaliyor yerini koruyor ve o kendi konumuna gore top,left,right, bottom degerleri dikkate alinacaktir
     ----------Position Absolute u Anlayalim!!!-----------------
     Position absolute demek serbest demek yani kapsayicisinin 0 noktasina gore hizalanmasi demektir
     Yani position absolute verdigimiz bir element once kendi parentina, babasina bakar position relative var mi diye varsa oraya konumlanir yoksa, babasinin babasina yani dedesine bakar yani bir ust dive bakar position relative var mi diye bu sekilde uste dogru gider position relativi buldugu yer de oraya konumlanir oranin 0 a 0 noktasina , peki hicbir ebeveyninde bulamazsa yukari dogru o zaman da son olarak sayfanin 0 a 0 noktasina kendisini konumlandirir.
     Yani kapsayicisinin eger position relativ i yoksa onu kapsayicisi olarak gormuyor...
     Ve position absolute olan bir elemente verdigiimiz top.bottom degerlerinde position relative ozelligi olan hangi ebeveynine gore kendini konumandirmissa onun 0 a 0 noktasina gore top ve left degerleri kutuyu hareket ettirir...
+    Ayrica biz bir kutuya position absolute ozelligi verirsek diger kutular o yokmus gibi davranacaktir ona gore konumlanacaklardir onun yerlestigi yerin uzerine yerleseceklerdir diger elementler sanki orda  o position relative ozellikli kutu yokmus gibi...
+    Position absolute ozellikli bir element parentleri icinde position relative bulamadi diyelim, peki ya ebeveynleri arasinda position absolute bulursa ne olur? Iste o zaman da ayni parentlerindan biri nasil ki relative olunce aonun altina yerlesiyor ise ayni sekilde ebeveynleri arasinda eger position absolute olursa onun icine de yerlesecektir aybni realitive de oldugu gibi....
+    Position absolute ozelligine sahip element havada ucacaktir bu absolutun disindaki elementler o yokmus gibi davranacaktir ancak eger bu absolute ozelligine sahip  olan elementin icerisinde baska elementler varsa onlar da tabiki absolute ozelligine sahip olan elementle birlikte hareket edeceklerdir
+
+
+    /BURASI COOK ONEMLI BURAYA DIKKAT EDELIM!!!!!!
+   Biz bir elemana position abolute, verdigimiz zaman eger o ementi kapsayan elementlerin hicbirinde position relative ozelligi yoksa o zaman biz bu elemente herhangi bir top, bottom,rigth veya left degeri verdgimiz zaman bu element sayfaya gore body ye gore hareket edecekti onu baz alacaktir ama biz bunu ancak top,right,left,bottom degeri verdigimizde anlariz, o zaman kutumuz gidi orneegin sayfaninn en ustune yerlesir eger biz ona top:0 degerini verirsek..
     ------Position Fixed Ozelligi-------
     Position:fixed ozelligi genelde header larda kullanilir, yani body icindeki header semantik elementlerde kullanilir...
 
@@ -118,8 +127,10 @@
                 <hr>|
 
         <div class="kapsayici-1">
+            kapsayici1 relative
             <div class="kapsayici-2">
-                <div class="kutu"></div>
+                kapsayici2derelativasdfasdfdsafasdfd
+                <div class="kutu">Absolute</div>
             </div>
         </div>        
       

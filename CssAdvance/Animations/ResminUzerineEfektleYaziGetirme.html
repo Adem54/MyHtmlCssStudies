@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .efekt{
+    margin: 0 auto;
+    font-family: "Segoe UI", sans-serif;
+
+margin-bottom:100px;
+}
+
+.resim{
+    display: inline-block;
+    margin: 10px;
+  overflow:hidden;
+  /* yazi ve efekti linear gradient i asagi gonderdik overflow hidden ile de onlaari gizledik gostermedik........sonra da efektli bir sekilde onlari yukari geri getirdik... */
+   border:1px solid;
+    position: relative;
+    opacity: .99;
+    border-radius: 4px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.05);
+}
+
+/* uzeringe geldigimizdeki efekt burdan geliyor uzeringe gelince resmini yarisina kadar linear gradient efekti geliyor...dikkat edelimm..*/
+.resim:before{
+    content: '';
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7)100%);  
+   background: -webkit-linear-gradient(top, transparent 0%, rgba(0,0,0,0.7)100%);
+  /* iste 100% yaparak orani */
+    width: 100%;
+    height: 50%;/*bu efektin 50% sinde daha yogun gorebiliyoruz efetkti ve 50% lik kismini alt taraf 50% sine getiriyoruz..*/
+    position: absolute;
+    top:100%;
+ z-index: 2;
+    transition-property: top,opacity;/*Efekt yukarı doğru gitsin diye yapılıyor bu ve opacity si ile gelsin */
+    transition-duration: 0.3s;
+  /*  top:100%; 100% asagi gondererek kutunun disina gonderiyoruz ve kutuyua da yukarda overflow:hidden dendigi icin yazi gozukmuuyor Sonra da uzerine gelince diyoruz before u sen top 50% yap yani resmin 50% ye kadar asagi itmis oluyor ve asagidaki kalan 50% sine uyguluyor..*/
+
+
+}
+
+.resim img{display: block;}
+
+/* olay kisaca su ki konumlandirmasi yapildi baska hicbirsey yok nereye konumandi peki ebevyni position relative old icin ve bottom ve left 0 dedgimiz icin normal de gozukecegi yerde konumlandi */
+.detay{
+    font-size: 16px;
+    padding: 20px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;  
+}
+
+
+.detay span{
+  /*yaziyi asagiya gondermis top 100px yaparak  ve .position relative vermis ki rahat bir skilde yukari asagi saga sola hareket ettirebilsiin  diye*/
+  display:block;
+    position: relative;
+    top: 100px;
+  /*yaziyi gostermeyelim diye top 100px asagi atiyoruz uzerine gelince de top:0 yapip tekrar resmin ustune gelmesini saglariz..*/
+    transition-property: top, opacity;
+    transition-duration: 0.3s;
+    transition-delay: 0s;
+    
+}
+.baslik{
+    line-height: 1;
+    font-weight: bold;
+    font-size: 18px;
+}
+.bilgi{
+    line-height: 1.2;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.resim:focus:before,.resim:focus span, .resim:hover:before, .resim:hover span{
+    opacity: 1;
+}
+
+.resim:focus:before,.resim:hover:before{
+    top:50%;
+}
+
+.resim:focus span,.resim:hover span{
+    top:0;
+}
+
+.resim:focus .baslik,.resim:hover .baslik{
+    transition-delay: 0.15s;
+}
+.resim:focus .bilgi, .resim:hover .bilgi{
+    transition-delay: 0.25s;
+}
+
+.box {
+  width:100px;
+  height:100px;
+  background-color:tomato;
+   background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7)100%);  
+ 
+}
+    </style>
+</head>
+
+    
+    <body>
+    <!--Video: https://youtu.be/QiKHNuODDqI-->
+        <div class="efekt">
+        <a href="#" class="resim">
+            <img src="https://i.postimg.cc/8cW5QN5B/1.jpg">
+            <div class="detay">
+            <span class="baslik">Resim 1</span>
+                <span class="bilgi">örnek 1 resim açıklaması buraya gelecek.</span>
+            </div>
+        </a>
+         <a href="#" class="resim">
+            <img src="https://i.postimg.cc/9fMQXG0f/2.jpg">
+            <div class="detay">
+            <span class="baslik">Resim 1</span>
+                <span class="bilgi">örnek 1 resim açıklaması buraya gelecek.</span>
+            </div>
+        </a>
+         <a href="#" class="resim">
+            <img src="https://i.postimg.cc/gjvYtsSg/3.jpg">
+            <div class="detay">
+            <span class="baslik">Resim 1</span>
+                <span class="bilgi">örnek 1 resim açıklaması buraya gelecek.</span>
+            </div>
+        </a>
+         <a href="#" class="resim">
+            <img src="https://i.postimg.cc/90thYM0S/4.jpg">
+            <div class="detay">
+            <span class="baslik">Resim 1</span>
+                <span class="bilgi">örnek 1 resim açıklaması buraya gelecek.</span>
+            </div>
+        </a>
+        </div>
+        
+   
+    
+ 
+        
+        <div class="box"></div>
+        
+</body>
+</html>

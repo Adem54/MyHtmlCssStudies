@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+         
+
+           
+        }
+        
+.main  {
+    width: 300px;
+   margin: 0 auto;
+    padding:1em 1.5em;
+    background-color:rgb(238,238,228)
+ ;
+  
+    
+   
+}
+
+        .context {
+            width: 100%;
+            display: flex;
+            background-color:#ffff;
+            border-radius: 0.3em;
+            margin: 0 auto;
+        
+           /* justify-content: space-evenly;*/
+            align-items: center;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+            padding: 0 0.5em 0  0.5em ;
+        
+            
+           
+        }
+
+        section {
+            flex-grow: 1;/* diyoruz ki bu alan buyuk boslugu doldursun*/
+           /*  flex-shrink: 0; 
+           word-break: break-all;
+           */
+           margin: 0.4em 0 ;
+           margin:0 1em;
+           
+           
+        }
+   
+    
+        .icon-coin-dollar:before {
+  content: "\e93b";
+ 
+  
+}
+.icon-circle-right:before {
+  content: "\ea42";
+}
+span{
+    font-size:3em;
+    flex-shrink: 0;
+   
+ 
+}
+
+p{
+    font-size: 1.2em;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+    </style>
+</head>
+<body>
+    <main class="main" >
+        <div class="context">
+
+      
+        <span class="icon-coin-dollar"></span>
+        <section>
+            <p class="invest">
+                <strong> Investments</strong>
+               </p>
+            <p>SIP & one-time investments asdmfkasdm fkmas dkfmasf sdakmas dmfsad </p>
+        </section>
+        <span class="icon-circle-right"></span>
+    </div>
+    <div class="context">
+
+      
+        <span class="icon-coin-dollar"></span>
+        <section>
+            <p class="invest">
+                <strong> Investments</strong>
+               </p>
+            <p>SIP & one-time investments </p>
+        </section>
+        <span class="icon-circle-right"></span>
+    </div>
+    <div class="context">
+
+      
+        <span class="icon-coin-dollar"></span>
+        <section>
+            <p class="invest">
+                <strong> Investments</strong>
+               </p>
+            <p>SIP & one-time investments </p>
+        </section>
+        <span class="icon-circle-right"></span>
+    </div>
+    </main>
+    
+   
+</body>
+</html>

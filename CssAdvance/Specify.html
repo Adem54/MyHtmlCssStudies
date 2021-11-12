@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div span {
+            color: red;
+        }
+
+        span {
+            color: aqua;
+        }
+
+        .div span {
+            color: orange;
+        }
+
+        #div span {
+            color: cyan;
+        }
+       span#span2{/* Bu arada bu seciciye dikkat edelim bu secici span elementi icinde id si span2 olan span i sec demis oluyoruz.....  */
+            color: brown !important;/*important kullanarak inline da  yazilan css ozelligini override ederiz yani ezeriz ancak important ozelligi cok fazla kullanilmaamalidir.Var olan tum specify i iptal ediyor yarin oburgun biz tekrar degistirmek icin secicilerle kod yazmaya calisiriz ama gecerli olmaz cunku important ile tum specify yi iptal etmis oluyoruz.. */
+        }
+
+    /* Biz css de secicilerimizin ustune maus ile gittigimiz zaman secicileirmiz css kodu yazarken yazdigimiz div span gibi , span gibi veya  .title  ya da #title gibi secicilerdir onlarin ustune geldigimiz zaamn 3 tane rakam var yanyana bunun en soldaki ilki id , ikincisi class ise ucuncusu ise html elemnt secici ise demektir yani bu siralamdir eger ki biz ayni elementin hem id sine hem de class ina css ozelligi yazarsam id ye yazdigim gecerli olacaktir demektir bu. Yani secicimiz ne kadar ozellesirse ne kadar belirginlesirse gecerliligi o kadar artacaktir  yani div span diye sectigimiz secici sadece span diye sectigimiz seciciden daha gecerlidir her ikisine de bir color ozelligi verirsek div span a verdigimiz ozellik uyuglanacaktir... */
+
+    /*
+    CSS SECICILERININ ONCELIK SIRASINI ANLAMAK ICIN MAUS IMLECIMIZ LE UZERLERINIE GITTIGIMZDE ORADA GORDUGUMZ 3 HANELI SAYININ BUYUKLUGUNE GORE ONCELIK SIRASNI ANLAYABILIRIZ
+        SEICILERIN ONEM SIRASI-BU NUJMARALARU BIZ SECILERIN UZERINE MAUS IMLECIMIZLE GELDIGIMIZDE GOREBILIRIZ VE ORDAKI SAYILARIN BUYUKLUGU SECILERIN ONCELIK  SIRASINI VERIR BIZE.....
+        1-ID-(YUZLERBASAMAGI)
+        2-CLASSES,ATTRUBUTES,PSEUDO ELEMTNS(ONLAR BASAMAGI)
+        3-ELEMENTS PSEUDO ELEMTNS(BIRLER BASAMAGIDIR)
+    Specify calculator dan nette bunu daha detayli inceleyebiliriz...
+        ASLINDA OLAY TAM OLARAK SU SEKILDEDIR....
+
+        BIZ SECICILERIMIZ SECERKEN USTTEKI 3 TANE KRITER DEN ORNEGIN AYNI ELEMENTIN 2 FARKLI SECILISINI DUSUNELIM HANGISI GECERLI OLACAK DIYE 1 INDE SADECE ID UZERINDEN SECELIM  ID SECICI 100 LER BASAMAGINI TEMSIL EDER YANI BIZ AYNI ELEMENTI IKI FARKLI SEKILDE SECERKEN BIRINDE SADECE ID ILE SECTIGIMI DUSUNELIM CLASS VE HTML ELEMNTI  KULLANMADAN SECTIGIMI VARSAYARSAK O ZAMAN 100 EDER BASKA BIR ALTERNATIF DE DE CLASS VE HTML ELEMENTI KULLANARAK SECELIM O DA 11 YAPACAKTIR DOLAYISI ILE ID SECICISI TEK BASINA DAHA GUCLU OLACAKTIR...
+
+        BU ARADA INLINE OLARAK YAZILAN HTML ELEMNTININ DIREK ICINE YAZILAN STYLE HER ZAMAN 1.SIRADA GECERLIDIR DAHA SONRA DA INTERNAL YA DA EXTERNAL OLARAK YAZILAN ELEMENTLER ISE HTML SAYFAMIZIN HEAD ETIKETI ICINDEKI YAZILMA SIRALARINA GORE HANGISI EN SON YAZILDI ISE O GECERLI OLACAKTIR HANGISI EN ALTTA YAZILI ISE
+        AMA INLINE ELEMENTE YAZDIGIM BIR CSS OZELLIGINI EZMEK ICIN ISE SON OLARAK IMPORTANT KEYWORDUNU KULLANIRIZ 
+
+SON OLARAK SUNU SOYLEYELIM EGER BIR KOD YAZIYORUZ VE BU KOD GECERLI OLMUYORSA O ZAMAN SECICIZIMI EZEN BASKA BIR SECICI OLMA IHTIMALI YUKSEKTIR ONUN ICIN SPECIFY ISLEMLERI COK ONEMLIDIR...
+    */
+    </style>
+</head>
+<body>
+
+    <div id="div" class="div">
+        <span>span elemani</span>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+        
+        </p>
+        <span style="color:yellow" id="span2">span elemani2
+
+            <span>bu da span2 nin cocugu!</span>
+        </span>
+    </div>
+    <!-- 
+
+span#span demek span elementi icinde id si span olan elemnt demektir
+#span span ise id si span olan elementin altindaki span lar dmeektir....
+
+
+     -->
+</body>
+</html>

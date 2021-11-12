@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+           
+
+        }
+
+        body {
+            font-size: 1em;
+            font-family: tahoma;
+            color: white;
+        }
+        main {
+            width: 100%;
+            background-color:lightgray;
+          
+        }
+        nav {
+            width: 100%;
+            background-color: black;
+            height: 3em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:0 0.5em;
+        }
+        nav>ul>li {
+            list-style-type: none;
+        }
+        nav a {
+            text-decoration: none;
+            height: 100%;
+            display:inline-block;
+            display: flex;
+            align-items: center;
+            margin: 0 0.3em;
+            list-style-type: none;
+        }
+
+        /* .marka a {
+            text-decoration: none;
+            height: 100%;
+            display:inline-block;
+           display: flex;
+           align-items: center;      
+        } */
+
+        nav a:hover {
+       
+            cursor: pointer;
+            background: lightgreen;
+            
+        }
+        .marka {
+            display: flex;
+            height: 100%;
+        }
+
+        .menu {
+            display: flex;
+            height: 100%;
+        }
+        nav a {
+            color: white;
+        }
+
+        @media only screen and (max-width:800px){ 
+
+            .menu {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.1em;
+            
+            position: absolute;
+            right: 0px;
+            top: 0;
+          
+            z-index: 2;
+            background-color:black ;
+          
+        }
+
+        nav {
+            width: 100%;
+            background-color: black;
+            height: 5em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:0 0.5em;
+            position: relative;
+         
+        }
+        nav a {
+            color: white;
+        }
+
+        nav a:hover {
+       
+       cursor: pointer;
+       background: lightgreen;
+       color: black;
+       
+   }
+
+     }
+    </style>
+</head>
+<body>
+    <main>
+        <nav>
+                <div class="marka">
+                    <a href="#">Marka</a>
+                </div>
+                <ul class="menu">
+                   <li> <a href="#">Ana Sayfa</a></li> 
+                  <li>  <a href="#">Hakkimizda</a></li> 
+                  <li><a href="#">Fiyatlandirma</a></li>  
+                   <li><a href="#">Iletisim</a></li> 
+                </ul>
+        </nav>
+    </main>
+</body>
+</html>

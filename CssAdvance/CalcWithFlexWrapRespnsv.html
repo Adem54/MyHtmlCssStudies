@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+  width:100%;
+  display:flex;
+ 
+  box-sizing:border-box;
+  padding-right:10px;
+  margin-top:20px;
+}
+.div {
+  
+  height:100px;
+  box-sizing:border-box;
+  border:1px solid;
+  margin-left:10px;
+ }
+
+ /*  burda 25%  flex-base dir o da biz eger hic width heigh degeri vermezsek o direk kutulari bu oranlara boler */
+.div11 {
+  flex:0 1 25%;
+  background-color:green;
+}
+.div12 {
+  flex:0 1 25%;
+  background-color:red;
+}
+.div13 {
+  flex:0 1 25%;
+  background-color:yellow;
+}
+.div14 {
+  flex:0 1 25%;
+  background-color:orange;
+}
+
+ @media only screen and (max-width:1000px)
+ {
+   .container {
+       display:flex;
+ 
+  box-sizing:border-box;
+     flex-wrap:wrap;
+     align-content:space-around;
+     
+     
+    
+   }
+  .div11 {
+  flex:0 1 calc(50% - 10px);
+  background-color:green;
+   margin-bottom:10px;
+}
+.div12 {
+  flex:0 1 calc(50% - 10px);
+  background-color:red;
+ 
+}
+.div13 {
+  flex:0 1 calc(50% - 10px);
+  background-color:yellow;
+   
+}
+.div14 {
+  flex:0 1 calc(50% - 10px);
+  background-color:orange;
+}
+}
+
+@media only screen and (max-width:700px) {
+  
+  
+  .container {
+       display:flex;
+ 
+  box-sizing:border-box;
+     flex-wrap:wrap;
+     align-content:space-around;
+     
+     
+    
+   }
+  .div11 {
+  flex:0 1 calc(100% - 10px);
+  background-color:green;
+   margin-bottom:10px;
+}
+.div12 {
+  flex:0 1 calc(100% - 10px);
+  background-color:red;
+ 
+}
+.div13 {
+  flex:0 1 calc(100% - 10px);
+  background-color:yellow;
+   
+}
+.div14 {
+  flex:0 1 calc(100% - 10px);
+  background-color:orange;
+}
+  
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="div div11"></div>
+        <div class="div div12"></div>
+        <div class="div div13"></div>
+        <div class="div div14"></div>
+        
+      </div>
+</body>
+</html>

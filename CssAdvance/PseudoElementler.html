@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p::first-letter{
+            font-size: 2em;
+        }
+
+        p::first-line{/*Dikkat edelim biz burayi baska bir sekilde yapamayiz burasi ilk satiri degistirmemizi sagliyor her zaman ilk satiri degistirebiliyoruz bu yontemle...*/
+            color: red;
+        }
+
+        p::selection{/* paragrafta biz herhangi bir yeri sectigimizde arka plani mavi ve yazi rengini beyaz yapacak...*/
+            background-color: blue;
+            color: white;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: rosybrown;
+            margin: 5px;
+        }
+
+        .box::before{
+            width: 50px;
+            background-color: cadetblue;
+            height: 50px;
+            content: 'adem.....';
+        }
+        /* BU COK ONEMLI!!!AFTER VE BEFORE DISPLAY INLINE ELEMENTLERDIR ONDAN DOLAYI EGER CONTENT I BOS BIRAKIP WIDTH VE HEIGHT DEGERLERI VERIRSEK DISPLAY INLINE OLD ICIN BUNUN ETKISINI GOREMEYECEGIZ...BUNA DIKKAT EDELIM...
+        BIRDE BIZ AFTER VE BEFORE U GOREBILMEK ICIN MUTLAKA CONTENT I KULLANMAK ZORUNDAYIZ...ICINE BIRSEY YAZMAYACAKSAK BOS BIRAKMALIYIZ AMA MUTLAKA KULLANMALIYIZ
+
+        AFTER VE BEFORE OZELLIKLE SVG IKONLAR IN SONRASINDA VEYA ONCESINDE BIRSEYLER KULLANIRKEN TEKRARDAN YENI BIR ELEMENT OLUSTURUP ONUN ICINE KOYMAK YERINE COK DAHA HIZLI VE KOLAY BIRSEKILDE ISIMIZI YAPABILIYRUZ AYRICA ANIMASYUON VS ILE ILGILI DE COK KULLANISLIDIR..
+        
+        
+        */
+        .box::after{
+            display: inline-block;
+            width: 50px;
+            background-color: yellow;
+            height: 50px;
+            content: "";
+        }
+        /* before after ile gelip baska bir div olusturmuyor bunu karistirmayalim...div imizin ICERIGINININ hemen oncesi ve sonrasina yapiyor bunu */
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        ADEM
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui tenetur, possimus et neque labore ratione sed mollitia! Harum, assumenda illum, illo culpa recusandae blanditiis consectetur sunt, corporis atque alias id.</p>
+</body>
+</html>

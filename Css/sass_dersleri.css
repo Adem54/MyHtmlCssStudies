@@ -1,0 +1,9 @@
+body {
+  color: green;
+}
+
+/*Yazdigimiz scss dosyamizi html imize yazarken gidip de link etiketleri icine bu scss dosyasini koyarak okutamayiz cunku browser scss dosyasini okuyamaz..anlamaz ve classic css kodlari bekler
+Ama zaten sasss bizim burda olusturdugumuz sass kodlarini arka planda classic css e cevirecek
+Live Sass Compiler eklentisini VsCode de install ettikten sonra VsCode altta watch sass diye bir sey gorecegiz ona tiklariz ve artik degisiklikleri Sass dinliyor ve bizim yazdigimiz scss dosyasi ile ayni isimde bir css dosyasi olusturur ve bizim yazdigimiz tum scss kodlarini olusturdugu css dosyasina biz her islem yaptigimizda yazacaktir
+*/
+/*# sourceMappingURL=sass_dersleri.css.map */

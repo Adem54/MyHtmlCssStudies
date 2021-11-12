@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root{
+            --body-bg-color:#333;
+            --text-color:white;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+      
+        a{
+            text-decoration: none;
+            color: inherit;/*ilk haline don yani siyah yani body nin rengii aldi*/
+        }
+        body {
+            font-size:2em;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: var(--body-bg-color);
+            color:var(--text-color);
+        }
+
+        .menu {
+            display:flex;
+            justify-content:space-around;
+        }
+        .menu a {
+            
+            position: relative;/*   - Bir HTML elementini sahip olduğu pozisyondan yukarı, aşağı, sağa ve sola doğru ayarlamayı sağlar.*/
+            padding:5px;
+           
+            display:block;/* tansform:scale() display inline olunca uygulanamiyor cunku width ve genislik olmadan uygulaanamaz */
+        }
+
+        .menu a::before {/*before ile biz a elementlerin yanina inline bir elemtn eklemis oluyoruz aslinda...*/
+            content: "";
+            background-color: yellow;
+            /*Buraya biz a elemntinin altina gelen cizgiyi yazpacagiz dolayisi ile bu elementi once a nin altina alalim ne ile yapacagiz tabi ki position ile yapariz bu islemi...*/
+            position: absolute;
+            width: 100%;
+            height:2px;
+            left:0;
+            bottom:0;
+            
+            /*Buraya kadar olan kisim uygulamamizin son hali oluyor simdi biz animasyon kismini yapalim yani menu elemanlarinin altina cizdigimiz cizgiyi once kaybedip sonra buyutelim...animasyonlu, efektli birsekilde*/
+            transform: scaleX(0);/*Ekrandan once kaybediiyoruz ki maus ile hover durumunda animasyonlu bir sekilde getirecegiz bunun icinde transition kodunu biz hem hover durumunda ki yazacagimiz kodlar arasina yazacagiz... hem de bu icinde bulundugumz kodlara yazacagiz ki once hover durumunda efekt uygulanacak sonra da normal haline donerken de buraya yazgimiz efetkkten dolayi birden kaybolmak yerine efekt ile kaybolacak....*/
+            transform-origin: left;/* origini in leftten baslat diyoruz..ve artik efektimizi soldan saga dogru gidiyor normalde hem saga hem de sola ayni anda buyuyor cunku orijin default olarak ortada duruyor */
+            transition: transform 0.5s ease-in-out;
+           
+            
+        }
+/* Bu su demekt a hover olunca ::before pseudo elementi ile olusturulmus elemente etki et demektir... */
+        .menu a:hover::before {
+            transition:1s ease-in-out;
+            transform: scaleX(1);/*biz x eksenin de buyutmesini istiyoruz dikey de degil yatay da buyutmesini istiyoruz..*/
+            /*Buraya kadar olan kisimda effektimiz biz uzerine gelince ortadan saga ve sola dogru ayni anda buyuyerek gelir cunku biz scaleX eksenin de yaptik ama biz bunun ortadan degilde orijin in soldan baslamasini istiyoruz..ki uzerine gelince before daki elementimiz soldan saga dogru buyusun su anda ortadan saga ve sola dogru ayni anda buyuyor bunu da biz nerden baslayacagini gidip before altin yazdigimz kodlara yazariz...*/
+          
+            transform-origin: left;
+         
+          
+           
+        }
+
+        .menu.to-left a::before {
+          transform-origin: right;
+        }
+
+        .menu.center a::before {
+          transform-origin: center;
+        }
+
+        .menu.adem a::before {
+            transform-origin:right;
+            /*burasi scale 0 ama uzerine gedlgimizde efekt ile tam boyutunu aliyor sonra da eski haline donuyor eski haline donerken normal halinin origini right old icin sagdan sola dogru 0 olacak.... */
+            transform: scaleX(0);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .menu.adem a:hover::before {
+            transform-origin: left;
+            transform: scaleX(1);
+            transition-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    
+        <ul class="menu">
+        <li><a href="">Ana Sayfa</a></li>
+        <li><a href="">Projeler</a></li>
+        <li><a href="">Yorumlar</a></li>
+        <li><a href="">Iletisim</a></li>
+    </ul>
+<hr>
+    <ul class="menu to-left">
+        <li><a href="">Ana Sayfa</a></li>
+        <li><a href="">Projeler</a></li>
+        <li><a href="">Yorumlar</a></li>
+        <li><a href="">Iletisim</a></li>
+    </ul>
+    <hr>
+    <ul class="menu center">
+        <li><a href="">Ana Sayfa</a></li>
+        <li><a href="">Projeler</a></li>
+        <li><a href="">Yorumlar</a></li>
+        <li><a href="">Iletisim</a></li>
+    </ul>
+    <hr>
+    <ul class="menu adem">
+        <li><a href="">Ana Sayfa</a></li>
+        <li><a href="">Projeler</a></li>
+        <li><a href="">Yorumlar</a></li>
+        <li><a href="">Iletisim</a></li>
+    </ul>
+ 
+</body>
+</html>

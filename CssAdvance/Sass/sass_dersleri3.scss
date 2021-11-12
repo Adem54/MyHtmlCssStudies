@@ -1,0 +1,31 @@
+// SCSS DE FONKSIYONLAR
+//Fonksiyonlarin mixinden tek farki fonksiyonlar geriye bir deger donderir ama mixinler geriye deger dondermezler
+
+//$bg-color:rgb(237,248,250);//bu renkte text rengi siyah
+//$bg-color:cyan gibi bir rentkte de text rengi beyaz oluyor cunku o orana gore koyu geliyor
+$bg-color:darken(#0ac, 10);//darken da yine Sass dan bir fonksiyondur 2.parametredeki sayi ile oynadikca renk koyulasiyor darken fonksiyonu ile birlikte. Yani 1.parametreye yazdigimiz rengin yanina yazdigimiz sayi orani kadar koyusunu veriyor...
+$accent-color:complement($bg-color);//parametre olarak verilen rengin zit rengini verir
+
+@function ikiyeKatla($deger){
+    @return $deger*2;
+}
+//Eger arka plan rengi koyu ise acik renk bir color verelim yazi rengi yok arkaplan rengi acik renk ise bu sefer de yazi rengi, kapali bir renk olsun
+@function textRenginiAyarla($bgcolor){
+    //lightness sass da var olan bir fonksiyondur
+    @if(lightness($bg-color)>70){
+        @return #335;
+    }
+    @return #fff;
+   }
+//Bize ne saglayacak bu biz yarin oburgun sadece arkaplan rengini koyudan acik renge veya acik renkten koyu renge gecirecegiz ve baska hicbirseye dokunmayacagiz...   
+   
+
+.div{
+    width: 300px;
+    height:ikiyeKatla(200px) ;
+    background-color: $accent-color;
+    font-size: ikiyeKatla(2rem);
+    color: textRenginiAyarla($bg-color);
+ 
+    
+}

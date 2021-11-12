@@ -1,0 +1,38 @@
+body{
+    background-color: $primary-color;
+}
+
+//PLACEHOLDER SELECTOR
+%button-base {
+    border-radius: 2px;
+    margin: 5px;
+}
+//Biz burda temel button ozelliklerini asagidaki 2 butonda da kullanmak istedigimiz zaman ne yapariz mixin yapisi icine bu ozellikleri aliriz ve gider tum butonlara o mixin  yapsini basariz normalde
+
+@mixin button-temel {
+    border-radius: 2px;
+    margin: 5px;
+}
+
+.menu-button {
+   // @include button-temel;
+   @extend %button-base;
+    color: purple;
+}
+
+.submit-button {
+   // @include button-temel;
+   @extend %button-base;
+    @extend .menu-button;//.menu-button dan da color:purple ozelligini alacak
+    font-size: 1rem;
+}
+
+//EXTEND INHERITANCE BEST PRACTISE
+//Normalde mixin yapisindan dolayi biz kolay bir sekilde yazsak bile burdaki anormallik su ki css tarafina gidip baktigimiz zaman ayni kodlarin defalarca yazildigini goruyoruz kod tekrari yapiyoruz yani! Ondan dolayi biz bu tarz durumlarda mixin ile degilde kalitim inherit ile yaparsak kod tekrarini da onlemis olacagiz css kisminda onun icin burda, bu tarz durumlarda extent keywordu ile inheritance yapmaliyiz
+//extend islemi ile yapinca .button-base, .menu-button, .submit-button {
+ // border-radius: 2px;
+//  margin: 5px; }
+// bu sekilde ortak bir  yerde yazarak ideal olan islemi yapiyor dolayisi ile de burdas extends i secmeliyiz...
+ 
+//PLACEHOLDER SELECTOR-ORTAK OZELLIKLERI TUTAN HTML ETIKETLERI ICINDE OLMAYAN ETIKETLER1!!
+//Biz bazen html elementlerimiz arasinda olmayan siniflari sirf bazi ortak css ozelliklerini tutmalari icin olustururuz, aslinda oyle bir sinifimiz yoktur ama bir tek ortak ozellikleri tutan bir yapi olarak olusturdu isek olustururken basina % koyariz ve kullaniminda hata vermemesi icinde extend edilirken basina nokta . yerine % koyariz...

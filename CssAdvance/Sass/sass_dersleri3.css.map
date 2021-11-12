@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAsBA,IAAI;EACA,KAAK,EAAE,KAAK;EACZ,MAAM,EAAC,KAAkB;EACzB,gBAAgB,EAnBN,OAAqB;EAoB/B,SAAS,EAAE,IAAgB;EAC3B,KAAK,EAVG,IAAI",
+"sources": ["sass_dersleri3.scss"],
+"names": [],
+"file": "sass_dersleri3.css"
+}

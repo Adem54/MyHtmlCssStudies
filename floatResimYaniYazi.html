@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         body {
+            margin:0;
+            padding:0;
+   box-sizing:border-box;
+        }
+        .container {
+            width:100%;
+            padding-right: 10px;
+            padding-left: 10px;
+          box-sizing:border-box;
+          /*Burası çok önemli burda border box verirsek artık container a padding berince verdiğimiz padding toplamını kutuların widht lerinden çıkarmamıza gerek kalmaz ancak border-box vermez isek o zaman işte padding leri de widht lerden çıkarmamız gerekecek.Biz burda border box kullandığımız için sadece margin leri widht lerden çıkardık ancak border box kullanmasa idik o zaman işte padding leri çıkarmamız gerkecekti  */
+            height:auto;
+        }
+        .box {
+            border:1px solid;
+            height: 400px;
+            
+            font-size:0.8em;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+
+        }
+    .baslik-1 {
+        width:calc(25% - 20px);
+        margin:10px;
+        float:left;
+        padding:10px;
+        box-sizing:border-box;
+        background-color: antiquewhite;
+    }
+         .baslik-2 {
+        width:calc(25% - 20px);
+        margin:10px;
+        float:left;
+        padding:10px;
+        box-sizing:border-box;
+        background-color: aqua;
+
+
+    }
+
+         .baslik-3 {
+        width:calc(50% - 20px);
+        margin:10px;
+        float:left;
+        padding:10px;
+        box-sizing:border-box;
+        background-color: darkkhaki;
+        position:relative;
+        overflow: hidden;
+       
+
+         }
+         .kirmizi-kutu {
+             width:40px;
+             height:40px;
+             border-radius: 50%;
+             background-color: red;
+             position: absolute;
+             top:5px;
+             right:5px;
+         }
+
+         .box-1 {
+            width:200px;
+            height:200px;
+            background-color: darkgray;
+            float:right;
+            margin-left:10px;/*Burda float-rigth dersek yazi kutunun solundan akar, float:left dersek de yazi kutunun solundan akacaktir */
+            
+         }
+
+         .lorem-3 {
+            text-align:justify;
+         }
+         .wrap {
+             width:100%;
+           
+         }
+
+       
+
+        /* div:not(:last-child) {
+    margin-right: 0;
+} */
+    
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box baslik-1">
+            <h2>Baslik 1</h2>
+            <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            
+        </div>
+        <div class="box baslik-2">
+            <h2>Baslik 2</h2>
+            <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                
+            </p>
+        </div>
+        <div class="box baslik-3">
+            <h2>Baslik 3</h2>
+            <div class="kirmizi-kutu"></div>
+            <div class="wrap">
+                <div class="box-1"></div>
+                <p class="lorem-3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        At illum ipsam esse sint similique, deleniti nulla incidunt 
+                        minima nobis delectus ullam facere nostrum doloremque,
+                         quas magni impedit? Minima, ducimus fugit!
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        At illum ipsam esse sint similique, deleniti nulla incidunt 
+                        minima nobis delectus ullam facere nostrum doloremque,
+                         quas magni impedit? Minima, ducimus fugit!
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        At illum ipsam esse sint similique, deleniti nulla incidunt 
+                        minima nobis delectus ullam facere nostrum doloremque,
+                         quas magni impedit? Minima, ducimus fugit!
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        At illum ipsam esse sint similique, deleniti nulla incidunt 
+                        minima nobis delectus ullam facere nostrum doloremque,
+                         quas magni impedit? Minima, ducimus fugit!
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                         At illum ipsam esse sint similique, deleniti nulla incidunt 
+                         minima nobis delectus ullam facere nostrum doloremque,
+                          quas magni impedit? Minima, ducimus fugit!
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                         At illum ipsam esse sint similique, deleniti nulla incidunt 
+                         
+                </p>
+                </div>
+            </div>
+            
+    </div>
+    
+</body>
+</html>
+<!-- Bir resmin yanina yazinin akma islemini ancak float ile yapabiliyoruz onu flex-box ile yapamayiz... -->

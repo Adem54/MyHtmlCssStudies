@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: orange;
+            height: 150px;
+            width:150px;
+            color: white;
+            font-size: 2rem;
+           /* transition: 2s;hover yaptigimizda ki ozelliklere direk gecmiyorda effektli yani 2 saniye de geciyor */
+           /* burda ister sek de hover durumunda ki yaptigimiz degiskiklerden sadece color da  1s lik transition olsun da diyebiliriz ya da hover durumunda degistirdigiimiz css ozelliklerini farkli farkli saniyelerde degistiririz*/
+           transition: color 1s, background-color 3s;
+           transition: all 5s;/* Normalde default olarak bu sekildedir*/
+          /* transition: 2s linear; bu varsayilan degerdir...bu efektidir bu efetki biz kendi istegimize gore degistirebiliriz.. transition in icinde transition-duration, transition property(all), transitio delay gibi transition-timing-function ease.Bunu biz inspect diyerek arka planda efektin once yavas girip sonra hizli cikmasi vs gibi nasil istersek ona gore ayarlayabiliriz..   */
+          transition:2sn ease-in;/* bu zaten all icine dahildir ama biz sonradan ekstra ozellik vererek efekti bu sekilde ayarlayabiliriz...*/
+
+          transition:4s cubic-bezier(0.25, 0.1, 1, 0.19) 2s;/*4s 4 saniye sursun, giris efektinin koordinat durumu yani hizli girsin yavas ciksin bunu inspect yaparak gorebiliriz, 2s de gecikme olsun yani delay demektir 
+          Bu sekilde tek satira yazabiliriz
+          */
+          /* Ama ayri ayri da yazabiliriz 
+          transition-duration: 4s;
+          transition-timing-function: ease-out;
+          transition-delay: 1s;
+          transition-property:color,background-color;/*burasi all da olaibir hangi ozelliklere uyguylansin demektir*/
+        
+         /* transition: height 2s, width  2s; uzerine gelince width ile heigh ayni anda 2 s icinde buyusun */
+          /*  burda da once height buyusun ve buyumesi 2 s sursun, width ise 1 sn gecikme ile buyusun onunda buyumesi 2sn sursun demektir bu... */
+          transition: height 2s, width  2s 1s;
+
+        }
+
+        div:hover {
+            background-color: teal;
+            color: black;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>Div</div>
+</body>
+</html>

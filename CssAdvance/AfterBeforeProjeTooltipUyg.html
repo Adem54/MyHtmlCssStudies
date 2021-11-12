@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+*, *::before, *::after {
+    box-sizing:border-box;
+}
+
+body {
+    margin-top: 300px;
+    font-size: 2rem;/* 32 px*/
+}
+
+/* attribute olarak data-tooltip olan tum elementleri sec demektir bu...*/
+[data-tooltip]{
+
+    position: relative;
+    display: inline-block; /*Simdide ana yapmiz datatooltip attributune sahip olan elementimiz tek satira sigdigi genis ekranda sorun yok ama ekran daralinca o satirimiz wrap oluyor bunun sebebi parent olan html elementimiz yani uzun tekstin icinde oldugu span icinde olan ana elementimiz span oldugu icin width degeri yoktur dolayisi ile iki satira ayrilinca 2 tane farkli width te satir oluyor ve bizim before da yazdigimiz elemntimzide inline elementtir ondan dolayi sapitiyor bizim burda cozum icin ya html etiketlerimiz arasindsaki span i display block bir eleemnt yani div elementi yapacagiz ya da ana elementin css ozelligini bir uste   display inline-block ozelligi ekleyecegiz.. */
+}
+
+/* ISLEMLERIMIZ BITTIKTEN SONRA BIZ ORTAK CSS OZELLIKLERIMIZ 2 KERE YAZMAMAK ICIN KENDIMIZI TEKRAR ETMEMEK ADINA BIRBIRI ILE BENZER OZELLIKLERI OLAN BEFORE VE AFTER I SECIP ORTAK OZELLIKLERI BURAYA YAZACAGIZ KI 2 KEZ YAZMAKTAN KURTULALIM... */
+[data-tooltip]:hover::before, [data-tooltip]:hover::after {
+    position: absolute;
+    left: 50%;
+    --tooltip-color:tomato;
+    --tooltip-ok-size:2rem;
+}
+
+[data-tooltip]:hover::before{
+    content: attr(data-tooltip);/*Biz attribute lerime bu sekilde css icinde erisebiliiyoruz... ve bu sekilde dinamik yapmistik...*/
+   /*  position: absolute;  bu degeri ortak css secicisine yaazdik hem before hem de after da old icin.... */
+  /*  top: -100%; transformun y ekseni ile bu isi yaptigimiz icin artik buna gerek kalmadi...*/
+   /*  left: 50%;  bu degeri ortak css secicisine yaazdik hem before hem de after da old icin.... */
+    transform:translate(-50%, calc(-100% - var(--tooltip-ok-size))) ;/* x ekseninde kendi boyutunun 50% si kadar sola kaysin, kendi boyutunun 100% u kadar da yukari ciksin diyuoruz ne kadar yukari cikacak ayrica ucgenin yuksekligi kadar daha cikacakki ucgen tam olarak bu elementimizin altina gelsin onun icin ucgenin yuksekligi olan 1 rem i de ekleriz burada,,,
+    ONEMLI....BEST PRACTISE.....
+    transform:translate elementlerimiz kendi boyutlarina gore x ve y ekseninde kaydirmamiza yariyor..Kendi boyuutlarina gore...dikkat edelimmm biz left te parent in boyutuna gore ayarllamistikkk  ve biz parenntin boyutuna gore 50% saga dogru gonderdik ama ne yapmamiz lazim yazimizin kendi boyutuna gore 50% sini de tekrar sola dogru gondermemiz gerekiyor iste bunu biz ancak transform ile yapabiliyoruz...
+    transform:translate(-50%) ;..*/
+    background-color: var(--tooltip-color);
+    border-radius: 0.3rem;
+    color: white;
+    padding: 0.5rem;
+    width: max-content;/*Bizim icerigimiz biraz buyuyunce wrap oluyor yani alt alta geliyor ve biz bunu istemiyoruz kotur bir goruntu olusuyor biz her zaman tek satirdsa olmasini istiyoruz iste bunu width:max-content ile cozeriz.. */
+    max-width: 100%;/* Ama hicbir zaman da parentinin kapladigi genisligi gecme diyoruz burda da, artgigi yerde wrap yapacak bu durumda*/
+    text-align: center;
+    
+}
+/*  */
+
+[data-tooltip]:hover::after {
+    content: '';/* icerigin gelmesi icin burasi olmak zorundadir...*/
+    border: calc(var(--tooltip-ok-size)/2) solid transparent;
+    border-top-color: var(--tooltip-color);;/* BEST PRACTISE BIZ EGER BORDER A TRANSPARENT VERIP SONRA DA SADECE BORDER-TOP-COLOR A RENK ATAMASI YAPARSAK IKI KENARI YUKARDA OLAN ASAGI DOGRU BIR UCGEN OLUSUR AYRICA EGER BIZ BU ELEMENTE WIDTH VE HEIGHT DEGERI VERIRSEK DE O ZAMAN BORDER IN BOYUTU DA WIDTH VE HEIGHT DEGERININ YARISI KADAR OLMALIDIR...BUNA DIKKAT...BIZ UCGENI AYRICA BIR DE  transform: rotate(45deg); ILE YAPABILIRIZ VE BIR DIKDORTGENI BU SEKILDE DONDURDUKTEN SONRA DA UST KISIMDA UCGEN OLUSUYOR GERI KALAN KISMI ONDAN SONRA GELEN DIVIN ALTINDAS SAKLAYARAK YAPARIZ BU ISLEMI... */
+    position: absolute;
+    top: 0px;/*burayi vermeliyiz yoksa konumunu degistiriyor postion larda bu cok onemli...*/
+    left: 50%;
+    width: var(--tooltip-ok-size);
+    height: var(--tooltip-ok-size);
+    transform:translate(-50%, -100%);
+
+  
+  
+}
+    </style>
+</head>
+<body>
+    <!--Bunun uzerine gelince yazi gostermek istiyorum icine degeri de yazdim ve artik deger yazacagim yer yok cunku kendisi zaten inline elementtir 
+    Bu tarz durumlarda kendi attribute lerimizi olusturacagiz ve o sekilde cozecegiz bu islemi..
+    -->
+    <span class="tooltip" data-tooltip="Bu bir deneme yazisidir!">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem debitis ex odit iste fugiat, numquam voluptate ut eius rerum ducimus id, fuga magnam, natus quidem neque non dolores voluptatibus facilis? </span>
+</body>
+</html>
+

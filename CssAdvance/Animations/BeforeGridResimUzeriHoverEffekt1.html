@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+:root {
+  --color-primary: rgb(126,87,194);
+  --color-secondary: rgb(124,179,66);
+  --color-tertiary: rgb(255, 60, 0);
+  
+  --color-facebook: #3b5998;
+  --color-twitter: #1da1f2;
+  --color-youtube: #ff0000;
+  --color-instagram: #c13584;
+  
+  --font-primary: 'Ubuntu', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--font-primary);
+}
+
+
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+/******************/
+/* Intro */
+
+.intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: calc(100vh - 9.4rem);
+}
+
+.intro__product {
+  position: relative;
+  overflow: hidden;
+}
+
+.intro__product:hover .intro__image {
+  transform: scale(1.1);
+}
+
+.intro__product:hover .intro__image:before {
+  height: 100%;
+}
+
+.intro__product:hover .intro__content {
+  transform: translate(-2rem);
+}
+
+.intro__product:hover .intro__content p {
+  opacity: 1;
+  height: auto;
+} 
+
+.intro__product a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.intro__image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  transition: 1s ease;
+}
+
+.intro__image:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 10rem;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, .8), transparent);
+  transition: height .5s ease-in-out;
+}
+
+.intro__product:nth-child(1) .intro__image {
+  background-image: url(https://images.pexels.com/photos/298864/pexels-photo-298864.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+}
+
+.intro__product:nth-child(2) .intro__image {
+  background-image: url(https://images.pexels.com/photos/168765/pexels-photo-168765.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+}
+
+.intro__product:nth-child(3) .intro__image {
+  background-image: url(https://images.pexels.com/photos/257344/pexels-photo-257344.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+}
+
+.intro__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem 2rem;
+  transform: translate(1rem);
+  justify-content: flex-end;
+  transition: all .5s ease-in-out;
+}
+
+.intro__content p {
+  opacity: 0;
+  transition: all .5s ease-in-out;
+  transition-delay: .3s ease-in-out;
+}
+
+/******************/
+
+
+
+
+/*********************/
+/* Media Queries */
+
+@media(max-width: 40rem) {
+  .intro {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  
+
+ 
+  
+
+}
+/* 400px ve ustunde resimler bu sekilde gozukuyor ama 400px altinda alt alta gozukecek */
+@media(min-width: 40rem) {
+ .intro__product:first-child {
+      grid-row: span 2;
+  } 
+}
+
+    </style>
+</head>
+<body>
+     <!-- Intro -->
+     <section class="intro">
+      
+      
+        <div class="intro__product">
+          <div class="intro__image"></div>
+          <a href="#clothes">
+            <span class="intro__content">
+              <h2>Clothes</h2>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam, saepe?</p>
+            </span>
+          </a>
+        </div>
+        
+        <div class="intro__product">
+          <div class="intro__image"></div>
+          <a href="#electronics">
+            <span class="intro__content">
+              <h2>Electronics</h2>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam, saepe?</p>
+            </span>
+          </a>
+        </div>
+        
+        <div class="intro__product">
+          <div class="intro__image"></div>
+          <a href="#furnitures">
+            <span class="intro__content">
+              <h2>Furnitures</h2>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam, saepe?</p>
+            </span>
+          </a>
+        </div>
+        
+      </section>
+      <!-- end: Intro -->
+</body>
+</html>

@@ -1,0 +1,53 @@
+body {
+  color: black;
+  background-color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.p1 {
+  font-size: 2rem;
+  border: 2px solid red;
+  margin: 20px 10px 10px 5px;
+}
+
+.p2 {
+  color: yellow;
+}
+
+.main-content .p3 {
+  color: #f4433f;
+}
+
+a {
+  font-size: 2rem;
+}
+
+a:hover {
+  /*icinde bulundugum a nin uzerine gelindiginde demektir...  */
+  color: #e573e5;
+}
+
+.p3 {
+  color: #e573e5;
+}
+
+.p4 {
+  /*
+    Nested Property
+     text-align:center;
+    text-transform: uppercase;
+    text-overflow: hidden;
+    Bu sekilde ayni keyword ile baslayan property leri asagidaki gibi daha kisa yazabilirz Scss sayesinde
+    */
+  text-align: justify;
+  text-transform: uppercase;
+  text-overflow: hidden;
+  font-size: 1rem;
+  font-family: tahoma;
+  font-weight: bold;
+}
+/*# sourceMappingURL=sass_dersleri1.css.map */

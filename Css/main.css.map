@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "AIAA,AAAA,IAAI,CAAA;EACA,gBAAgB,EHDL,GAAG;CGEjB;;AAcD,AAXA,YAWY,EAMZ,cAAc,CAjBD;EACT,aAAa,EAAE,GAAG;EAClB,MAAM,EAAE,GAAG;CACd;;AAQD,AAAA,YAAY,EAMZ,cAAc,CAND;EAGT,KAAK,EAAE,MAAM;CAChB;;AAED,AAAA,cAAc,CAAC;EAIX,SAAS,EAAE,IAAI;CAClB",
+    "sources": [
+        "../CssAdvance/Sass/SccssStructureImport/main.scss",
+        "../CssAdvance/Sass/SccssStructureImport/_variables.scss",
+        "../CssAdvance/Sass/SccssStructureImport/_variables.scss",
+        "../CssAdvance/Sass/SccssStructureImport/_variables.scss",
+        "../CssAdvance/Sass/SccssStructureImport/_layout.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}

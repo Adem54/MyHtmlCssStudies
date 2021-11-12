@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, *::before, *::after{/* before ve after i kapsamayabilir * onun icin biz before ve after i da bu sekilde seciyoruz...  */
+            box-sizing:border-box;
+        }
+
+        .my-checkbox{
+           /* display: none; Biz boyle yaparsak bu ekranda hic yokmus gibi davranacaktir ama biz istiyoruz ki ekranda olsun ama gorunmesin */
+           opacity: 0;/* bu sekilde biz onu gorunmez yapabiliriz
+           Ama bu hali ile bulundugu yerde yerkapliyor onun icin biz onu ekran da yer tutmamasini da istiyorum o zaman da ne yapacagiz position:absolute degeri verip sonra da left:99999 yaparsak ekranda da hicgormeyecegimiz bir yere gider
+           
+           */
+           position: absolute; 
+           left: -99999;
+        }
+/* .my-checkbox class ina sahip olan elementten hemen sonra gelen ilk elementi secer....Yani biz tum class i my-checkbox olan elementlerden sonra gelen ilk elementi seciyoruz dolayisi ile tum label lari secmis olduk aslinda...   */
+        .my-checkbox + label {
+            cursor:pointer;
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+        }
+/*  before dedgimiz zaman burda label a biz before diyoruz yani label in icin e yazilan yazidan hemen once demektir yani label etiketinin altinda oluyor yani o zaman biz bunlari ortalamak icin display:flex den yararlaniriz dikey de hizalamak icin..  */
+        .my-checkbox + label::before{
+            content:'';
+            width: 1.5em;
+            height: 1.5em;
+            display:inline-block ;
+            border-radius: 0.2em;
+            border:0.05em solid black ;
+            margin-right: 0.5em;
+           
+           }
+        /*  em ile rem arasindaki farkliligi burda gorebiliriz biz normalde my-checkbox+label::before da tum degerleri rem olarak girdik rem ne idi root a gore kendini ayarliyordu yani kendi parentinin font-size indan etkienmiyordu...VE biz de label lara gidip font-size olarak bir deger verdik 24 px gibi ama label in child i olan before kismina biz degerleri rem le yazdiigmz icin font-size degisikliginden hic etkilenmedi ve biz ne yapmak zorunda kaldik gidip tek tek label in before kisminin degerlerini label a uydurmak zorunda kaldik oysa biz onlari en bastan em yapsa idik ne aypacakti em, parenteina yazilan font-size dan zaten otomatik olarak etkilenecekti ve o da o font-size a gore kendini ayarlayacakti....Iste bu farka gore bu tarz durumlara gore biz em mi yoksa rem mi kullanacagiz ona karar veririz...   */
+
+
+        /*SIMDI DE LABEL IMIZDAN ONCE GELEN KUTULARIMIZIN UZERINE GELINCE VERECEGIZIM STILERI AYRLAYALIM*/
+        
+        /* Seciciye cok dikkat edelim biz label dan onceki elemente hover verirken iste bu sekilde yazmalyiz once label:hover demeliyiz sonra da ::before demeliyiz ona..onun icin buraya cok dikkat edelim...  */
+        .my-checkbox + label:hover::before{
+            background-color: chartreuse;
+        }  
+
+        
+        /*
+          Burda biz olusturdugumuz elemente focus oldugunda diye birsey de yapmak istiyoruz ama bizim olusturdugumz eleman bir kutu yani focus ozelligi yokki yani tiklanma gibi bir ozelligi yok ama biz kaybettigimz checkbox lari focus yapacagiz ama stil degisimini olusturdugumuz kutularda yapacagiz checkbox larimizda gozukmedigi icin sanki bizim olusturdugumuz kutular focus oluyor gibi gozukecek...
+          Focus ozelligi input elementler icin gecerlidir...
+        */
+
+        .my-checkbox:focus + label::before {
+              box-shadow: 0 0 20px 0 black;  
+        }
+
+
+        .my-checkbox:checked + label::before {
+            content: "\2713";/*Biz bunu kullaninca bize otomatik bir check isareti veriyor... */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* tik isaretini ortalamak icin yapariz burayi da*/
+}
+
+.my-checkbox:disabled + label::before {
+    background-color: lightgrey;
+    border-color:#999;
+}
+
+.my-checkbox:disabled + label {
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+        span {
+  content: "\2713";
+}
+    </style>
+</head>
+<body>
+    <input type="checkbox" class="my-checkbox" disabled checked id="cb1">
+    <label for="cb1">Checkbox</label>
+    <br>
+    <input type="checkbox" class="my-checkbox" disabled  id="cb2">
+    <label for="cb2">Checkbox</label>
+    <br>
+    <input type="checkbox" class="my-checkbox"  id="cb3">
+    <label for="cb3">Checkbox</label>
+    <br>
+    <input type="checkbox" class="my-checkbox"  id="cb4">
+    <label for="cb4">Checkbox</label>
+
+    <hr>
+  
+    <span>&#10003;</span>
+   
+</body>
+</html>

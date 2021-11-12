@@ -1,0 +1,159 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    color: $primary-font-color;
+}
+.fullscreen-header {
+
+   height: 100vh; 
+    @include flexCenter;
+    background-image:linear-gradient(to right bottom,  rgba($primary-color-dark,.2),
+    rgba($primary-color,.2)), url("../img/james-harrison-vpOeXr5wmR4-unsplash.jpg");
+    background-repeat: no-repeat;
+    flex-direction: column;
+    background-size: cover; 
+    background-position-x: 90%;
+    background-position-y:center ;   
+}  
+
+.nav{
+    background-color: $primary-font-color;
+
+     position: fixed;
+       top: 0;
+       left: 0;
+       right: 0; 
+       z-index: 1;
+       text-align: center; 
+       padding-bottom: .5rem;
+
+       @include responsive(small){
+           display: flex;
+           justify-content: space-between;
+           padding-right:1rem ;
+       }
+       &__list {
+           display: flex;
+           list-style: none;
+           justify-content: space-around;
+           align-items: center;
+
+           &-item{
+               text-decoration: none;
+               color: white;
+               margin-left: 2rem;
+               
+               
+            &:hover {
+               color: $primary-color-light;
+            }
+           }
+       }
+
+    }
+
+    
+.section {
+ 
+    padding: 1rem;
+    margin: 1rem 0;
+    &-title {
+        text-align: center;
+        margin: 1rem;
+    }
+
+    &--accent {
+        background-color: $primary-color;
+    }
+}
+
+
+
+.about-grid{
+    display: grid;
+    grid-template-columns: minmax(auto, 650px);
+    row-gap: 2rem;
+    padding: .5rem;
+
+   
+    
+    
+    &__item {
+        display: flex;
+        @include flexCenter;
+      
+        
+       
+      
+  }
+    &__picture {
+        width: 5rem;
+        margin-left:1rem;
+        margin-right: 1rem;
+    }
+    &__text {
+        font-size: 1rem;
+        margin-left:.5rem;
+        margin-right: 1rem;
+        line-height: 1.5;
+  
+    }
+
+    @include responsive(medium){
+        grid-template-columns: repeat(2,minmax(auto, 750px));
+        justify-content: center;
+      
+    }
+
+   
+}
+
+.tutor-container {
+    display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+
+
+   @include responsive(medium){
+       flex-direction: row;
+    
+   
+   }
+   @include responsive(desktop){
+    flex-direction: row;
+
+}
+   
+}
+
+
+.form {
+    max-width: 900px;
+    margin: 0 auto;
+    
+    }
+    
+    .form-label{
+        color: $primary-color;
+        font-weight: bold;
+        display: block;
+    }     
+    
+    .form-input{
+        width: 100%;
+        margin-top:.25rem ;
+        margin-bottom: .75rem;
+        outline: none;
+        border: 1px solid $primary-font-color;
+        border-radius: .3rem;
+        padding: .5rem;
+        color: inherit;
+        resize: vertical;
+        max-height: 150px;
+    
+        &:hover, &:focus {
+            border-color: $primary-color;
+        }
+    }
+    
+    

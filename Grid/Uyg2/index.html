@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* BU UYGULAMA DA KOLONLARI ISTEDIGIMIZ GIBI AYARLADIK AMA BU UYGULAMA DA ROW LAR YANI HEIGHT LER HEPSININ ESIT YAPTIK DAHA DOGRUSU BIRLESTIRELIYORUZ AMA COK INCE AYARLARDA SORUN YASIYORUZ ISTE NE KADAR INCE AYAR YAPMAK ISTERSK O KADAR MINMAX DEGERDEKI KOLON MIN DEGERINE O KADAR AZ DEGER VERIRSEK ONA GORE FARKLI FARKLI ORANLARDA BIRLESTIRMEMIZ O KADAR KOLAY OLUR BUNDAN DOLAYI ZATEN BOOTSTRAP 12 PARCAYA BOLMUS...AMA BURDA BIZ SADECE KOLONLARIN INCE AYARINA YOGUNLASTIK UYG3 UMUZDE ISE HEM KOLON HEM DE YUKSEKLIKLERI ISTEDIGIMIZ GIBI AYARLIYORUZ..... 
+        AYRICA BIZ BU YAPTIKLAIRMIZI YINE KOLAY BIR SEKILDE GIRD-AREAS ILE DE YAPABILIRIZ...
+          grid-template-areas:"header header"
+                      "title sidebar" 
+                      "main sidebar"
+                      "footer footer"
+      
+        */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit , minmax(100px , 1fr)) ;
+            grid-auto-rows:250px;
+            gap: 5px;
+            grid-auto-flow: row  dense;
+        }
+  
+        .img1 {
+            grid-column: span 4;
+            grid-row: span 2;
+          
+        }
+        .img2 {
+            grid-column: span 4;
+        }
+        .img3 {
+            grid-column: span 4;
+        }
+
+        .img4 {
+            grid-column: span 3;
+        }
+        .img5 {
+            grid-column: span 2;
+        }
+        .img6 {
+            grid-column: span 4;
+        }
+        .img7 {
+            grid-column: span 3;
+        }
+
+        .img8 {
+            grid-column: span 4;
+        }
+        .img9 {
+            grid-column: span 3;
+        }
+        .img10 {
+            grid-column: span 5;
+        }
+         .img11 {
+            grid-column: span 4;
+        }
+        .img12 {
+            grid-column: span 8;
+        }
+
+        .img13 {
+            grid-column: span 3;
+        }
+         .img14 {
+            grid-column: span 6;
+        }
+        .img15 {
+            grid-column: span 3;
+        }
+
+        .img16 {
+            grid-column: span 4;
+        }
+        .img17 {
+            grid-column: span 4;
+        }
+        .img18 {
+            grid-column: span 4;
+        }
+
+        .img19 {
+            grid-column: span 4;
+        }
+        .img20 {
+            grid-column: span 5;
+        }
+        .img21 {
+            grid-column: span 3;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+    </style>
+</head>
+<body>
+    
+<div class="container">
+
+     <div class="img1"><img src="https://picsum.photos/300/200?random=1" alt=""></div>
+     <div class="img2"><img src="https://picsum.photos/300/200?random=2" alt=""></div>
+     <div class="img3"><img src="https://picsum.photos/300/200?random=3" alt=""></div>
+     <div class="img4"><img src="https://picsum.photos/300/200?random=4" alt=""></div>
+     <div class="img5"><img src="https://picsum.photos/300/200?random=5" alt=""></div>
+     <div class="img6"><img src="https://picsum.photos/300/200?random=6" alt=""></div>
+     <div class="img7"><img src="https://picsum.photos/300/200?random=7" alt=""></div>
+     <div class="img8"><img src="https://picsum.photos/300/200?random=8" alt=""></div>
+     <div class="img9"><img src="https://picsum.photos/300/200?random=20" alt=""></div>
+     <div class="img10"><img src="https://picsum.photos/300/200?random=9" alt=""></div>
+     <div class="img11"><img src="https://picsum.photos/300/200?random=10" alt=""></div>
+     <div class="img12"><img src="https://picsum.photos/300/200?random=11" alt=""></div>
+     <div class="img13"><img src="https://picsum.photos/300/200?random=12" alt=""></div>
+     <div class="img14"><img src="https://picsum.photos/300/200?random=13" alt=""></div>
+     <div class="img15"><img src="https://picsum.photos/300/200?random=14" alt=""></div>
+     <div class="img16"><img src="https://picsum.photos/300/200?random=15" alt=""></div>
+     <div class="img17"><img src="https://picsum.photos/300/200?random=16" alt=""></div>
+     <div class="img18"><img src="https://picsum.photos/300/200?random=17" alt=""></div>
+     <div class="img19"><img src="https://picsum.photos/300/200?random=18" alt=""></div>
+     <div class="img20"><img src="https://picsum.photos/300/200?random=19" alt=""></div>
+   
+     <div class="img21"><img src="https://picsum.photos/300/200?random=21" alt=""></div>
+     <div class="img8"><img src="https://picsum.photos/300/200?random=22" alt=""></div>
+     <div class="img8"><img src="https://picsum.photos/300/200?random=23" alt=""></div>
+     <div class="img8"><img src="https://picsum.photos/300/200?random=24" alt=""></div>
+     <div class="img8"><img src="https://picsum.photos/300/200?random=25" alt=""></div>
+     <div class="img8"><img src="https://picsum.photos/300/200?random=26" alt=""></div>
+     <div class="img8"><img src="https://picsum.photos/300/200?random=27" alt=""></div>
+     <div class="img8"><img src="https://picsum.photos/300/200?random=28" alt=""></div>
+     <div class="img8"><img src="https://picsum.photos/300/200?random=29" alt=""></div>
+     <div class="img8"><img src="https://picsum.photos/300/200?random=30" alt=""></div>
+     <div class="img8"><img src="https://picsum.photos/300/200?random=31" alt=""></div>
+     <!-- Biz ustte iki satiri birlestirdik ve geriye bosluklar kaldi bizde o bosluklari o bosluklarin boyutuna uygun yeni resimler ekleyerek cozduk asaggidaki resimler gibi... -->
+     <div><img src="https://picsum.photos/100/50?random=31" alt=""></div>
+     <div><img src="https://picsum.photos/100/100?random=32" alt=""></div>
+     <div><img src="https://picsum.photos/100/100?random=33" alt=""></div>
+     <div><img src="https://picsum.photos/100/100?random=34" alt=""></div>
+</div>
+
+
+</body>
+</html>
