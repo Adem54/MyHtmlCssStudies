@@ -1,0 +1,39 @@
+/*  Header     */
+.mainHeader {
+    background-color: $primaryDark;
+}
+/*##  Header  */
+
+/* SearchBox  */
+.searchBox {
+width: 100%;
+min-height: 50vh;
+background-image: linear-gradient(to right top,rgba($primaryColor, .6) ,rgba($secondaryColor,.9)), url(../images/searchBoxBg.jpg);
+@include backgroundSize;
+@include flexCenter(column);
+&__inputContainer {//&__inputContainer=>.searchBox__inputContainer demektir bu ve scss den gelen bir ozelliktir
+   position: relative;
+    @include flexCenter;
+   background-color: rgba($white,0.1);
+    width: 40%;
+    border-radius: .2rem;
+    .searchInput {
+        flex:1;
+        padding:2rem 3rem 2rem 3rem ;
+        border-radius: 30rem;
+        border:none;
+        &:focus {//&:focus=>.searchInput:focus   
+            outline:none;         
+        }
+    }
+    .searchBtn {
+       position:absolute;
+        right: 5rem;
+        background-color: inherit;
+        border:none;
+    }
+}
+}
+
+
+/* ##Search Box  */

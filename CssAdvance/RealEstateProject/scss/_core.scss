@@ -1,0 +1,26 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+body {
+  font-size: 1.6rem;
+  font-family: $mainFont;
+}
+
+.container {
+max-width: 114rem;
+margin :0 auto;
+
+
+}
+
+/*
+    font-family: $mainFont;
+
+      */
